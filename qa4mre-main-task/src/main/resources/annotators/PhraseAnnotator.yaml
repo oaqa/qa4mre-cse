@@ -1,0 +1,2 @@
+class: edu.cmu.lti.qalab.annotators.PhraseAnnotator
+#NOISE_THRESHOLD: 0.20

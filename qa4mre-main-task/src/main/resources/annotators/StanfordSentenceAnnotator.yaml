@@ -1,0 +1,2 @@
+class: edu.cmu.lti.qalab.annotators.StanfordSentenceAnnotator
+NOISE_THRESHOLD: 0.20

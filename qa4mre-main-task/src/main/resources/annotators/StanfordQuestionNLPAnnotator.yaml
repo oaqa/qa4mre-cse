@@ -1,0 +1,2 @@
+class: edu.cmu.lti.qalab.annotators.StanfordQuestionNLPAnnotator
+NOISE_THRESHOLD: 0.20

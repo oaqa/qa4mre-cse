@@ -1,0 +1,2 @@
+class: edu.cmu.lti.qalab.annotators.TextSegmenter
+NOISE_THRESHOLD: 0.20

@@ -1,0 +1,3 @@
+class: edu.cmu.lti.qalab.annotators.QASynonymAnnotator
+FILE_NAME: data/gene_ontology_ext.obo
+GIGA_WORD: data/cmudict.0.7a.gigaword.freq

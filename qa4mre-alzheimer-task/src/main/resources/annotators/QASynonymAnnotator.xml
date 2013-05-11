@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<analysisEngineDescription xmlns="http://uima.apache.org/resourceSpecifier">
+  <frameworkImplementation>org.apache.uima.java</frameworkImplementation>
+  <primitive>true</primitive>
+  <annotatorImplementationName>edu.cmu.lti.qalab.annotators.QASynonymAnnotator</annotatorImplementationName>
+  <analysisEngineMetaData>
+    <name>QASynonymAnnotatorDescriptor</name>
+    <description/>
+    <version>1.0</version>
+    <vendor/>
+     <configurationParameters>
+      <configurationParameter>
+        <name>FILE_NAME</name>
+        <description>synonym file</description>
+        <type>String</type>
+        <multiValued>false</multiValued>
+        <mandatory>false</mandatory>
+      </configurationParameter>
+      <configurationParameter>
+        <name>GIGA_WORD</name>
+        <description>synonym gigaword file</description>
+        <type>String</type>
+        <multiValued>false</multiValued>
+        <mandatory>false</mandatory>
+      </configurationParameter>      
+    </configurationParameters>
+    <configurationParameterSettings>
+      <nameValuePair>
+        <name>FILE_NAME</name>
+        <value>
+          <string>model/synonym/gene_ontology_ext.obo</string>
+        </value>
+      </nameValuePair>     
+      <nameValuePair>
+        <name>GIGA_WORD</name>
+        <value>
+          <string>model/synonym/cmudict.0.7a.gigaword.freq</string>
+        </value>
+      </nameValuePair>
+    </configurationParameterSettings>     
+   
+    <typeSystemDescription/>
+    <typePriorities/>
+    <fsIndexCollection/>
+    <capabilities>
+      <capability>
+        <inputs/>
+        <outputs/>
+        <languagesSupported/>
+      </capability>
+    </capabilities>
+    <operationalProperties>
+      <modifiesCas>true</modifiesCas>
+      <multipleDeploymentAllowed>true</multipleDeploymentAllowed>
+      <outputsNewCASes>false</outputsNewCASes>
+    </operationalProperties>
+  </analysisEngineMetaData>
+  <resourceManagerConfiguration/>
+</analysisEngineDescription>
