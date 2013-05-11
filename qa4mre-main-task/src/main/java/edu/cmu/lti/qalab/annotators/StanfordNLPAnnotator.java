@@ -138,7 +138,7 @@ public class StanfordNLPAnnotator extends JCasAnnotator_ImplBase {
 				annSentence.addToIndexes();
 				sentList.add(annSentence);
 				sentNo++;
-				System.out.println("Sentence no. " + sentNo + " processed");
+				//System.out.println("Sentence no. " + sentNo + " processed");
 			}
 		}
 		FSList fsSentList = this.createSentenceList(jCas, sentList);

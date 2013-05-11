@@ -324,6 +324,11 @@
           <rangeTypeName>uima.cas.FSList</rangeTypeName>
           <elementType>edu.cmu.lti.qalab.types.QuestionAnswerSet</elementType>
         </featureDescription>
+        <featureDescription>
+          <name>ReadingTestId</name>
+          <description/>
+          <rangeTypeName>uima.cas.String</rangeTypeName>
+        </featureDescription>
       </features>
     </typeDescription>
     <typeDescription>

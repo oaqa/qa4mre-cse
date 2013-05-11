@@ -128,7 +128,7 @@ public class StanfordQuestionNLPAnnotator extends JCasAnnotator_ImplBase {
 					answer.addToIndexes();
 					choiceList.set(j, answer);
 
-					System.out.println("Answer no. " + j + " processed");
+					//System.out.println("Answer no. " + j + " processed");
 				}
 				
 			}

@@ -10,6 +10,9 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
 
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+
 import org.apache.uima.cas.CAS;
 import org.apache.uima.cas.CASException;
 import org.apache.uima.collection.CollectionException;
@@ -36,8 +39,9 @@ public class QA4MRETestDocReader extends CollectionReader_ImplBase {
 
 	File testFile[] = null;
 	int nCurrFile = 0;
-	NodeList documents = null;
+	ArrayList<NodeList> documents = new ArrayList<NodeList>();
 
+	int nCurrTopic=0;
 	int nCurrDoc = 0;
 
 	@Override
@@ -50,6 +54,7 @@ public class QA4MRETestDocReader extends CollectionReader_ImplBase {
 			System.out.println("Total files: " + testFile.length);
 			String xmlText = this.readTestFile();
 			this.parseTestDocument(xmlText);
+			//this.parseTestDocument(testFile);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -58,12 +63,18 @@ public class QA4MRETestDocReader extends CollectionReader_ImplBase {
 	@Override
 	public void getNext(CAS aCAS) throws IOException, CollectionException {
 
-		if (nCurrFile < testFile.length && !(nCurrDoc < documents.getLength())) {
+		if (nCurrFile < testFile.length && !(nCurrTopic<documents.size()) && !(nCurrDoc < documents.get(nCurrTopic).getLength())) {
 			nCurrDoc = 0;
+			nCurrTopic=0;
 			nCurrFile++;
 			documents = null;
 			getNext(aCAS);
+		}else if(nCurrFile < testFile.length && nCurrTopic<documents.size() && !(nCurrDoc < documents.get(nCurrTopic).getLength())){
+			nCurrDoc=0;
+			nCurrTopic++;
+			getNext(aCAS);
 		}
+		
 
 		JCas jcas;
 		try {
@@ -83,7 +94,7 @@ public class QA4MRETestDocReader extends CollectionReader_ImplBase {
 
 		}
 
-		Element readingTestElement = (Element) documents.item(nCurrDoc);
+		Element readingTestElement = (Element) documents.get(nCurrTopic).item(nCurrDoc);
 		NodeList testDocNodeList = readingTestElement
 				.getElementsByTagName("doc");
 
@@ -94,7 +105,7 @@ public class QA4MRETestDocReader extends CollectionReader_ImplBase {
 				.getAttribute("d_id");
 		String fileName = testFile[nCurrFile].getName();
 
-		String docId = fileName.replace(".xmi", "") + "_" + testDocId;
+		String docId = fileName.replace(".xmi", "") + "_" +nCurrTopic+"_"+ testDocId;
 
 		NodeList questionNodeList = readingTestElement
 				.getElementsByTagName("q");
@@ -122,9 +133,9 @@ public class QA4MRETestDocReader extends CollectionReader_ImplBase {
 				Answer ans = new Answer(jcas);
 
 				if (isCorrect != null) {
-					if (isCorrect.equals("Yes")){
+					if (isCorrect.equals("Yes")) {
 						ans.setIsCorrect(true);
-					}else{
+					} else {
 						ans.setIsCorrect(false);
 					}
 				} else {
@@ -229,9 +240,40 @@ public class QA4MRETestDocReader extends CollectionReader_ImplBase {
 		return list;
 	}
 
+	public void parseTestDocument(File fXmlFile[]) throws Exception {
+
+		for (int fileIdx = 0; fileIdx < fXmlFile.length; fileIdx++) {
+
+			DocumentBuilderFactory dbFactory = DocumentBuilderFactory
+					.newInstance();
+			DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
+			Document document = dBuilder.parse(fXmlFile[fileIdx]);
+
+			// optional, but recommended
+			// read this -
+			// http://stackoverflow.com/questions/13786607/normalization-in-dom-parsing-with-java-how-does-it-work
+			document.getDocumentElement().normalize();
+			NodeList topicNodeList = document.getElementsByTagName("topic");
+
+			for (int i = 0; i < topicNodeList.getLength(); i++) {
+
+				Element topicElement = (Element) topicNodeList.item(i);
+				String topicId = topicElement.getAttribute("t_id");
+				NodeList readingTestNodeList = topicElement
+						.getElementsByTagName("reading-test");
+				System.out.println("Total reading tests: "+readingTestNodeList.getLength());
+				documents.add(readingTestNodeList);
+				// Element eleReading=(Element)readingTestNodeList;
+				// String rId=eleReading.getAttribute("r_id");
+			}
+
+		}
+	}
+
 	public void parseTestDocument(String xmlText) throws Exception {
 
 		DOMParser parser = new DOMParser();
+
 		parser.parse(new InputSource(new StringReader(xmlText)));
 		Document document = parser.getDocument();
 
@@ -240,13 +282,14 @@ public class QA4MRETestDocReader extends CollectionReader_ImplBase {
 		for (int i = 0; i < topicNodeList.getLength(); i++) {
 
 			Element topicElement = (Element) topicNodeList.item(i);
-			String topicId=topicElement.getAttribute("t_id");
+			String topicId = topicElement.getAttribute("t_id");
 			NodeList readingTestNodeList = topicElement
 					.getElementsByTagName("reading-test");
+			System.out.println("Total reading tests: "+readingTestNodeList.getLength());
+			documents.add(readingTestNodeList);
 			
-			documents = readingTestNodeList;
 			//Element eleReading=(Element)readingTestNodeList;
-			//String rId=eleReading.getAttribute("r_id");
+			// String rId=eleReading.getAttribute("r_id");
 		}
 
 	}
@@ -271,8 +314,8 @@ public class QA4MRETestDocReader extends CollectionReader_ImplBase {
 	public boolean hasNext() throws IOException, CollectionException {
 		// return nCurrFile < 10;
 		// return nCurrFile < testFile.length;
-		if (nCurrFile < testFile.length && nCurrDoc < documents.getLength()) {
-			System.out.println("***********True: currFile " + nCurrFile
+		if (nCurrFile < testFile.length && nCurrTopic<documents.size()) {
+			System.out.println("***********True: currFile " + nCurrFile+"\tnTopic "+nCurrTopic
 					+ "\tcurrDoc " + nCurrDoc);
 			return true;
 		}

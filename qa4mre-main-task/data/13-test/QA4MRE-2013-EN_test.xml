@@ -1140,7 +1140,7 @@ Musicology, §II: Disciplines of musicology. II. Disciplines of musicology 2. Th
 					<answer a_id='2'>determine the influences on a composition</answer>
 					<answer a_id='3'>inventory the components of a particular composition and explain the particular disposition and relationship of those components</answer>
 					<answer a_id='4'>determine the links between the composition and others</answer>
-					<answer a_id='5'>none of the above</answer>
+	         			<answer a_id='5'>none of the above</answer>
 				</q>
 				<q  q_id="19" >
 					<q_str>When did E.T.A. Hoffmann write a review of a Beethoven symphony?</q_str>
@@ -1345,7 +1345,7 @@ Latin America: Climate Change Swing States  U.S. Special Envoy for Climate Chang
 					<answer a_id='3'>cleaning their factories</answer>
 					<answer a_id='4'>buying carbon credits in other countries</answer>
 					<answer a_id='5'>None of the above</answer>
-				</q>
+                                </q>
 				<q  q_id="6" >
 					<q_str>Where did Todd Stern travel?</q_str>
 					<answer a_id='1'>to the United States</answer>
