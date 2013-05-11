@@ -19,7 +19,7 @@
       <nameValuePair>
         <name>INPUT_DIR</name>
         <value>
-          <string>XMIs/13-sample/</string>
+          <string>XMIs/13-test/</string>
         </value>
       </nameValuePair>
     </configurationParameterSettings>

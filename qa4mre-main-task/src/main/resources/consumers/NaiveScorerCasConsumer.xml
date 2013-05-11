@@ -32,7 +32,7 @@
       <nameValuePair>
         <name>OUTPUT_DIR</name>
         <value>
-          <string>evaluation1</string>
+          <string>evaluation1/</string>
         </value>
       </nameValuePair>
     </configurationParameterSettings>
