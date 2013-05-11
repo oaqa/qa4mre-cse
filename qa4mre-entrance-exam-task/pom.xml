@@ -21,7 +21,7 @@
 		</snapshotRepository>
 	</distributionManagement>
 	<dependencies>
-	<dependency>
+		<dependency>
 			<groupId>edu.cmu.lti.qalab</groupId>
 			<artifactId>qa4mre-base</artifactId>
 			<version>0.0.1-SNAPSHOT</version>
@@ -36,7 +36,12 @@
 			<artifactId>commons-compress</artifactId>
 			<version>1.2</version>
 		</dependency>
-		
+		<dependency>
+			<groupId>de.linguatools.disco</groupId>
+			<artifactId>disco</artifactId>
+			<version>1.4</version>
+		</dependency>
+
 	</dependencies>
 	<scm>
 		<connection>scm:git:git@github.com:alkeshpatel11/hw1-alkeshku.git</connection>

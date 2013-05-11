@@ -1,8 +1,6 @@
 package edu.cmu.lti.qalab.annotators;
 
-import java.io.IOException;
 import java.util.ArrayList;
-import java.util.List;
 import java.util.Properties;
 
 import org.apache.uima.UimaContext;
@@ -10,28 +8,12 @@ import org.apache.uima.analysis_component.JCasAnnotator_ImplBase;
 import org.apache.uima.analysis_engine.AnalysisEngineProcessException;
 import org.apache.uima.cas.FSIterator;
 import org.apache.uima.jcas.JCas;
-import org.apache.uima.jcas.cas.FSList;
 import org.apache.uima.resource.ResourceInitializationException;
 
-import edu.cmu.lti.qalab.dependency.Depsimilar;
 import edu.cmu.lti.qalab.types.Answer;
-import edu.cmu.lti.qalab.types.Question;
 import edu.cmu.lti.qalab.types.QuestionAnswerSet;
 import edu.cmu.lti.qalab.types.Sentence;
-import edu.cmu.lti.qalab.types.SourceDocument;
-import edu.cmu.lti.qalab.types.Token;
 import edu.cmu.lti.qalab.utils.Utils;
-import edu.stanford.nlp.ling.CoreAnnotations.NamedEntityTagAnnotation;
-import edu.stanford.nlp.ling.CoreAnnotations.PartOfSpeechAnnotation;
-import edu.stanford.nlp.ling.CoreAnnotations.SentencesAnnotation;
-import edu.stanford.nlp.ling.CoreAnnotations.TokensAnnotation;
-import edu.stanford.nlp.ling.CoreLabel;
-import edu.stanford.nlp.pipeline.Annotation;
-import edu.stanford.nlp.pipeline.StanfordCoreNLP;
-import edu.stanford.nlp.trees.semgraph.SemanticGraph;
-import edu.stanford.nlp.trees.semgraph.SemanticGraphCoreAnnotations.CollapsedCCProcessedDependenciesAnnotation;
-import edu.stanford.nlp.trees.semgraph.SemanticGraphEdge;
-import edu.stanford.nlp.util.CoreMap;
 
 public class WordSimilarityAnalyzer extends JCasAnnotator_ImplBase {
 	class Choice {
@@ -141,7 +123,7 @@ public class WordSimilarityAnalyzer extends JCasAnnotator_ImplBase {
 					}
 				}
 				Result r = new Result(pivot, maxScore);
-				ArrayList<Answer> ansL = Utils.getAnswerListFromQAset(qas);
+				ArrayList<Answer> ansL = Utils.fromFSListToCollection(qas.getAnswerList(),Answer.class);
 				//ArrayList<ArrayList<Double>> adisl = new ArrayList<ArrayList<Double>>();
 				// int count2 = 0;
 				for (int j = 0; j<ansL.size();j++) {

@@ -9,8 +9,6 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.regex.Pattern;
 
-import org.apache.xerces.impl.xs.identity.Selector.Matcher;
-
 public class NGDSimilarityCalculator {
 	private static int MAXCACHESIZE = 100000;
 	private static final String GOOGLE_SEARCH_SITE_PREFIX = "http://ajax.googleapis.com/ajax/services/search/web?v=1.0&";

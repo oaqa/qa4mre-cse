@@ -22,7 +22,7 @@ public class Stemmer {
 	private Set<String> words = null;
 	private HashMap<String, String> verbs = null;
 	DISCO disco = null;
-	
+
 	public Stemmer() {
 		words = new HashSet<String>();
 		verbs = new HashMap<String, String>();
@@ -46,7 +46,7 @@ public class Stemmer {
 			BufferedReader br = new BufferedReader(new InputStreamReader(in));
 			String strLine;
 			while ((strLine = br.readLine()) != null) {
-				String [] pair = strLine.split("\t");
+				String[] pair = strLine.split("\t");
 				verbs.put(pair[0], pair[1]);
 			}
 			in.close();
@@ -62,7 +62,7 @@ public class Stemmer {
 	}
 
 	public String stemWord(String input) throws IOException {
-		if (verbs.containsKey(input)){
+		if (verbs.containsKey(input)) {
 			return verbs.get(input);
 		}
 		TokenStream tokenStream = new StandardTokenizer(Version.LUCENE_30,
@@ -83,18 +83,16 @@ public class Stemmer {
 	public String stem(String word) throws IOException {
 		String newWord = stemWord(word);
 		if (words.contains(newWord)) {
-			if (disco.firstOrderSimilarity(newWord, word)>=0.1){
+			if (disco.firstOrderSimilarity(newWord, word) >= 0.1) {
 				return newWord;
-			}
-			else{
-				if (words.contains(word)){
+			} else {
+				if (words.contains(word)) {
 					return word;
-				}
-				else{
+				} else {
 					return newWord;
 				}
 			}
-			//return newWord;
+			// return newWord;
 		} else {
 			return word;
 		}

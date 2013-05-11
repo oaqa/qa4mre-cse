@@ -63,8 +63,8 @@ public class StanfordAnswerNLPAnnotator extends JCasAnnotator_ImplBase {
 		int sentNo = 0;
 		for (int i = 0; i < qaList.size(); i++) {
 
-			ArrayList<Answer> answers = Utils.getAnswerListFromQAset(qaList
-					.get(i));
+			ArrayList<Answer> answers = Utils.fromFSListToCollection(qaList
+					.get(i).getAnswerList(),Answer.class);
 			for (int i2 = 0; i2 < answers.size(); i2++) {
 				String answerText = answers.get(i2).getText();
 				Annotation document = new Annotation(answerText);
@@ -160,8 +160,8 @@ public class StanfordAnswerNLPAnnotator extends JCasAnnotator_ImplBase {
 		FSList fsQASet = Utils.createQuestionAnswerSet(jCas, qaList);
 		testDoc.setQaList(fsQASet);
 		testDoc.addToIndexes();
-		for(Answer a:Utils.getAnswerListFromQAset(Utils.getQuestionAnswerSetFromTestDocCAS(
-				jCas).get(0))){
+		for(Answer a:Utils.fromFSListToCollection(Utils.getQuestionAnswerSetFromTestDocCAS(
+				jCas).get(0).getAnswerList(),Answer.class)){
 			try{
 				for(int i=0;;i++){
 					System.out.println(a.getDependencies().getNthElement(i).toString());

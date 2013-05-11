@@ -14,10 +14,10 @@ import edu.stanford.nlp.pipeline.StanfordCoreNLP;
 public class DiscoSimilarity {
 	DISCO disco = null;
 	StanfordCoreNLP pipeline = null;
-	private Stemmer stemmer = null;
+	Stemmer stemmer = null;
 	private Set<String> words = null;
 
-	DiscoSimilarity() {
+	public DiscoSimilarity() {
 		try {
 			disco = new DISCO("data/similarityModel", false);
 		} catch (IOException e) {
@@ -42,10 +42,9 @@ public class DiscoSimilarity {
 		stemmer = new Stemmer();
 	}
 
-	
-	double getSimilarity(String sent1, String sent2) throws IOException{
-		String [] t1 = sent1.split(" ");
-		String [] t2 = sent2.split(" ");
+	double getSimilarity(String sent1, String sent2) throws IOException {
+		String[] t1 = sent1.split(" ");
+		String[] t2 = sent2.split(" ");
 		for (int i = 1; i < t1.length; i++) {
 			t1[i] = stemmer.stem(t1[i]);
 		}
@@ -53,10 +52,10 @@ public class DiscoSimilarity {
 			t2[i] = stemmer.stem(t2[i]);
 		}
 		double score = 0.0;
-		for (String w1:t1){
-			for (String w2:t2){
+		for (String w1 : t1) {
+			for (String w2 : t2) {
 				if (words.contains(w1) && words.contains(w2)) {
-					score+=disco.secondOrderSimilarity(w1, w2);
+					score += disco.secondOrderSimilarity(w1, w2);
 				}
 			}
 		}
@@ -66,7 +65,7 @@ public class DiscoSimilarity {
 	public static void main(String args[]) throws IOException {
 		DiscoSimilarity sim = new DiscoSimilarity();
 		String str = " GOVERNOR SUNUNU AND I FELL ASLEEP AND SHE WENT UP AROUND THIRTY FIVE FLOORS BELOW THE EIGHT DEMOCRATS WHO RUN THIS IS JULIE MCCARTHY REPORTING";
-		//double s = sim.getSelfMaxSimilarity(str.toLowerCase());
-		//System.out.println(s);
+		// double s = sim.getSelfMaxSimilarity(str.toLowerCase());
+		// System.out.println(s);
 	}
 }
