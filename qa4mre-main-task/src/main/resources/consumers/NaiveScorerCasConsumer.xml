@@ -39,6 +39,7 @@
       <nameValuePair>
         <name>OUTPUT_DIR</name>
         <value>
+<<<<<<< HEAD
           <string>test</string>
         </value>
       </nameValuePair>
@@ -46,6 +47,9 @@
         <name>IS_TEST</name>
         <value>
           <boolean>false</boolean>
+=======
+          <string>evaluation1/</string>
+>>>>>>> 9a3ee9fccf3d6cb04b1af1ed9aca9656dad2704b
         </value>
       </nameValuePair>
     </configurationParameterSettings>
