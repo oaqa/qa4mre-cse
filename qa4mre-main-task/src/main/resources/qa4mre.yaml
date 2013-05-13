@@ -1,5 +1,5 @@
 configuration: 
-  name: qa4mre-main
+  name: qa4mre-12-test-main
   author: ziy
   
 persistence-provider:
@@ -7,6 +7,7 @@ persistence-provider:
 
 collection-reader:
   inherit: collectionreaders.CollectionReaderDescriptor
+  INPUT_DIR: data/12-test-main/
 
 pipeline:
   # question and document annotations: data -> XMIs
@@ -65,10 +66,8 @@ pipeline:
     options: |
       - inherit: annotators.QASynonymAnnotator
 
-  - inherit: ecd.phase
-    name: CasConsumer
-    options: |
-      - inherit: consumers.CasConsumerDescriptor
+  - inherit: consumers.CasConsumerDescriptor
+    OutputDirectory: results/12-test-main/final-xmis
 
   # indexing
   - inherit: ecd.phase
@@ -98,7 +97,5 @@ pipeline:
       - inherit: annotators.AnswerSelectionByKCandAggregation
 
   # output format
-  - inherit: ecd.phase
-    name: ResultGenerator
-    options: |
-      - inherit: consumers.NaiveScorerCasConsumer
+  - inherit: consumers.NaiveScorerCasConsumer
+    OUTPUT_DIR: results/12-test-main/final-outputs

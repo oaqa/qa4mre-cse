@@ -1,5 +1,4 @@
 class: edu.cmu.lti.qalab.casconsumers.XmiWriterCasConsumer
-OutputDirectory: results/13-test/XMIs/
 
 persistence-provider: |
   inherit: ecd.default-log-persistence-provider

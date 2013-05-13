@@ -1,6 +1,5 @@
 class: edu.cmu.lti.qalab.collectionreaders.QA4MRECseCollectionReader
 dataset: QA4MRE-ALZHEIMER
-INPUT_DIR: data/12-test-main/
 
 persistence-provider: |
   inherit: persistence.local-persistence-provider
