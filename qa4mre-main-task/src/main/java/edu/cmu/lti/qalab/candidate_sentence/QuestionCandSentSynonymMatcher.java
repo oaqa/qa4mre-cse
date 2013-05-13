@@ -32,7 +32,7 @@ public class QuestionCandSentSynonymMatcher extends JCasAnnotator_ImplBase {
 	String coreName;
 	String schemaName;
 	int TOP_SEARCH_RESULTS = 10;
-	double K_RATIO=5;
+	double K_RATIO = 5;
 
 	@Override
 	public void initialize(UimaContext context)
@@ -66,32 +66,34 @@ public class QuestionCandSentSynonymMatcher extends JCasAnnotator_ImplBase {
 					.println("========================================================");
 			System.out.println("Question: " + question.getText());
 			String searchQuery = this.formSolrQuery(question);
-			if(searchQuery.trim().equals("")){
+			if (searchQuery.trim().equals("")) {
 				continue;
 			}
 			ArrayList<CandidateSentence> candidateSentList = new ArrayList<CandidateSentence>();
-			SolrQuery solrQuery=new SolrQuery();
-			solrQuery.add("fq", "docid:"+testDocId);
-			solrQuery.add("q",searchQuery);
-			solrQuery.add("rows",String.valueOf(TOP_SEARCH_RESULTS));
+			SolrQuery solrQuery = new SolrQuery();
+			solrQuery.add("fq", "docid:" + testDocId);
+			solrQuery.add("q", searchQuery);
+			solrQuery.add("rows", String.valueOf(TOP_SEARCH_RESULTS));
 			solrQuery.setFields("*", "score");
 			try {
 				SolrDocumentList results = solrWrapper.runQuery(solrQuery,
 						TOP_SEARCH_RESULTS);
-				
-				int dynamicKSelection=0;
-				double maxScore=results.getMaxScore();
-				for(int j=0;j<results.size();j++){
-					SolrDocument doc=results.get(j);
-					double score=Double.parseDouble(doc.get("score").toString());
-					double thrScore=maxScore/score;
-					if(thrScore>K_RATIO){
+
+				int dynamicKSelection = 0;
+				double maxScore = results.getMaxScore();
+				for (int j = 0; j < results.size(); j++) {
+					SolrDocument doc = results.get(j);
+					double score = Double.parseDouble(doc.get("score")
+							.toString());
+					double thrScore = maxScore / score;
+					if (thrScore > K_RATIO) {
 						break;
 					}
 					dynamicKSelection++;
 				}
-				int kSentCandidates=Math.min(dynamicKSelection, results.size());
-				
+				int kSentCandidates = Math.min(dynamicKSelection,
+						results.size());
+
 				for (int j = 0; j < kSentCandidates; j++) {
 					SolrDocument doc = results.get(j);
 					String sentId = doc.get("id").toString();
@@ -140,25 +142,28 @@ public class QuestionCandSentSynonymMatcher extends JCasAnnotator_ImplBase {
 		for (int i = 0; i < nounPhrases.size(); i++) {
 			NounPhrase np = nounPhrases.get(i);
 			// solrQuery += "nounphrases:\"" + np.getText() + "\" ";
-
-			ArrayList<Synonym> synList = Utils.fromFSListToCollection(
-					np.getSynonyms(), Synonym.class);
-			for (int j = 0; j < synList.size(); j++) {
-				solrQuery += "synonyms:\"" + synList.get(j).getText() + "\" ";
+			if (np != null && np.getSynonyms() != null) {
+				ArrayList<Synonym> synList = Utils.fromFSListToCollection(
+						np.getSynonyms(), Synonym.class);
+				for (int j = 0; j < synList.size(); j++) {
+					solrQuery += "synonyms:\"" + synList.get(j).getText()
+							+ "\" ";
+				}
 			}
-
 		}
 
 		ArrayList<NER> neList = Utils.fromFSListToCollection(
 				question.getNerList(), NER.class);
 		for (int i = 0; i < neList.size(); i++) {
 			NER ner = neList.get(i);
-			// solrQuery += "namedentities:\"" + neList.get(i).getText() +
-			// "\" ";
-			ArrayList<Synonym> synList = Utils.fromFSListToCollection(
-					ner.getSynonyms(), Synonym.class);
-			for (int j = 0; j < synList.size(); j++) {
-				solrQuery += "synonyms:\"" + synList.get(j).getText() + "\" ";
+			
+			if (ner != null && ner.getSynonyms() != null) {
+				ArrayList<Synonym> synList = Utils.fromFSListToCollection(
+						ner.getSynonyms(), Synonym.class);
+				for (int j = 0; j < synList.size(); j++) {
+					solrQuery += "synonyms:\"" + synList.get(j).getText()
+							+ "\" ";
+				}
 			}
 		}
 		solrQuery = solrQuery.trim();
