@@ -112,7 +112,7 @@ public class AnswerChoiceCandAnsSynonymScorer extends JCasAnnotator_ImplBase {
 						nnMatch = 0;
 					}
 					CandidateAnswer candAnswer = null;
-					if (candSent.getCandAnswerList() == null) {
+					if (candSent.getCandAnswerList() != null) {
 						candAnswer = Utils.fromFSListToCollection(
 								candSent.getCandAnswerList(),
 								CandidateAnswer.class).get(j);//
