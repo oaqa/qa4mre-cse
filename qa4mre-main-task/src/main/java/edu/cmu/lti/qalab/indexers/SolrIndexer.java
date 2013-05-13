@@ -83,7 +83,7 @@ public class SolrIndexer extends JCasAnnotator_ImplBase {
 				for (int j = 0; j < nounPhrases.size(); j++) {
 					NounPhrase nnPhr = nounPhrases.get(j);
 					nnList.add(nounPhrases.get(j).getText());
-					if (nnPhr != null) {
+					if (nnPhr != null && nnPhr.getSynonyms()!=null) {
 						ArrayList<Synonym> synList = Utils
 								.fromFSListToCollection(nnPhr.getSynonyms(),
 										Synonym.class);
@@ -102,7 +102,7 @@ public class SolrIndexer extends JCasAnnotator_ImplBase {
 				for (int j = 0; j < namedEntities.size(); j++) {
 					NER ner = namedEntities.get(j);
 					neList.add(namedEntities.get(j).getText());
-					if (ner != null) {
+					if (ner != null && ner.getSynonyms()!=null) {
 						ArrayList<Synonym> synList = Utils
 								.fromFSListToCollection(ner.getSynonyms(),
 										Synonym.class);
