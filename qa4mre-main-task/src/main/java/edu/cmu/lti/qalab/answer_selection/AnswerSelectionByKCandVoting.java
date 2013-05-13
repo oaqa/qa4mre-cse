@@ -66,7 +66,9 @@ public class AnswerSelectionByKCandVoting extends JCasAnnotator_ImplBase {
 			for (int c = 0; c < topK; c++) {
 
 				CandidateSentence candSent = candSentList.get(c);
-
+				if(candSent.getCandAnswerList()==null){
+					continue;
+				}
 				ArrayList<CandidateAnswer> candAnswerList = Utils
 						.fromFSListToCollection(candSent.getCandAnswerList(),
 								CandidateAnswer.class);
