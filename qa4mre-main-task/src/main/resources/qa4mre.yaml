@@ -1,5 +1,5 @@
 configuration: 
-  name: qa4mre
+  name: qa4mre-main
   author: ziy
   
 persistence-provider:
