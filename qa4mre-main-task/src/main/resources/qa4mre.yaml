@@ -29,42 +29,39 @@ pipeline:
   - inherit: ecd.phase
     name: StanfordNLPAnnotator
     options: |
-      - inherit: annotators.StanfordNLPAnnotator
-
-  - inherit: ecd.phase
-    name: StanfordQuestionNLPAnnotator
-    options: |
-      - inherit: annotators.StanfordQuestionNLPAnnotator
+      - pipeline:
+          - inherit: annotators.StanfordNLPAnnotator
+          - inherit: annotators.StanfordQuestionNLPAnnotator
 
   - inherit: ecd.phase
     name: PhraseAnnotator
     options: |
-      - inherit: annotators.PhraseAnnotator
-
-  - inherit: ecd.phase
-    name: QuestionPhraseAnnotator
-    options: |
-      - inherit: annotators.QuestionPhraseAnnotator
+      - pipeline:
+          - inherit: annotators.PhraseAnnotator
+          - inherit: annotators.QuestionPhraseAnnotator
 
   - inherit: ecd.phase
     name: NEAnnotator
     options: |
-      - inherit: annotators.NEAnnotator
-
-  - inherit: ecd.phase
-    name: QuestionNEAnnotator
-    options: |
-      - inherit: annotators.QuestionNEAnnotator
+      - pipeline:
+          - inherit: annotators.NEAnnotator
+          - inherit: annotators.QuestionNEAnnotator
 
   - inherit: ecd.phase
     name: SynonymAnnotator
     options: |
-      - inherit: annotators.SynonymAnnotator
+      - inherit: base.noop
+      - pipeline:
+          - inherit: annotators.SynonymAnnotator
+          - inherit: annotators.QASynonymAnnotator
 
   - inherit: ecd.phase
-    name: QASynonymAnnotator
+    name: WikiSynonymAnnotator
     options: |
-      - inherit: annotators.QASynonymAnnotator
+      - inherit: base.noop
+      - pipeline:
+          - inherit: annotators.WikiSynonymAnnotator
+          - inherit: annotators.WikiQASynonymAnnotator
 
   - inherit: consumers.CasConsumerDescriptor
     OutputDirectory: results/12-test-main/final-xmis
