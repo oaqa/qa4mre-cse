@@ -808,7 +808,7 @@ Requiem for Classical MusicA man stands surrounded by women. He is tall and hand
 				</q>
 				<q  q_id="5" >
 					<q_str>By the nineteenth century, what two elements governed the music business?</q_str>
-					<answer a_id='1'  correct="Yes">star performers and a business to deliver the star to the public</answer>
+<answer a_id='1' correct="Yes">star performers and a business to deliver the star to the public</answer>
 					<answer a_id='2' >star performers and a restaurant business</answer>
 					<answer a_id='3' >patrons and a business to deliver the star to the public</answer>
 					<answer a_id='4' >freelance composers and salons</answer>
@@ -1299,7 +1299,7 @@ Creativity &amp; Alzheimer's Disease Alzheimer’s disease leads to nerve cell d
 					<q_str>What did the patient in Dr. Fornazzari's study do for a living?</q_str>
 					<answer a_id='1' >she worked in the healthcare industry</answer>
 					<answer a_id='2'  correct="Yes">she was an artist</answer>
-					<answer a_id='3' >she was a researcher at the Centre for Addiction and Mental Health</answer>
+<answer a_id='3' >she was a researcher at the Centre for Addiction and Mental Health</answer>
 					<answer a_id='4' >she was a researcher at the University of Toronto</answer>
 					<answer a_id='5' >she was the clinical director of the Multilingual/Multicultural Memory Clinic</answer>
 				</q>

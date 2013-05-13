@@ -39,9 +39,9 @@ public class QA4MRETestDocReader extends CollectionReader_ImplBase {
 
 	File testFile[] = null;
 	int nCurrFile = 0;
-	ArrayList<NodeList> documents = new ArrayList<NodeList>();
+	ArrayList<Element> documents = new ArrayList<Element>();
+	ArrayList<String> topics = new ArrayList<String>();
 
-	int nCurrTopic=0;
 	int nCurrDoc = 0;
 
 	@Override
@@ -52,9 +52,10 @@ public class QA4MRETestDocReader extends CollectionReader_ImplBase {
 					(String) getConfigParameterValue("INPUT_DIR"));
 			testFile = inputDir.listFiles(new OnlyNXML("xml"));
 			System.out.println("Total files: " + testFile.length);
-			String xmlText = this.readTestFile();
-			this.parseTestDocument(xmlText);
-			//this.parseTestDocument(testFile);
+			//String xmlText = this.readTestFile();
+			
+			this.parseTestDocument(testFile);
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -62,19 +63,10 @@ public class QA4MRETestDocReader extends CollectionReader_ImplBase {
 
 	@Override
 	public void getNext(CAS aCAS) throws IOException, CollectionException {
+		convertElementToTestDocument(documents.get(nCurrDoc), aCAS);
+	}
 
-		if (nCurrFile < testFile.length && !(nCurrTopic<documents.size()) && !(nCurrDoc < documents.get(nCurrTopic).getLength())) {
-			nCurrDoc = 0;
-			nCurrTopic=0;
-			nCurrFile++;
-			documents = null;
-			getNext(aCAS);
-		}else if(nCurrFile < testFile.length && nCurrTopic<documents.size() && !(nCurrDoc < documents.get(nCurrTopic).getLength())){
-			nCurrDoc=0;
-			nCurrTopic++;
-			getNext(aCAS);
-		}
-		
+	private void convertElementToTestDocument(Element element, CAS aCAS) throws CollectionException {
 
 		JCas jcas;
 		try {
@@ -83,30 +75,19 @@ public class QA4MRETestDocReader extends CollectionReader_ImplBase {
 			throw new CollectionException(e);
 		}
 
-		if (documents == null) {
-
-			try {
-				String xmlText = readTestFile();
-				this.parseTestDocument(xmlText);
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-
-		}
-
-		Element readingTestElement = (Element) documents.get(nCurrTopic).item(nCurrDoc);
-		String readingTestId=readingTestElement.getAttribute("r_id");
+		
+		Element readingTestElement =element;//documents.get(nCurrDoc);
+		String readingTestId = readingTestElement.getAttribute("r_id");
 		NodeList testDocNodeList = readingTestElement
 				.getElementsByTagName("doc");
-
+	
 		String docText = testDocNodeList.item(0).getTextContent().trim();
-		// System.out.println("**************Lines in documenttext: "+docText.split("[\\n]").length);
-
+	
 		String testDocId = ((Element) testDocNodeList.item(0))
 				.getAttribute("d_id");
 		String fileName = testFile[nCurrFile].getName();
 
-		String docId = fileName.replace(".xmi", "") + "_" +nCurrTopic+"_"+ testDocId;
+		String docId = fileName.replace(".xmi", "") + "_" + testDocId;
 
 		NodeList questionNodeList = readingTestElement
 				.getElementsByTagName("q");
@@ -158,9 +139,10 @@ public class QA4MRETestDocReader extends CollectionReader_ImplBase {
 				questionAnswersList);
 
 		// put document in CAS
-		//jcas.setDocumentText(docText);
+		// jcas.setDocumentText(docText);
 		TestDocument testDoc = new TestDocument(jcas);
 		testDoc.setId(docId);
+		testDoc.setTopicId(topics.get(nCurrDoc));
 		testDoc.setReadingTestId(readingTestId);
 		testDoc.setText(docText);
 		testDoc.setQaList(quetionAnswersFSList);
@@ -170,7 +152,7 @@ public class QA4MRETestDocReader extends CollectionReader_ImplBase {
 		nCurrDoc++;
 
 	}
-
+/*
 	public String readTestFile() throws Exception {
 		// open input file list iterator
 		BufferedReader bfr = null;
@@ -198,7 +180,7 @@ public class QA4MRETestDocReader extends CollectionReader_ImplBase {
 		}
 		return xmlText;
 	}
-
+*/
 	public FSList createAnswerFSList(JCas aJCas, Collection<Answer> aCollection) {
 		if (aCollection.size() == 0) {
 			return new EmptyFSList(aJCas);
@@ -263,16 +245,22 @@ public class QA4MRETestDocReader extends CollectionReader_ImplBase {
 				String topicId = topicElement.getAttribute("t_id");
 				NodeList readingTestNodeList = topicElement
 						.getElementsByTagName("reading-test");
-				System.out.println("Total reading tests: "+readingTestNodeList.getLength());
-				documents.add(readingTestNodeList);
+				System.out.println("Total reading tests: "
+						+ readingTestNodeList.getLength());
+				// documents.add(readingTestNodeList);
 				// Element eleReading=(Element)readingTestNodeList;
 				// String rId=eleReading.getAttribute("r_id");
+				for (int j = 0; j < readingTestNodeList.getLength(); j++) {
+					topics.add(topicId);
+					Element readingTestElement=(Element)readingTestNodeList.item(j);
+					documents.add(readingTestElement);
+				}
 			}
 
 		}
 	}
 
-	public void parseTestDocument(String xmlText) throws Exception {
+	/*public void parseTestDocument(String xmlText) throws Exception {
 
 		DOMParser parser = new DOMParser();
 
@@ -287,14 +275,16 @@ public class QA4MRETestDocReader extends CollectionReader_ImplBase {
 			String topicId = topicElement.getAttribute("t_id");
 			NodeList readingTestNodeList = topicElement
 					.getElementsByTagName("reading-test");
-			System.out.println("Total reading tests: "+readingTestNodeList.getLength());
-			documents.add(readingTestNodeList);
-			
-			//Element eleReading=(Element)readingTestNodeList;
+			System.out.println("Total reading tests: "
+					+ readingTestNodeList.getLength());
+			topics.add(topicId);
+			documents.add(topicElement);
+
+			// Element eleReading=(Element)readingTestNodeList;
 			// String rId=eleReading.getAttribute("r_id");
 		}
 
-	}
+	}*/
 
 	/**
 	 * Closes the file and other resources initialized during the process
@@ -316,10 +306,8 @@ public class QA4MRETestDocReader extends CollectionReader_ImplBase {
 	public boolean hasNext() throws IOException, CollectionException {
 		// return nCurrFile < 10;
 		// return nCurrFile < testFile.length;
-		if (nCurrFile < testFile.length && nCurrTopic<documents.size()) {
-			System.out.println("***********True: currFile " + nCurrFile+"\tnTopic "+nCurrTopic
-					+ "\tcurrDoc " + nCurrDoc);
-			return true;
+		if (nCurrDoc<documents.size()){
+				return true;
 		}
 		return false;
 	}
