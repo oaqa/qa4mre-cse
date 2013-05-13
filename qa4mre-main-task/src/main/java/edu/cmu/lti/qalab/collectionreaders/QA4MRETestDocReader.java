@@ -95,10 +95,7 @@ public class QA4MRETestDocReader extends CollectionReader_ImplBase {
 		}
 
 		Element readingTestElement = (Element) documents.get(nCurrTopic).item(nCurrDoc);
-<<<<<<< HEAD
 		String readingTestId=readingTestElement.getAttribute("r_id");
-=======
->>>>>>> 9a3ee9fccf3d6cb04b1af1ed9aca9656dad2704b
 		NodeList testDocNodeList = readingTestElement
 				.getElementsByTagName("doc");
 

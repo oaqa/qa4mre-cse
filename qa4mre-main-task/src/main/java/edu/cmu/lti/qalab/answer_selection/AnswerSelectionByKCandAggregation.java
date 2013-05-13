@@ -135,11 +135,6 @@ public class AnswerSelectionByKCandAggregation extends JCasAnnotator_ImplBase {
 		Iterator<String> it = hshAnswer.keySet().iterator();
 		String bestAns = null;
 		double maxScore = 0;
-<<<<<<< HEAD
-		// System.out.println("Aggregated counts; ");
-=======
-		//System.out.println("Aggregated counts; ");
->>>>>>> 9a3ee9fccf3d6cb04b1af1ed9aca9656dad2704b
 		while (it.hasNext()) {
 			String key = it.next();
 			Double val = hshAnswer.get(key);
