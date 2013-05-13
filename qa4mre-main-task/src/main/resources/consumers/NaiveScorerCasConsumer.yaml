@@ -1,0 +1,7 @@
+class: edu.cmu.lti.qalab.casconsumers.NaiveScorerCasConsumer
+THRESHOLD: 3.0
+OUTPUT_DIR: results/final-outputs
+IS_TEST: false
+
+persistence-provider: |
+  inherit: ecd.default-log-persistence-provider

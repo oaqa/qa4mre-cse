@@ -1,4 +1,4 @@
-class: edu.cmu.lti.qalab.candidate_sentence.QuestionCandSentSimilarityMatcher
+class: edu.cmu.lti.qalab.candidate_sentence.QuestionCandSentSynonymMatcher
 SOLR_SERVER_URL: http://ur.lti.cs.cmu.edu:8983/solr/
 SOLR_CORE: qa4mre
 SCHEMA_NAME: clef-alzhemer-task

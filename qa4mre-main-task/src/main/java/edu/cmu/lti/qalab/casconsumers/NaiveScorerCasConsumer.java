@@ -6,18 +6,19 @@ import java.io.FileOutputStream;
 import java.io.FileWriter;
 import java.io.IOException;
 
+import org.apache.uima.UimaContext;
+import org.apache.uima.analysis_engine.AnalysisEngineProcessException;
 import org.apache.uima.cas.CAS;
 import org.apache.uima.cas.CASException;
 import org.apache.uima.cas.FSIterator;
 import org.apache.uima.cas.FeatureStructure;
 import org.apache.uima.cas.impl.XmiCasSerializer;
-import org.apache.uima.collection.CasConsumer_ImplBase;
 import org.apache.uima.jcas.JCas;
 import org.apache.uima.jcas.cas.FSList;
 import org.apache.uima.jcas.cas.NonEmptyFSList;
 import org.apache.uima.jcas.tcas.Annotation;
-import org.apache.uima.resource.ResourceProcessException;
 import org.apache.uima.util.XMLSerializer;
+import org.uimafit.component.CasConsumer_ImplBase;
 import org.xml.sax.SAXException;
 
 import edu.cmu.lti.qalab.types.Answer;
@@ -61,7 +62,7 @@ public class NaiveScorerCasConsumer extends CasConsumer_ImplBase {
 	int a_id = 0; // answer id, changing from 1 - 5.
 
 	@Override
-	public void initialize() {
+	public void initialize(UimaContext context) {
 		/**
 		 * string buffer for the output file.
 		 */
@@ -69,14 +70,15 @@ public class NaiveScorerCasConsumer extends CasConsumer_ImplBase {
 		
 		mDocNum = 0;
 		try {
-			mOutputFile = new File(
-					(String) getConfigParameterValue("OUTPUT_DIR")
-							+ "/output.xml");
+		  File dir = new File((String) context.getConfigParameterValue("OUTPUT_DIR"));
+		  if (!dir.exists()) {
+		    dir.mkdirs();
+		  }
+      mOutputFile = new File(dir, "output-" + System.currentTimeMillis() + ".xml");
 
-			THRESHOLD = Double
-					.parseDouble((String) getConfigParameterValue("THRESHOLD"));
+			THRESHOLD = (Float) context.getConfigParameterValue("THRESHOLD");
 			
-			IS_TEST = (Boolean) getConfigParameterValue("IS_TEST");
+			IS_TEST = (Boolean) context.getConfigParameterValue("IS_TEST");
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -111,14 +113,14 @@ public class NaiveScorerCasConsumer extends CasConsumer_ImplBase {
 	}
 
 	@Override
-	public void processCas(CAS aCAS) throws ResourceProcessException {
+  public void process(CAS aCAS) throws AnalysisEngineProcessException {
 		// DEBUG System.out.println("!!!Entered here!!!");
 
 		JCas jcas;
 		try {
 			jcas = aCAS.getJCas();
 		} catch (CASException e) {
-			throw new ResourceProcessException(e);
+			throw new AnalysisEngineProcessException(e);
 		}
 
 
@@ -127,7 +129,7 @@ public class NaiveScorerCasConsumer extends CasConsumer_ImplBase {
 			writeToFile(jcas, out);
 
 		} catch (IOException e) {
-			throw new ResourceProcessException(e);
+			throw new AnalysisEngineProcessException(e);
 		}
 	}
 
@@ -288,4 +290,5 @@ public class NaiveScorerCasConsumer extends CasConsumer_ImplBase {
 		}
 
 	}
+
 }

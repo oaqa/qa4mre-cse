@@ -32,13 +32,6 @@
 				<multiValued>false</multiValued>
 				<mandatory>false</mandatory>
 			</configurationParameter>
-			<configurationParameter>
-				<name>TOP_SEARCH_RESULTS</name>
-				<description>top search results</description>
-				<type>Integer</type>
-				<multiValued>false</multiValued>
-				<mandatory>false</mandatory>
-			</configurationParameter>
 		</configurationParameters>
 		<configurationParameterSettings>
 			<nameValuePair>
@@ -57,12 +50,6 @@
 				<name>SCHEMA_NAME</name>
 				<value>
 					<string>clef-alzhemer-task</string>
-				</value>
-			</nameValuePair>
-			<nameValuePair>
-				<name>TOP_SEARCH_RESULTS</name>
-				<value>
-					<integer>10</integer>
 				</value>
 			</nameValuePair>
 		</configurationParameterSettings>

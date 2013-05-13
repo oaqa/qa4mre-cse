@@ -34,6 +34,8 @@ import org.apache.uima.util.XMLSerializer;
 import org.uimafit.component.CasConsumer_ImplBase;
 import org.xml.sax.SAXException;
 
+import edu.cmu.lti.qalab.utils.Utils;
+
 /**
  * A simple CAS consumer that writes the CAS to XMI format.
  * <p>
@@ -77,7 +79,8 @@ public class XmiWriterCasConsumer extends CasConsumer_ImplBase {
       // throw new ResourceProcessException(e);
     }
 
-    File outFile = new File(mOutputDir, System.currentTimeMillis() + ".xmi");
+    File outFile = new File(mOutputDir, Utils.getTestDocumentFromCAS(jcas).getId() + "-"
+            + System.currentTimeMillis() + ".xmi");
     // serialize XCAS and write to output file
     try {
       writeXmi(jcas.getCas(), outFile, modelFileName);

@@ -28,13 +28,13 @@
       <nameValuePair>
         <name>DISCO_PATH</name>
         <value>
-          <string>data/disco-tool</string>
+          <string>model/dependency/</string>
         </value>
       </nameValuePair>
        <nameValuePair>
         <name>DEPTREE_PATH</name>
         <value>
-          <string>data/disco-tool/dpTree.xml</string>
+          <string>model/dependency/dpTree.xml</string>
         </value>
       </nameValuePair>     
     </configurationParameterSettings>

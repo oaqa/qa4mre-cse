@@ -1,0 +1,3 @@
+class: edu.cmu.lti.qalab.candidate_sentence.QuestionCandSentDependencyMatcher
+DISCO_PATH: model/dependency
+DEPTREE_PATH: model/dependency/dpTree.xml

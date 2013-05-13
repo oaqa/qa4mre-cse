@@ -81,13 +81,24 @@ pipeline:
     name: QuestionCandSentSimilarityMatcher
     options: |
       - inherit: annotators.QuestionCandSentSimilarityMatcher
+      - inherit: annotators.QuestionCandSentSynonymMatcher
+      - inherit: annotators.QuestionCandSentDependencyMatcher
 
   - inherit: ecd.phase
     name: AnswerChoiceCandAnsSimilarityScorer
     options: |
       - inherit: annotators.AnswerChoiceCandAnsSimilarityScorer
+      - inherit: annotators.AnswerChoiceCandAnsSynonymScorer
+      - inherit: annotators.AnswerChoiceCandAnsPMIScorer
 
   - inherit: ecd.phase
     name: AnswerChoiceCandAnsSimilarityScorer
     options: |
       - inherit: annotators.AnswerSelectionByKCandVoting
+      - inherit: annotators.AnswerSelectionByKCandAggregation
+
+  # output format
+  - inherit: ecd.phase
+    name: ResultGenerator
+    options: |
+      - inherit: consumers.NaiveScorerCasConsumer

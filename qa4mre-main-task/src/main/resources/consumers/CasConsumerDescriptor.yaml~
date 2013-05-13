@@ -1,5 +1,0 @@
-class: edu.cmu.lti.qalab.casconsumers.XmiWriterCasConsumer
-OutputDirectory: results/annotated-documents
-
-persistence-provider: |
-  inherit: ecd.default-log-persistence-provider

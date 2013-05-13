@@ -1,2 +1,1 @@
 class: edu.cmu.lti.qalab.annotators.QuestionNEAnnotator
-#NOISE_THRESHOLD: 0.20
