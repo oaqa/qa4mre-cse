@@ -325,7 +325,12 @@
           <elementType>edu.cmu.lti.qalab.types.QuestionAnswerSet</elementType>
         </featureDescription>
         <featureDescription>
-          <name>ReadingTestId</name>
+          <name>readingTestId</name>
+          <description/>
+          <rangeTypeName>uima.cas.String</rangeTypeName>
+        </featureDescription>
+        <featureDescription>
+          <name>topicId</name>
           <description/>
           <rangeTypeName>uima.cas.String</rangeTypeName>
         </featureDescription>

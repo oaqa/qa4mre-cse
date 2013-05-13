@@ -11,7 +11,7 @@ import org.apache.uima.jcas.cas.FSList;
 
 
 /** 
- * Updated by JCasGen Sat May 11 17:39:30 EDT 2013
+ * Updated by JCasGen Mon May 13 14:41:33 EDT 2013
  * XML source: /media/alkesh/Windows7_OS/Users/alkesh/git/qa4mre-cse/qa4mre-base/src/main/resources/TypeSystemDescriptor.xml
  * @generated */
 public class TestDocument extends SourceDocument {
@@ -86,16 +86,34 @@ public class TestDocument extends SourceDocument {
   /** getter for ReadingTestId - gets 
    * @generated */
   public String getReadingTestId() {
-    if (TestDocument_Type.featOkTst && ((TestDocument_Type)jcasType).casFeat_ReadingTestId == null)
-      jcasType.jcas.throwFeatMissing("ReadingTestId", "edu.cmu.lti.qalab.types.TestDocument");
-    return jcasType.ll_cas.ll_getStringValue(addr, ((TestDocument_Type)jcasType).casFeatCode_ReadingTestId);}
+    if (TestDocument_Type.featOkTst && ((TestDocument_Type)jcasType).casFeat_readingTestId == null)
+      jcasType.jcas.throwFeatMissing("readingTestId", "edu.cmu.lti.qalab.types.TestDocument");
+    return jcasType.ll_cas.ll_getStringValue(addr, ((TestDocument_Type)jcasType).casFeatCode_readingTestId);}
     
   /** setter for ReadingTestId - sets  
    * @generated */
   public void setReadingTestId(String v) {
-    if (TestDocument_Type.featOkTst && ((TestDocument_Type)jcasType).casFeat_ReadingTestId == null)
-      jcasType.jcas.throwFeatMissing("ReadingTestId", "edu.cmu.lti.qalab.types.TestDocument");
-    jcasType.ll_cas.ll_setStringValue(addr, ((TestDocument_Type)jcasType).casFeatCode_ReadingTestId, v);}    
+    if (TestDocument_Type.featOkTst && ((TestDocument_Type)jcasType).casFeat_readingTestId == null)
+      jcasType.jcas.throwFeatMissing("readingTestId", "edu.cmu.lti.qalab.types.TestDocument");
+    jcasType.ll_cas.ll_setStringValue(addr, ((TestDocument_Type)jcasType).casFeatCode_readingTestId, v);}    
+   
+    
+  //*--------------*
+  //* Feature: topicId
+
+  /** getter for topicId - gets 
+   * @generated */
+  public String getTopicId() {
+    if (TestDocument_Type.featOkTst && ((TestDocument_Type)jcasType).casFeat_topicId == null)
+      jcasType.jcas.throwFeatMissing("topicId", "edu.cmu.lti.qalab.types.TestDocument");
+    return jcasType.ll_cas.ll_getStringValue(addr, ((TestDocument_Type)jcasType).casFeatCode_topicId);}
+    
+  /** setter for topicId - sets  
+   * @generated */
+  public void setTopicId(String v) {
+    if (TestDocument_Type.featOkTst && ((TestDocument_Type)jcasType).casFeat_topicId == null)
+      jcasType.jcas.throwFeatMissing("topicId", "edu.cmu.lti.qalab.types.TestDocument");
+    jcasType.ll_cas.ll_setStringValue(addr, ((TestDocument_Type)jcasType).casFeatCode_topicId, v);}    
   }
 
     

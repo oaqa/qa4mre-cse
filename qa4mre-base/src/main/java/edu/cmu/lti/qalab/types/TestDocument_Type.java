@@ -14,7 +14,7 @@ import org.apache.uima.cas.Feature;
 
 
 /** 
- * Updated by JCasGen Sat May 11 17:39:30 EDT 2013
+ * Updated by JCasGen Mon May 13 14:41:33 EDT 2013
  * @generated */
 public class TestDocument_Type extends SourceDocument_Type {
   /** @generated */
@@ -63,20 +63,38 @@ public class TestDocument_Type extends SourceDocument_Type {
   
  
   /** @generated */
-  final Feature casFeat_ReadingTestId;
+  final Feature casFeat_readingTestId;
   /** @generated */
-  final int     casFeatCode_ReadingTestId;
+  final int     casFeatCode_readingTestId;
   /** @generated */ 
   public String getReadingTestId(int addr) {
-        if (featOkTst && casFeat_ReadingTestId == null)
-      jcas.throwFeatMissing("ReadingTestId", "edu.cmu.lti.qalab.types.TestDocument");
-    return ll_cas.ll_getStringValue(addr, casFeatCode_ReadingTestId);
+        if (featOkTst && casFeat_readingTestId == null)
+      jcas.throwFeatMissing("readingTestId", "edu.cmu.lti.qalab.types.TestDocument");
+    return ll_cas.ll_getStringValue(addr, casFeatCode_readingTestId);
   }
   /** @generated */    
   public void setReadingTestId(int addr, String v) {
-        if (featOkTst && casFeat_ReadingTestId == null)
-      jcas.throwFeatMissing("ReadingTestId", "edu.cmu.lti.qalab.types.TestDocument");
-    ll_cas.ll_setStringValue(addr, casFeatCode_ReadingTestId, v);}
+        if (featOkTst && casFeat_readingTestId == null)
+      jcas.throwFeatMissing("readingTestId", "edu.cmu.lti.qalab.types.TestDocument");
+    ll_cas.ll_setStringValue(addr, casFeatCode_readingTestId, v);}
+    
+  
+ 
+  /** @generated */
+  final Feature casFeat_topicId;
+  /** @generated */
+  final int     casFeatCode_topicId;
+  /** @generated */ 
+  public String getTopicId(int addr) {
+        if (featOkTst && casFeat_topicId == null)
+      jcas.throwFeatMissing("topicId", "edu.cmu.lti.qalab.types.TestDocument");
+    return ll_cas.ll_getStringValue(addr, casFeatCode_topicId);
+  }
+  /** @generated */    
+  public void setTopicId(int addr, String v) {
+        if (featOkTst && casFeat_topicId == null)
+      jcas.throwFeatMissing("topicId", "edu.cmu.lti.qalab.types.TestDocument");
+    ll_cas.ll_setStringValue(addr, casFeatCode_topicId, v);}
     
   
 
@@ -93,8 +111,12 @@ public class TestDocument_Type extends SourceDocument_Type {
     casFeatCode_qaList  = (null == casFeat_qaList) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_qaList).getCode();
 
  
-    casFeat_ReadingTestId = jcas.getRequiredFeatureDE(casType, "ReadingTestId", "uima.cas.String", featOkTst);
-    casFeatCode_ReadingTestId  = (null == casFeat_ReadingTestId) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_ReadingTestId).getCode();
+    casFeat_readingTestId = jcas.getRequiredFeatureDE(casType, "readingTestId", "uima.cas.String", featOkTst);
+    casFeatCode_readingTestId  = (null == casFeat_readingTestId) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_readingTestId).getCode();
+
+ 
+    casFeat_topicId = jcas.getRequiredFeatureDE(casType, "topicId", "uima.cas.String", featOkTst);
+    casFeatCode_topicId  = (null == casFeat_topicId) ? JCas.INVALID_FEATURE_CODE : ((FeatureImpl)casFeat_topicId).getCode();
 
   }
 }

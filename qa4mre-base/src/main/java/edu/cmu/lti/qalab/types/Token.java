@@ -11,7 +11,7 @@ import org.apache.uima.jcas.tcas.Annotation;
 
 
 /** 
- * Updated by JCasGen Sat May 11 17:39:31 EDT 2013
+ * Updated by JCasGen Mon May 13 14:41:33 EDT 2013
  * XML source: /media/alkesh/Windows7_OS/Users/alkesh/git/qa4mre-cse/qa4mre-base/src/main/resources/TypeSystemDescriptor.xml
  * @generated */
 public class Token extends Annotation {
