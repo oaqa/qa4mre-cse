@@ -1,0 +1,3 @@
+class: edu.cmu.lti.qalab.annotators.WikiQASynonymAnnotator
+DISCO_INDEX_DIR: model/wikiModel/
+MAX_SYNONYMS: 3
