@@ -16,7 +16,7 @@ import edu.cmu.lti.qalab.types.Sentence;
 import edu.cmu.lti.qalab.utils.Utils;
 import edu.stanford.nlp.pipeline.StanfordCoreNLP;
 
-public class NaiveAnalyzer_ extends JCasAnnotator_ImplBase {
+public class NaiveAnalyzer extends JCasAnnotator_ImplBase {
 
 	private StanfordCoreNLP stanfordAnnotator;
 

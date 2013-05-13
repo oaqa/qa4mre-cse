@@ -99,6 +99,14 @@ public class AnswerSelectionByKCandVoting extends JCasAnnotator_ImplBase {
 			} catch (Exception e) {
 				e.printStackTrace();
 			}
+			if (bestChoice != null) {
+				for (int l = 0; l < choiceList.size(); l++) {
+					if (choiceList.get(l).getText().equals(bestChoice)) {
+						choiceList.get(l).setIsSelected(true);
+						break;
+					}
+				}
+			}
 			System.out.println("Correct Choice: " + "\t" + correct);
 			System.out.println("Best Choice: " + "\t" + bestChoice);
 

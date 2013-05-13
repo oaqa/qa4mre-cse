@@ -28,7 +28,7 @@ public class AnswerSelectionByKCandAggregation extends JCasAnnotator_ImplBase {
 		super.initialize(context);
 		K_CANDIDATES = (Integer) context
 				.getConfigParameterValue("K_CANDIDATES");
-		
+
 	}
 
 	@Override
@@ -79,12 +79,12 @@ public class AnswerSelectionByKCandAggregation extends JCasAnnotator_ImplBase {
 					double totalScore = candAns.getSimilarityScore()
 							+ candAns.getSynonymScore() + candAns.getPMIScore();
 
-					Double existingVal=hshAnswer.get(answer);
-					if(existingVal==null){
-						existingVal=new Double(0.0);
+					Double existingVal = hshAnswer.get(answer);
+					if (existingVal == null) {
+						existingVal = new Double(0.0);
 					}
-					hshAnswer.put(answer, existingVal+totalScore);
-					
+					hshAnswer.put(answer, existingVal + totalScore);
+
 				}
 			}
 
@@ -94,6 +94,14 @@ public class AnswerSelectionByKCandAggregation extends JCasAnnotator_ImplBase {
 
 			} catch (Exception e) {
 				e.printStackTrace();
+			}
+			if (bestChoice != null) {
+				for (int l = 0; l < choiceList.size(); l++) {
+					if (choiceList.get(l).getText().equals(bestChoice)) {
+						choiceList.get(l).setIsSelected(true);
+						break;
+					}
+				}
 			}
 			System.out.println("Correct Choice: " + "\t" + correct);
 			System.out.println("Best Choice: " + "\t" + bestChoice);
@@ -120,18 +128,18 @@ public class AnswerSelectionByKCandAggregation extends JCasAnnotator_ImplBase {
 		System.out.println("c@1 score:" + cAt1);
 
 	}
-	
-	public String findBestChoice(
-			HashMap<String, Double> hshAnswer) throws Exception {
+
+	public String findBestChoice(HashMap<String, Double> hshAnswer)
+			throws Exception {
 
 		Iterator<String> it = hshAnswer.keySet().iterator();
 		String bestAns = null;
 		double maxScore = 0;
-		//System.out.println("Aggregated counts; ");
+		// System.out.println("Aggregated counts; ");
 		while (it.hasNext()) {
 			String key = it.next();
 			Double val = hshAnswer.get(key);
-			System.out.println(key+"\t"+key+"\t"+val);
+			System.out.println(key + "\t" + key + "\t" + val);
 			if (val > maxScore) {
 				maxScore = val;
 				bestAns = key;
@@ -141,6 +149,5 @@ public class AnswerSelectionByKCandAggregation extends JCasAnnotator_ImplBase {
 
 		return bestAns;
 	}
-
 
 }

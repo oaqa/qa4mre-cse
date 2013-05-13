@@ -27,7 +27,8 @@ public class AnswerChoiceCandAnsSynonymScorer extends JCasAnnotator_ImplBase {
 	public void initialize(UimaContext context)
 			throws ResourceInitializationException {
 		super.initialize(context);
-		K_CANDIDATES=(Integer)context.getConfigParameterValue("K_CANDIDATES");
+		K_CANDIDATES = (Integer) context
+				.getConfigParameterValue("K_CANDIDATES");
 	}
 
 	@Override
@@ -63,46 +64,53 @@ public class AnswerChoiceCandAnsSynonymScorer extends JCasAnnotator_ImplBase {
 				for (int j = 0; j < choiceList.size(); j++) {
 
 					Answer answer = choiceList.get(j);
-					ArrayList<NounPhrase> choiceNouns = Utils
-							.fromFSListToCollection(answer.getNounPhraseList(),
-									NounPhrase.class);
-					ArrayList<NER> choiceNERs = Utils.fromFSListToCollection(
-							answer.getNerList(), NER.class);
-
 					int nnMatch = 0;
-					for (int k = 0; k < candSentNouns.size(); k++) {
-						for (int l = 0; l < choiceNERs.size(); l++) {
-							if (candSentNouns.get(k).getText()
-									.contains(choiceNERs.get(l).getText())) {
-								nnMatch++;
+					if (!answer.getText().equals("None of the above")) {
+
+						ArrayList<NounPhrase> choiceNouns = Utils
+								.fromFSListToCollection(
+										answer.getNounPhraseList(),
+										NounPhrase.class);
+						ArrayList<NER> choiceNERs = Utils
+								.fromFSListToCollection(answer.getNerList(),
+										NER.class);
+
+						for (int k = 0; k < candSentNouns.size(); k++) {
+							for (int l = 0; l < choiceNERs.size(); l++) {
+								if (candSentNouns.get(k).getText()
+										.contains(choiceNERs.get(l).getText())) {
+									nnMatch++;
+								}
+							}
+							for (int l = 0; l < choiceNouns.size(); l++) {
+								if (candSentNouns.get(k).getText()
+										.contains(choiceNouns.get(l).getText())) {
+									nnMatch++;
+								}
 							}
 						}
-						for (int l = 0; l < choiceNouns.size(); l++) {
-							if (candSentNouns.get(k).getText()
-									.contains(choiceNouns.get(l).getText())) {
-								nnMatch++;
+
+						for (int k = 0; k < candSentNers.size(); k++) {
+							for (int l = 0; l < choiceNERs.size(); l++) {
+								if (candSentNouns.get(k).getText()
+										.contains(choiceNERs.get(l).getText())) {
+									nnMatch++;
+								}
 							}
+							for (int l = 0; l < choiceNouns.size(); l++) {
+								if (candSentNouns.get(k).getText()
+										.contains(choiceNouns.get(l).getText())) {
+									nnMatch++;
+								}
+							}
+
 						}
+
+						System.out.println(choiceList.get(j).getText() + "\t"
+								+ nnMatch);
+					} else {
+						nnMatch = 0;
 					}
-
-					for (int k = 0; k < candSentNers.size(); k++) {
-						for (int l = 0; l < choiceNERs.size(); l++) {
-							if (candSentNouns.get(k).getText()
-									.contains(choiceNERs.get(l).getText())) {
-								nnMatch++;
-							}
-						}
-						for (int l = 0; l < choiceNouns.size(); l++) {
-							if (candSentNouns.get(k).getText()
-									.contains(choiceNouns.get(l).getText())) {
-								nnMatch++;
-							}
-						}
-
-					}
-
-					System.out.println(choiceList.get(j).getText() + "\t"
-							+ nnMatch);
 					CandidateAnswer candAnswer = null;
 					if (candSent.getCandAnswerList() == null) {
 						candAnswer = Utils.fromFSListToCollection(

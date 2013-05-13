@@ -16,7 +16,7 @@ public class DepTreeInfo {
 	node root;
 	HashMap<String, node> nodeList;
 	double k = 0.5;
-	DepTreeInfo(String path) throws Exception {
+	public DepTreeInfo(String path) throws Exception {
 		File fXmlFile = new File(path);
 		DocumentBuilderFactory dbFactory = DocumentBuilderFactory.newInstance();
 		DocumentBuilder dBuilder = dbFactory.newDocumentBuilder();
@@ -31,6 +31,7 @@ public class DepTreeInfo {
 	void createTree(Node parent) {
 		root = new node(null, parent.getNodeName(), 0);
 		nodeList = new HashMap<String, node>();
+		nodeList.put(root.dep, root);
 		createTree(parent, root);
 	}
 
@@ -69,7 +70,7 @@ public class DepTreeInfo {
 		Integer[] deeps = new Integer[2];
 		node sharedP = getSharedParent(target,candidate,deeps);
 		if(sharedP==null){
-			//System.out.println(target+" "+candidate+" !!!!!!!!dep relation not found!!!!!!!!");
+			System.out.println(target+" "+candidate+" !!!!!!!!dep relation not found!!!!!!!!");
 			return 0.0;
 		}
 		if(sharedP.dep.equals(target))
@@ -82,8 +83,8 @@ public class DepTreeInfo {
 		return k*d/(d1+d2);
 	}
 
-	node getSharedParent(String rel1, String rel2,Integer[] deeps) {
-
+	public node getSharedParent(String rel1, String rel2,Integer[] deeps) {
+		
 		node A = this.nodeList.get(rel1.toLowerCase());
 		node B = this.nodeList.get(rel2.toLowerCase());
 		if (A == null || B == null)
@@ -114,7 +115,7 @@ public class DepTreeInfo {
 		return p;
 	}
 
-	class node {
+	public class node {
 		node(node parent, String dep, int deep) {
 			this.parent = parent;
 			this.dep = dep;

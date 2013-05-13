@@ -30,8 +30,10 @@ public class Depsimilar {
 			rel = rel.replaceFirst("_.*", "");
 			if (!tree.containsDep(rel))
 				continue;
-			if(disco.frequency(t.getGovernor().getText())==0||disco.frequency(t.getDependent().getText())==0)
+			if(disco.frequency(t.getGovernor().getText())==0||disco.frequency(t.getDependent().getText())==0){
+				//System.out.println(t.getGovernor().getText()+" "+ t.getDependent().getText());
 				continue;
+			}
 			if(filter.contains(rel)||(postiveFilter!=null&&!postiveFilter.contains(rel)))
 				continue;
 			double max = 0.0;
@@ -49,11 +51,9 @@ public class Depsimilar {
 			score+=max;	
 			String d1 = t.getRelation()+"("+t.getGovernor().getText() +","+t.getDependent().getText()+")";
 			String d2 = "";
-			if(maxC!=null)
-			 d2 = maxC.getRelation()+"("+maxC.getGovernor().getText() +","+maxC.getDependent().getText()+")";
-			//else
-				//System.out.println("no valid text in:"+candidate.getText());
-			//System.out.println(max+ " "+d1+" <---> "+d2);
+			if (maxC!=null)
+				d2 = maxC.getRelation()+"("+maxC.getGovernor().getText() +","+maxC.getDependent().getText()+")";
+			System.out.println(max+ " "+d1+" <---> "+d2);
 			
 		}
 		if(validTarget==0)

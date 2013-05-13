@@ -20,7 +20,8 @@
 			<mark></mark>
 			<rel></rel>
 			<acomp></acomp>
-			<complm></complm></comp>
+			<complm></complm>
+			<pcomp></pcomp></comp>
 		<agent></agent></arg>
 	<ref></ref>
 	<expl></expl>
@@ -49,7 +50,8 @@
 		<rcmod></rcmod>
 		<quantmod></quantmod>
 		<npadvmod>
-			<tmod></tmod></npadvmod></mod>
+			<tmod></tmod></npadvmod>
+		<prepc></prepc></mod>
 	<sdep>
 		<xsubj></xsubj></sdep>
 	<parataxis></parataxis>

@@ -32,6 +32,7 @@ public class QuestionCandSentSynonymMatcher extends JCasAnnotator_ImplBase {
 	String coreName;
 	String schemaName;
 	int TOP_SEARCH_RESULTS = 10;
+	double K_RATIO=5;
 
 	@Override
 	public void initialize(UimaContext context)
@@ -77,7 +78,21 @@ public class QuestionCandSentSynonymMatcher extends JCasAnnotator_ImplBase {
 			try {
 				SolrDocumentList results = solrWrapper.runQuery(solrQuery,
 						TOP_SEARCH_RESULTS);
-				for (int j = 0; j < results.size(); j++) {
+				
+				int dynamicKSelection=0;
+				double maxScore=results.getMaxScore();
+				for(int j=0;j<results.size();j++){
+					SolrDocument doc=results.get(j);
+					double score=Double.parseDouble(doc.get("score").toString());
+					double thrScore=maxScore/score;
+					if(thrScore>K_RATIO){
+						break;
+					}
+					dynamicKSelection++;
+				}
+				int kSentCandidates=Math.min(dynamicKSelection, results.size());
+				
+				for (int j = 0; j < kSentCandidates; j++) {
 					SolrDocument doc = results.get(j);
 					String sentId = doc.get("id").toString();
 					String docId = doc.get("docid").toString();

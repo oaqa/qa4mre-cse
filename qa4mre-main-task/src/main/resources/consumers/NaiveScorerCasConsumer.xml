@@ -21,6 +21,13 @@
         <multiValued>false</multiValued>
         <mandatory>false</mandatory>
       </configurationParameter>
+      <configurationParameter>
+        <name>IS_TEST</name>
+        <description>true if this UIMA run is a test run - so there is no gold standard in this case so there is no need to calculate the c@1 measure..</description>
+        <type>Boolean</type>
+        <multiValued>false</multiValued>
+        <mandatory>false</mandatory>
+      </configurationParameter>
     </configurationParameters>
     <configurationParameterSettings>
       <nameValuePair>
@@ -32,7 +39,13 @@
       <nameValuePair>
         <name>OUTPUT_DIR</name>
         <value>
-          <string>evaluation1/</string>
+          <string>test</string>
+        </value>
+      </nameValuePair>
+      <nameValuePair>
+        <name>IS_TEST</name>
+        <value>
+          <boolean>false</boolean>
         </value>
       </nameValuePair>
     </configurationParameterSettings>

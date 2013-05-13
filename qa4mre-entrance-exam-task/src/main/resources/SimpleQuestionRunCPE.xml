@@ -41,7 +41,7 @@
         <node>QuestionCandSentDependencyMatcher</node>
         <node>AnswerChoiceCandAnsSimilarityScorer</node>
         <node>AnswerChoiceCandAnsSynonymScorer</node>
-        <node>AnswerChoiceCandAnsPMIScorer</node>
+        <!--<node>AnswerChoiceCandAnsPMIScorer</node>-->
         <node>AnswerSelectionByKCandVoting</node>
       </fixedFlow>
     </flowConstraints>

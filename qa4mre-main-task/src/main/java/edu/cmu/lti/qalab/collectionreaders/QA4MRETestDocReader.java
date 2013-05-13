@@ -95,6 +95,7 @@ public class QA4MRETestDocReader extends CollectionReader_ImplBase {
 		}
 
 		Element readingTestElement = (Element) documents.get(nCurrTopic).item(nCurrDoc);
+		String readingTestId=readingTestElement.getAttribute("r_id");
 		NodeList testDocNodeList = readingTestElement
 				.getElementsByTagName("doc");
 
@@ -157,9 +158,10 @@ public class QA4MRETestDocReader extends CollectionReader_ImplBase {
 				questionAnswersList);
 
 		// put document in CAS
-		jcas.setDocumentText(docText);
+		//jcas.setDocumentText(docText);
 		TestDocument testDoc = new TestDocument(jcas);
 		testDoc.setId(docId);
+		testDoc.setReadingTestId(readingTestId);
 		testDoc.setText(docText);
 		testDoc.setQaList(quetionAnswersFSList);
 

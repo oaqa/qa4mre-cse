@@ -137,6 +137,10 @@ public class AnswerChoiceCandAnsPMIScorer extends JCasAnnotator_ImplBase {
 
 	public double scoreCoOccurInSameDoc(String question, Answer choice)
 			throws Exception {
+		
+		if(choice.getText().equals("None of the above")){
+			return 0.0;
+		}
 		// String choiceTokens[] = choice.split("[ ]");
 		ArrayList<NounPhrase> choiceNounPhrases = Utils.fromFSListToCollection(
 				choice.getNounPhraseList(), NounPhrase.class);
