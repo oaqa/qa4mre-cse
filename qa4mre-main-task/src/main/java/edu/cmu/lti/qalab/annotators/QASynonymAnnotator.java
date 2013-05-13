@@ -55,6 +55,9 @@ public class QASynonymAnnotator extends JCasAnnotator_ImplBase {
 	public void process(JCas jCas) throws AnalysisEngineProcessException {
 		
 		TestDocument testDoc=Utils.getTestDocumentFromCAS(jCas);
+		if(testDoc.getTopicId().equals("2") || testDoc.getTopicId().equals("3")){//2. Climate change, 3. Music and society
+			return;
+		}
 		
 		ArrayList<Question> questionList = Utils
 				.getQuestionListFromTestDocCAS(jCas);

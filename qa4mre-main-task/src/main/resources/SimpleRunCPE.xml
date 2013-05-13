@@ -35,6 +35,13 @@
     <delegateAnalysisEngine key="StanfordSentenceAnnotator">
       <import location="annotators/StanfordSentenceAnnotator.xml"/>
     </delegateAnalysisEngine>
+    <delegateAnalysisEngine key="WikiSynonymAnnotator">
+      <import location="annotators/WikiSynonymAnnotator.xml"/>
+    </delegateAnalysisEngine>
+    <delegateAnalysisEngine key="WikiQASynonymAnnotator">
+      <import location="annotators/WikiQASynonymAnnotator.xml"/>
+    </delegateAnalysisEngine>
+    
     <delegateAnalysisEngine key="SolrIndexer">
       <import location="annotators/SolrIndexer.xml"/>
     </delegateAnalysisEngine>
@@ -83,6 +90,9 @@
         <node>QuestionNEAnnotator</node>
         <node>SynonymAnnotator</node>
         <node>QASynonymAnnotator</node>
+        <node>WikiSynonymAnnotator</node>
+        <node>WikiQASynonymAnnotator</node>
+        
         <node>SolrIndexer</node>
         <node>QuestionCandSentSimilarityMatcher</node>
         <!-- <node>QuestionCandSentSynonymMatcher</node> -->        

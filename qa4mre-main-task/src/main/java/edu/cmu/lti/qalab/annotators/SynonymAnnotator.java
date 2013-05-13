@@ -20,6 +20,7 @@ import edu.cmu.lti.qalab.types.NER;
 import edu.cmu.lti.qalab.types.NounPhrase;
 import edu.cmu.lti.qalab.types.Sentence;
 import edu.cmu.lti.qalab.types.Synonym;
+import edu.cmu.lti.qalab.types.TestDocument;
 import edu.cmu.lti.qalab.utils.Utils;
 
 public class SynonymAnnotator extends JCasAnnotator_ImplBase {
@@ -48,8 +49,11 @@ public class SynonymAnnotator extends JCasAnnotator_ImplBase {
 
 	@Override
 	public void process(JCas jCas) throws AnalysisEngineProcessException {
-		// TestDocument testDoc=Utils.getTestDocumentFromCAS(jCas);
+		TestDocument testDoc=Utils.getTestDocumentFromCAS(jCas);
 
+		if(testDoc.getTopicId().equals("2") || testDoc.getTopicId().equals("3")){//2. Climate change, 3. music and society
+			return;
+		}
 		ArrayList<Sentence> sentList = Utils
 				.getSentenceListFromTestDocCAS(jCas);
 		for (int i = 0; i < sentList.size(); i++) {
