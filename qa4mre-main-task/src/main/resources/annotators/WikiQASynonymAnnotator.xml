@@ -28,7 +28,7 @@
       <nameValuePair>
         <name>DISCO_INDEX_DIR</name>
         <value>
-          <string>model/synonym/wikiModel/</string>
+          <string>model/wikiModel/</string>
         </value>
       </nameValuePair>     
       <nameValuePair>

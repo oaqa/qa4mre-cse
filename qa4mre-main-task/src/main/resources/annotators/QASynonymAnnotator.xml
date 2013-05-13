@@ -22,7 +22,21 @@
         <type>String</type>
         <multiValued>false</multiValued>
         <mandatory>false</mandatory>
-      </configurationParameter>      
+      </configurationParameter>  
+      <configurationParameter>
+        <name>DISCO_INDEX_DIR</name>
+        <description>synonym file</description>
+        <type>String</type>
+        <multiValued>false</multiValued>
+        <mandatory>false</mandatory>
+      </configurationParameter>
+      <configurationParameter>
+        <name>MAX_SYNONYMS</name>
+        <description>max synonym </description>
+        <type>Integer</type>
+        <multiValued>false</multiValued>
+        <mandatory>false</mandatory>
+      </configurationParameter>                
     </configurationParameters>
     <configurationParameterSettings>
       <nameValuePair>
@@ -35,6 +49,18 @@
         <name>GIGA_WORD</name>
         <value>
           <string>model/synonym/cmudict.0.7a.gigaword.freq</string>
+        </value>
+      </nameValuePair>      
+      <nameValuePair>
+        <name>DISCO_INDEX_DIR</name>
+        <value>
+          <string>model/pubmedModel/</string>
+        </value>
+      </nameValuePair>     
+      <nameValuePair>
+        <name>MAX_SYNONYMS</name>
+        <value>
+          <integer>5</integer>
         </value>
       </nameValuePair>
     </configurationParameterSettings>     

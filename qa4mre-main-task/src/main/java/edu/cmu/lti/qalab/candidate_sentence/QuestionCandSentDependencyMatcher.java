@@ -33,8 +33,8 @@ public class QuestionCandSentDependencyMatcher extends JCasAnnotator_ImplBase {
 		String depTreePath = (String) context
 				.getConfigParameterValue("DEPTREE_PATH");
 		try {
-			//tree = new DepTreeInfo(depTreePath);
-			//disco = new DISCO(path, false);
+			tree = new DepTreeInfo(depTreePath);
+			disco = new DISCO(path, false);
 			
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -65,8 +65,8 @@ public class QuestionCandSentDependencyMatcher extends JCasAnnotator_ImplBase {
 						Dependency.class);
 				double depMatchScore = 0.0;
 				try {
-					depMatchScore=this.compareDependencies(qDepList, cDepList);
-					//depMatchScore = this.getScore(qDepList, cDepList);
+					//depMatchScore=this.compareDependencies(qDepList, cDepList);
+					depMatchScore = this.getScore(qDepList, cDepList);
 				} catch (Exception e) {
 					e.printStackTrace();
 				}

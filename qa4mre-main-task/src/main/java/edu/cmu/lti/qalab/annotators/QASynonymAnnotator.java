@@ -16,6 +16,9 @@ import org.apache.uima.jcas.JCas;
 import org.apache.uima.jcas.cas.FSList;
 import org.apache.uima.resource.ResourceInitializationException;
 
+import de.linguatools.disco.DISCO;
+import de.linguatools.disco.ReturnDataCol;
+
 import abner.Tagger;
 import edu.cmu.lti.qalab.types.Answer;
 import edu.cmu.lti.qalab.types.NER;
@@ -36,6 +39,9 @@ public class QASynonymAnnotator extends JCasAnnotator_ImplBase {
 	// counts more than 5000 as
 	// common words.
 
+	String DISCO_INDEX_DIR="";
+	int MAX_SYNONYMS=3;
+	DISCO disco=null;
 	@Override
 	public void initialize(UimaContext context)
 			throws ResourceInitializationException {
@@ -43,8 +49,15 @@ public class QASynonymAnnotator extends JCasAnnotator_ImplBase {
 		super.initialize(context);
 		FILE_NAME=(String)context.getConfigParameterValue("FILE_NAME");
 		GIGA_WORD=(String)context.getConfigParameterValue("GIGA_WORD");
+		DISCO_INDEX_DIR = (String) context
+				.getConfigParameterValue("DISCO_INDEX_DIR");
+		MAX_SYNONYMS = (Integer) context
+				.getConfigParameterValue("MAX_SYNONYMS");
+
 		try{
 			startup();
+			disco = new DISCO(DISCO_INDEX_DIR, false);
+
 		}catch(Exception e){
 			e.printStackTrace();
 		}
@@ -127,6 +140,10 @@ public class QASynonymAnnotator extends JCasAnnotator_ImplBase {
 					
 					NounPhrase phrase = aPhraseList.get(j);
 					LinkedList<String>synPhrases=getSynonym(phrase.getText());
+					LinkedList<String>synPhrase1=getSynonymPubmed(phrase.getText());
+					if(synPhrase1.size()>0){
+						synPhrase1.addAll(synPhrase1);
+					}
 					ArrayList<Synonym>synList=new ArrayList<Synonym>();
 					for(int k=0;k<synPhrases.size();k++){
 						String syn=synPhrases.get(k);
@@ -145,6 +162,10 @@ public class QASynonymAnnotator extends JCasAnnotator_ImplBase {
 				for(int j=0;j<aNerList.size();j++){
 					NER ner = aNerList.get(j);
 					LinkedList<String>synNers=getSynonym(ner.getText());
+					LinkedList<String>synNers1=getSynonymPubmed(ner.getText());
+					if(synNers1.size()>0){
+						synNers.addAll(synNers1);
+					}
 					ArrayList<Synonym>synList=new ArrayList<Synonym>();
 					for(int k=0;k<synNers.size();k++){
 						String syn=synNers.get(k);
@@ -320,6 +341,35 @@ public class QASynonymAnnotator extends JCasAnnotator_ImplBase {
 			res = dict.get(word);
 		}
 		return res;
+	}
+	public LinkedList<String> getSynonymPubmed(String word) {
+
+		LinkedList<String> synonymList = new LinkedList<String>();
+
+		try {
+			int freq = disco.frequency(word);
+			// and print it to stdout
+			System.out.println("Frequency of " + word + " is " + freq);
+
+			// end if the word wasn't found in the index
+			if (freq == 0) {
+				return synonymList;
+			}
+
+			// retrieve the collocations for the input word
+			ReturnDataCol[] collocationResult = disco.collocations(word);
+			// and print the first 20 to stdout
+			System.out.println("Collocations:");
+			for (int i = 1; i < collocationResult.length; i++) {
+				System.out.println("\t" + collocationResult[i].word + "\t"
+						+ collocationResult[i].value);
+				if (i >= MAX_SYNONYMS)
+					break;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return synonymList;
 	}
 
 }

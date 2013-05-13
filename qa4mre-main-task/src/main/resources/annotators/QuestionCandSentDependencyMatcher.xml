@@ -28,7 +28,7 @@
       <nameValuePair>
         <name>DISCO_PATH</name>
         <value>
-          <string>model/dependency/</string>
+          <string>model/dependency/pubmedModel/</string>
         </value>
       </nameValuePair>
        <nameValuePair>
