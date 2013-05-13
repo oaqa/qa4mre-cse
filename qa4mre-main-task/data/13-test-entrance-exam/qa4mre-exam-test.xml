@@ -1,0 +1,355 @@
+<?xml version="1.0" ?>
+<!DOCTYPE test-set SYSTEM "input.dtd">
+<test-set>
+  <topic t_id="0" t_name="Entrance Exam">
+    <reading-test r_id="1">
+      <doc d_id="1">When I was a child, our dining room had two kinds of chairs - two large ones with arm rests and four small ones without. The larger ones stood at the ends of the table, the small ones on the sides. Mom and Dad sat in the big chairs, except when one of us was away; then Mom would sit in one of the smaller chairs. I always remained in the same place, at my father's right. He always sat at the end, at the &quot;head&quot; of the table. I couldn't imagine either of us sitting in any other position. In the years when I went away to school and came home only during the holidays, the arrangement at the table remained the same. Sitting where he did, Dad was framed by the window through which the yard could be seen with its carefully cultivated trees and grass. His chair was not just a place for him at the table; it was a place in which he was situated against the yard and trees, the fences and barbecue, the bikes, and cars. It was the holy and protected place that was his, and ours through him. Years later, in my mid-20s and uncertain about my future, I returned home. I remember my feeling at the moment I sat down: &quot;There is still a place for me at this table; things seem understandable here even if I can't yet make sense of my failed attempts in work and love. I'm glad I can come home to this table.&quot; After Dad retired, he and Mom moved out into a small apartment. When they came to visit me at their old house, Dad still sat at the head of the table though the table was no longer his but mine. Only with my marriage to Barbara, did I hear a voice question the arrangement. She requested, gently but firmly, that I sit at the head of the table in our home. I realized then that I was head of the family, but I also felt unwilling to introduce such a change. How would I feel sitting in that &quot;head&quot; place in my Dad's presence? And how would he handle it? I was to find out on the occasion of our youngest child's first birthday. Mom and Dad arrived for lunch, and went into the dining room. Dad moved toward his usual seat in front of the window that opened to the backyard. Before he could get around the side of the table, I took a deep breath and said, &quot;Dad, this is going to be your place, next to Mom, on the side.&quot; He stopped and looked at me. Then he sat where I had indicated. I felt awkward, sad, and angry at Barbara for pushing me to do this. It would have been easy to say, &quot;My mistake, Dad. Sit where you always sit.&quot; But I didn't. When he and Mom were seated, Barbara and I took our places. I don't know how Dad felt. I do know that, though removed from his usual place, he continued to share his best self with us, telling stories of his childhood and youth to the delight of his grandchildren. As I served the food with my window and yard as background, our lives experienced a change, which we continue to live with. It wasn't easy, but I sense that there is also something good in the change which has occurred. I am beginning to learn that &quot;honoring one's father&quot; is more than the question of which place to occupy at the dining table. It also means listening, wherever we sit and whatever our own positions, to the stories Dad longs to tell. We may then, during these magical moments, even be able to forget about whose chair is whose.</doc>
+      <question q_id="1">
+        <q_str>Where did the author's mother sit when one of her children was away?</q_str>
+        <answer a_id="1">She didn't change her chair.</answer>
+        <answer a_id="2">She moved her own chair next to Dad's.</answer>
+        <answer a_id="3">She moved to an empty chair on the side.</answer>
+        <answer a_id="4">She sat opposite to Dad.</answer>
+      </question>
+      <question q_id="2">
+        <q_str>What did the father's chair represent to the author in his school days?</q_str>
+        <answer a_id="1">It represented a secure family life he could rely on.</answer>
+        <answer a_id="2">It represented his father's changing position within the family.</answer>
+        <answer a_id="3">It represented the religious beliefs which his father shared with the family.</answer>
+        <answer a_id="4">It represented the world which could be seen outside the window.</answer>
+      </question>
+      <question q_id="3">
+        <q_str>How did the author respond to his wife's request when he heard it for the first time?</q_str>
+        <answer a_id="1">He agreed, but was worried about the consequences.</answer>
+        <answer a_id="2">He decided that his father would have to live apart.</answer>
+        <answer a_id="3">He disagreed because he knew exactly how his father would react.</answer>
+        <answer a_id="4">He refused, gently but firmly, to follow it.</answer>
+      </question>
+      <question q_id="4">
+        <q_str>How did the author feel when he told his father to sit on the side?</q_str>
+        <answer a_id="1">He didn't feel bad because his father was going to sit there anyway.</answer>
+        <answer a_id="2">He felt relieved at having carried out the difficult task.</answer>
+        <answer a_id="3">He regretted what he had done and wanted to blame his wife.</answer>
+        <answer a_id="4">He was thoroughly satisfied with the new seating arrangement.</answer>
+      </question>
+      <question q_id="5">
+        <q_str>What happened during the meal after the family had all taken their new seats?</q_str>
+        <answer a_id="1">The author's children removed their grandfather from his usual place.</answer>
+        <answer a_id="2">The author's father didn't appear to mind where he sat.</answer>
+        <answer a_id="3">The author's father shared his favorite dishes with the grandchildren.</answer>
+        <answer a_id="4">They became tense and nervous about their future as a family.</answer>
+      </question>
+    </reading-test>
+    <reading-test r_id="2">
+      <doc d_id="1">A few years ago I was flying from China to my home in the United States. I was in a huge airplane with more than four hundred people. We were nearly eight miles up in the sky. They were showing a good cowboy movie. The trip was smooth, and all the passengers around me were relaxed, except for the old man across the aisle. He was holding onto the arms of his seat so tightly that the blood had left his fingers. He was what is known as a &quot;white-knuckle flier.&quot; He would not look out the window, and he was sweating so much that the stewardesses had to keep bringing him towels. I thought it might help if I talked to him. &quot;Is this your first flight?&quot; I asked. &quot;No. In my business I fly thousands of miles each year. I hate it, but it has to be done.&quot; He explained to me that he'd always been afraid of flying and could never relax in the air. Even on twelve-hour trips he never unfastened his seat belt, not even for a minute. To avoid going to the toilet, he never drank even one cup of coffee. He was unable to enjoy the movie, nor could he sleep at all. &quot;But,&quot; I said, &quot;surely you know how safe flying is. It is said that you are more likely to be hit by lightning than injured on a commercial airplane. You are safer right now than in your own bath at home.&quot; I could tell from the look on his face that he'd heard all that a thousand times before. It did not make him feel better. When dinner was served, he gave me his. After I had eaten, I offered him one of my cigarettes. He didn't want to smoke. I asked him to play cards with me, hoping that might take his mind off his fear. He agreed, but his mind was not on the game. &quot;Somehow,&quot; he said, in a trembling voice, &quot;I can't believe we're supposed to be doing this. It doesn't seem natural.&quot; &quot;What do you mean?&quot; I asked. &quot;It scares me,&quot; he said, &quot;to think of the force it takes to keep us all up here. Imagine how much this machine weighs. Think of your own body weight and all the things you packed in your suitcase. Then multiply by four hundred for all the other people. And don't forget the weight of the fuel. When these giant machines take off to cross the Pacific, they weigh twice as much as they do when they land. Doesn't it ever worry you?&quot; As we finished the third or fourth round of our poker game, the captain announced that we were soon going to fly over Washington State, where a volcano, Mt. Saint Helens, had exploded a few hours earlier. It had shot ash and smoke high into the air. Our plane would have to fly hundreds of miles out of our way to get around it. If we flew through the cloud, the engines might get full of ash and stop. The pilot told us to look out the windows on the left. We saw a huge black cloud not far off. It looked almost like a monster. Now everybody was nervous, including me. But the old man was eagerly looking out the window. He seemed to have forgotten his worries. He was the calmest person on board now. &quot;It comforts me to see that volcano,&quot; he said. I asked him why. &quot;Well,&quot; he said, &quot;when I travel on a plane, I think how unnatural our technology is and what a danger it is to nature. We change the weather with our gases and we make nuclear bombs. But the moment I saw that volcano, I realized that nature is still far more powerful. Imagine the power that shot that smoke all the way up here. Compared to that, the engines on this giant plane are nothing more than four birthday cake candles. We will never be able to change the basic structural forces of our planet. And I find that very comforting.&quot; </doc>
+      <question q_id="1">
+        <q_str>What is meant by a &quot;white-knuckle flier?&quot;</q_str>
+        <answer a_id="1">It is a person who easily gets sick on an airplane.</answer>
+        <answer a_id="2">It is a person who is eager to take a trip on a white airplane.</answer>
+        <answer a_id="3">It is a person who is extremely nervous on an airplane.</answer>
+        <answer a_id="4">It is a person who travels on an airplane and has white fingers.</answer>
+      </question>
+      <question q_id="2">
+        <q_str>When the old man takes a trip on an airplane, what does he avoid doing?</q_str>
+        <answer a_id="1">Drinking anything that might make him go to the toilet.</answer>
+        <answer a_id="2">Fastening his seatbelt because it limits his movement.</answer>
+        <answer a_id="3">Talking with other passengers who might make him more nervous.</answer>
+        <answer a_id="4">Watching the movie since he needs to sleep during the trip.</answer>
+      </question>
+      <question q_id="3">
+        <q_str>Did any of the author's acts of kindness relieve the old man's fear?</q_str>
+        <answer a_id="1">No, none of them did.</answer>
+        <answer a_id="2">Yes, his offer of a cigarette did.</answer>
+        <answer a_id="3">Yes, his suggestion to play poker did.</answer>
+        <answer a_id="4">Yes, his talk on the safety of flying did.</answer>
+      </question>
+      <question q_id="4">
+        <q_str>What did the old man have on his mind when he was playing cards with the author?</q_str>
+        <answer a_id="1">The cards he could play in the next round of the poker game.</answer>
+        <answer a_id="2">The danger of two airplanes hitting each other.</answer>
+        <answer a_id="3">The uncertainty of the fuel lasting to their destination.</answer>
+        <answer a_id="4">The unnaturalness of the heavy airplane flying in the air.</answer>
+      </question>
+      <question q_id="5">
+        <q_str>What change did the pilot have to make in the flight plan?</q_str>
+        <answer a_id="1">He had to avoid the dark clouds of rain that spread in his way.</answer>
+        <answer a_id="2">He had to fly hundreds of miles more to show his passengers the volcano.</answer>
+        <answer a_id="3">He had to fly off the regular course for the sake of safety.</answer>
+        <answer a_id="4">He had to fly several miles higher than usual to avoid ash and smoke.</answer>
+      </question>
+      <question q_id="6">
+        <q_str>Why did the old man suddenly become calm and relaxed?</q_str>
+        <answer a_id="1">He realized that human technology is unable to compete with natural forces.</answer>
+        <answer a_id="2">He remembered that his airplane was no more powerful than four birthday cake candles.</answer>
+        <answer a_id="3">He understood that his airplane was not polluting nature as much as a volcano.</answer>
+        <answer a_id="4">He was comforted by the view that the earth remains healthy as long as it has active volcanoes.</answer>
+      </question>
+    </reading-test>
+    <reading-test r_id="3">
+      <doc d_id="1">One autumn afternoon a friend of mine, Captain Baker, returned from a trip to Washington and found his wife, Jane, waiting for him at the station in New York. She had gone to meet him because she had suddenly been given tickets for the opera that night. She was afraid they would be late if they didn't go there directly from the station. She told him about something that she had found while she was waiting for the train to arrive. In a corner of the station she had noticed a telephone booth with a sign on its door, &quot;Out of Order&quot;. Glancing into the booth, she had seen a small object beneath the telephone. &quot;Look!&quot; she said, holding out to him a small blue wooden cat. They smiled over this curious toy, and she pushed it into her bag as they left the station. Later, they were sitting in the back row in the crowded opera house enjoying the wonderful music. Some of the audience were standing just behind them. Suddenly Jane felt fingers touching her lightly on the back of her arm. She shivered a little, and tried to keep her attention on the music. When the touch was repeated a moment later, she whispered to her husband about it, but he only replied that people do not bother you at the opera on purpose. However, the touch was repeated and it seemed there was a reason for it. Yet the touch was so slight that she hesitated to turn round and glance back. At the end of the first part they left their seats. Jane said, &quot;Those fingers brushing lightly against me felt so strange, like the fingers of a ghost.&quot; She felt so nervous that she could not return to her seat and the Captain reluctantly agreed that they should leave the opera and go home. But on the way home Jane began to doubt that anything had touched her at all. She admitted it might have been merely her imagination. After they reached home, she remembered the little cat and got her bag to have another look at it. She noticed the bag felt heavier. When she opened it and looked inside, she was amazed to see a pile of diamonds, sapphires and pearls. Not surprisingly, they could hardly sleep at all that night. Both were now convinced that those ghostlike fingers had put the jewels in her bag during the opera. The next morning they went to the police. At first the police could not understand this strange situation. It was only after Jane happened to mention finding the little wooden cat that they could give an explanation. &quot;Thieves had stolen the jewels and were going to pass them over to a woman. In order to identify her, they placed the cat in the booth and told her to pick it up. They would be watching her, and afterwards would pass the stolen objects to her. The woman arrived late, however, and you found the cat by chance. They followed you and found a clever way to pass the jewelry to you.&quot; Much of the jewelry was returned to the owners, but a considerable amount was not and came into Jane's possession. She also kept the small wooden cat, which she had grown to like. </doc>
+      <question q_id="1">
+        <q_str>Why did Jane go to the station?</q_str>
+        <answer a_id="1">She had left her bag in a phone booth there by mistake.</answer>
+        <answer a_id="2">She wanted to tell her husband about the cat she had found.</answer>
+        <answer a_id="3">She was to accompany her husband on a trip.</answer>
+        <answer a_id="4">She wished to reach the opera house with her husband on time.</answer>
+      </question>
+      <question q_id="2">
+        <q_str>What was the purpose of the wooden cat?</q_str>
+        <answer a_id="1">It had a message from the thieves hidden in it to say where they would all meet.</answer>
+        <answer a_id="2">It was a sign that the thieves would wait at the ofspera house.</answer>
+        <answer a_id="3">It would indicate where the bag with the jewels was to be left.</answer>
+        <answer a_id="4">It would show which woman the thieves should give the jewels to.</answer>
+      </question>
+      <question q_id="3">
+        <q_str>What happened in the opera house?</q_str>
+        <answer a_id="1">Jane felt herself being touched and wanted to leave early.</answer>
+        <answer a_id="2">Jane noticed something being taken from her bag.</answer>
+        <answer a_id="3">Jane spoke angrily to someone who was bothering her.</answer>
+        <answer a_id="4">Jane's husband didn't enjoy the opera and so they went home before the second part.</answer>
+      </question>
+      <question q_id="4">
+        <q_str>Why did Jane and her husband have difficulty sleeping that night?</q_str>
+        <answer a_id="1">They felt they should not have taken the cat from the phone booth.</answer>
+        <answer a_id="2">They regretted that they hadn't seen the end of the opera.</answer>
+        <answer a_id="3">They were disturbed by the mysterious treasure they had found.</answer>
+        <answer a_id="4">They were worried because the police had found out about the jewels.</answer>
+      </question>
+      <question q_id="5">
+        <q_str>Why did the thieves' plan go wrong?</q_str>
+        <answer a_id="1">They couldn't find Jane when they looked for her at the station.</answer>
+        <answer a_id="2">They didn't expect anyone else to take the cat away from the booth.</answer>
+        <answer a_id="3">They didn't realize that the telephone was not working.</answer>
+        <answer a_id="4">They were too late in putting the cat under the telephone.</answer>
+      </question>
+    </reading-test>
+    <reading-test r_id="4">
+      <doc d_id="1">The world is full of modern technological &quot;conveniences&quot; and everyone is expected to understand how to use them. Some people, however, are not so clever at dealing with them as they should be. I am one of these. Our television set has a remote control. With it we can easily change channels or adjust the volume. This spares us the extra effort of walking across the room, which may be a great help if we have already walked a mile or so for exercise that day. But even a remote control can be a problem for people like me. One night the face of the quiz show host suddenly looked unhealthily pale. My wife said, &quot;It's the TV set. Why don't you fix it?&quot; In response to my blank stare, she told me to open the little door on the remote control. Behind this were buttons for adjusting the color, the contrast, and so on. I tried various adjustments and almost lost the picture entirely. Then my wife, merely by pressing the buttons a couple of times, brought back the host's health completely. It made me sick. I didn't even know the little door was there. When I first tried to use a cash machine in a bank, I had an unpleasant experience. I managed to position my card in the right place without too much trouble. Then I was instructed to punch in my secret number. I had chosen a number which was familiar to me so that I would always know what it was. Now, however, I couldn't remember it or where I could find it. I just had to try and produce the right number from memory. I knew my chances of success were no better than being appointed head of NASA, but I tried anyway. My first shot was 5352. The machine said I had made a mistake and should try again. So I tried 3255. The machine wasn't any happier. Then I tried 2535. Still the machine was not satisfied, so I reached in to take out my card. Before I was able to, a razor-sharp door suddenly dropped and nearly cut off the fingers of my right hand. On the display panel I read: WE'LL CONTACT YOU LATER. &quot;You came close enough to contacting me then,&quot; I replied, loud enough for the customers behind me to appreciate my humor. When I returned to the parking lot, I happened to notice that the license plate number on my car was 60A3552. So that was it. How forgetful of me, especially as I had been writing it down all the time when checking in at motels! Last July I bought two smoke alarms. I put one of them in the kitchen close to the oven, and the other in the bedroom. The one in the bedroom, after doing nothing for several months, became bored one night and began to make a high-pitched sound every minute or two. I've slept through many disturbances, but after a couple of hours of this awful beeping noise I got up and cleverly, I thought, changed the noisy one for the quiet one in the kitchen. At exactly 3:10 a.m., this one too began to beep even louder, and I threw both of them outside with the trash. The next day I bought two new ones. Two days later, a friend of mine remarked casually that one of his smoke alarms had begun to beep to let him know that its battery was weak. Upon hearing this, I dashed home, but the trash had already been collected. </doc>
+      <question q_id="1">
+        <q_str>What was the problem when the author and his wife were watching TV one night?</q_str>
+        <answer a_id="1">The author didn't know how to use the remote control properly.</answer>
+        <answer a_id="2">The author's wife thought that the author watched too many quiz programs on TV.</answer>
+        <answer a_id="3">The quiz show host suddenly became ill during the broadcast.</answer>
+        <answer a_id="4">They were unable to adjust the TV picture correctly.</answer>
+      </question>
+      <question q_id="2">
+        <q_str>What happened when the author used a cash machine?</q_str>
+        <answer a_id="1">He forgot his number and gave it correctly only at the third attempt.</answer>
+        <answer a_id="2">His bank card was returned to him damaged.</answer>
+        <answer a_id="3">The machine didn't work properly and injured him.</answer>
+        <answer a_id="4">The machine kept his card because he gave the wrong number.</answer>
+      </question>
+      <question q_id="3">
+        <q_str>What did the author do after he left the bank?</q_str>
+        <answer a_id="1">He contacted the motel where he was staying to check his number.</answer>
+        <answer a_id="2">He noticed he had forgotten his card and went back to get it.</answer>
+        <answer a_id="3">He spoke to some other customers about his amusing experience.</answer>
+        <answer a_id="4">He went to his car and by chance found his secret number there.</answer>
+      </question>
+      <question q_id="4">
+        <q_str>What did the author think about his first two smoke alarms?</q_str>
+        <answer a_id="1">He thought their batteries were not powerful enough.</answer>
+        <answer a_id="2">He thought their warning sound was not loud enough.</answer>
+        <answer a_id="3">He thought they didn't work well and should be replaced.</answer>
+        <answer a_id="4">He thought they were suitable only for the kitchen.</answer>
+      </question>
+      <question q_id="5">
+        <q_str>How does the author probably feel about modern machines?</q_str>
+        <answer a_id="1">He doesn't mind them because his wife understands how to operate them.</answer>
+        <answer a_id="2">He has gradually got used to them and recognizes their advantages.</answer>
+        <answer a_id="3">He is eager to have many modern conveniences in his house.</answer>
+        <answer a_id="4">He is uneasy with them because they tend to make him appear foolish.</answer>
+      </question>
+    </reading-test>
+    <reading-test r_id="5">
+      <doc d_id="1">Going to the shore on the first morning of the vacation, Jerry stopped and looked at a wild and rocky bay, and then over to the crowded beach he knew so well from other years. His mother looked back at him. &quot;Are you tired of the usual beach, Jerry?&quot; &quot;Oh, no!&quot; he said quickly, but then said, &quot;I'd like to look at those rocks down there.&quot; &quot;Of course, if you like.&quot; Jerry watched his mother go, then ran straight into the water and began swimming. He was a good swimmer. He swam out over the gleaming sand and then he was in the real sea. He saw some older, local boys - men, to him - sitting on the rocks. One smiled and waved. It was enough to make him feel welcome. In a minute, he had swum over and was on the rocks beside them. Then, as he watched, the biggest of the boys dived into the water, and did not come up. Jerry gave a cry of alarm, but after a long time the boy came up on the other side of a big dark rock, letting out a shout of victory. Immediately the rest of them dived and Jerry was alone. He counted the seconds they were under water: one, two, three... fifty... one hundred. At one hundred and sixty, one, then another, of the boys came up on the far side of the rock and Jerry understood that they had swum through some gap or hole in it. He knew then that he wanted to be like them. He watched as they swam away and then swam to shore himself. Next day he swam back to the rocks. There was nobody else there. He looked at the great rock the boys had swum through. He could see no gap in it. He dived down to its base, again and again. It took a long time, but finally, while he was holding on to the base of the rock, he shot his feet out forward and they met no obstacle. He had found the hole. In the days that followed, Jerry hurried to the rocks every morning and exercised his lungs as if everything, the whole of his life, depended on it. He counted how long he could hold his breath. Each day he improved his time. Even back at home he timed himself by the clock, and was proud to find he could hold his breath for two minutes. The authority of the clock brought close the adventure that was so important to him. The day after tomorrow, his mother reminded him casually one morning, they must go home. He swam straight out to the rock and looked down into the water. This was the moment when he would try. If he did not do it now, he never would. He filled his lungs, started to count, and dived to the bottom. He was soon inside the dark, narrow hole. The water pushed him up against the roof. The roof was sharp and hurt his back. He pulled himself along with his hands - fast, fast. His head knocked against something; a sharp pain dizzied him. He counted: one hundred... one hundred and fifteen. The hole had widened! He gave himself a kick forward and swam as fast as he could. He lost track of time and said one hundred and fifteen to himself again. Then he saw light. Victory filled him. His hands, reaching forward, met nothing; and his feet propelled him out into the open sea. He floated to the surface, pulled himself up onto the rock and lay face down, catching his breath. After a time he felt better and sat up. Then he swam to shore and climbed slowly up the path to the house. His mother came to meet him, smiling. &quot;Have a nice time?&quot; she asked. &quot;Oh, yes, thank you,&quot; he said. &quot;How did you cut your head?&quot; &quot;Oh, I just cut it.&quot; They sat down to lunch together. &quot;Mom,&quot; he said, &quot;I can hold my breath for two minutes - three minutes.&quot; &quot;Can you, darling?&quot; she said. &quot;Well, you shouldn't overdo it. You look a bit pale. I don't think you ought to swim any more today.&quot; She was ready for a battle of wills, but he gave in at once. It was no longer of the least importance to go to the bay. </doc>
+      <question q_id="1">
+        <q_str>Why did Jerry want to go to the rocky bay?</q_str>
+        <answer a_id="1">He wanted to make friends with the local boys.</answer>
+        <answer a_id="2">He was tired and wanted to rest on the rock.</answer>
+        <answer a_id="3">His mother suggested that it would be fun to go there.</answer>
+        <answer a_id="4">The beach appeared less attractive than before.</answer>
+      </question>
+      <question q_id="2">
+        <q_str>What was in Jerry's mind while the local boys were under water?</q_str>
+        <answer a_id="1">He wanted to give the alarm to the people on the shore.</answer>
+        <answer a_id="2">He wanted to know how deep the water was.</answer>
+        <answer a_id="3">He was impressed at how long they stayed down.</answer>
+        <answer a_id="4">He was planning to compete against them.</answer>
+      </question>
+      <question q_id="3">
+        <q_str>What made Jerry decide to carry out his plan when he did?</q_str>
+        <answer a_id="1">He could count to one hundred and fifteen.</answer>
+        <answer a_id="2">He had permission from the local authority.</answer>
+        <answer a_id="3">He thought he might not try if he put it off.</answer>
+        <answer a_id="4">He wanted his mother to be proud of him.</answer>
+      </question>
+      <question q_id="4">
+        <q_str>Why did Jerry lose track of time for a moment at one hundred and fifteen?</q_str>
+        <answer a_id="1">He became confused when he saw light at the end of the hole.</answer>
+        <answer a_id="2">He forgot the time when he hit his head against the rock.</answer>
+        <answer a_id="3">He was excited because he thought he was near the end of the hole.</answer>
+        <answer a_id="4">He was surprised at counting to one hundred and fifteen, which he had never done before.</answer>
+      </question>
+      <question q_id="5">
+        <q_str>What made Jerry give in so easily when his mother told him not to go swimming?</q_str>
+        <answer a_id="1">He had achieved his goal already.</answer>
+        <answer a_id="2">He was too tired to argue any more.</answer>
+        <answer a_id="3">It is too dangerous to swim after lunch.</answer>
+        <answer a_id="4">It was important to obey his mother.</answer>
+      </question>
+    </reading-test>
+    <reading-test r_id="6">
+      <doc d_id="1">My old friend John Price persuaded me to take up hill walking. I am far from being the world's fittest man, and I always find it very tough. But when I first climbed to the top of a mountain, the view was so beautiful that I fell in love with walking. So now we go walking together whenever we can. On this particular autumn day we were in the north-west of England. When Price arrived to pick me up at the station, I was waiting eagerly. We drove to the hotel, left our bags, got two packed lunches from the kitchen, dressed in stylish hiking clothes and set off. Although the weather was threatening, the car parks and roadsides were crowded with cars. Everywhere people were finding their equipment and pulling on warm socks and strong boots. We did the same, and joined in behind a long line of walkers, all with rucksacks and knee-high socks, to start the climb. Our goal was the famous summit of Bow Fell, a height of 900 meters. Walkers ahead of us formed well-spaced dots of color leading to a summit lost in cloud. We climbed through the grassy lower slopes onto more difficult ground, finding our way over rocks and loose stones, until we were up among broken cloud that hung above the valley floor some 300 meters below. The views were sensational - the other peaks across the valley, with its farms now looking so tiny, and a sea of brown hills away to the west. This was living. As we went on, the weather worsened. The wind began to blow tiny pieces of ice at us that hurt the skin. Then came fog, and we had to walk at a slow, careful pace so that we would not lose the path. Out of the fog ahead of us appeared something that looked rather like an orange snowman. It proved to be high-tech hiking clothes. Somewhere inside them was a man. &quot;Bit breezy,&quot; he said, saying less than he meant. Price asked him if he'd come far. &quot;Just from Blea Lake.&quot; This was 16 kilometers away over difficult ground. &quot;Bad over there?&quot; &quot;Hands-and-knees job. It'll be like that here soon.&quot; We nodded knowingly. &quot;Well, I must be going,&quot; announced the man, as if he couldn't spend the whole day chatting, and disappeared again into the white soup. I watched him go, then turned to find Price vanishing into the mist ten meters ahead of me. &quot;Hey, wait for me!&quot; I shouted and hurried after. &quot;Hurry up, Bill!&quot; came the reply. It was hard going, but we finally reached the top. I counted thirty-four people there ahead of us, sitting among the rocks with sandwiches, bottles and wildly blowing maps. We went over to a rock, where a couple kindly moved their rucksacks to make room for us. We sat and reached into our brown bags in the whistling wind, cracking open boiled eggs, drinking soda, eating cheese-and-tomato sandwiches, staring into the thick fog we had spent three hours climbing through. I tried to imagine how I would explain to a non-walker why so many people had had the idea that struggling up a mountain on a wet Saturday at the winter end of October was fun. How could I explain that three dozen people enjoyed having a picnic in an ice storm? Perhaps it is the views; perhaps the escape from city life; perhaps the feeling of fellowship with other walkers. More, it is the feeling of achievement, of setting myself a goal and reaching it, even under difficult conditions. As I sat there, though, I realized there was no way you could explain it to anyone who has never done it. But I thought, I seriously thought: God, I love doing this. </doc>
+      <question q_id="1">
+        <q_str>What first made the writer become interested in hill walking?</q_str>
+        <answer a_id="1">He enjoyed the scenery from the top.</answer>
+        <answer a_id="2">He lived near mountains as a child.</answer>
+        <answer a_id="3">He wanted to be fit and needed more exercise.</answer>
+        <answer a_id="4">He wanted to experience something new.</answer>
+      </question>
+      <question q_id="2">
+        <q_str>Why was the writer waiting for Price eagerly at the station?</q_str>
+        <answer a_id="1">He hadn't had lunch yet.</answer>
+        <answer a_id="2">He was looking forward to the climb.</answer>
+        <answer a_id="3">It was getting cold.</answer>
+        <answer a_id="4">Price was always late for appointments.</answer>
+      </question>
+      <question q_id="3">
+        <q_str>What did Price and the writer see up on Bow Fell when they set out?</q_str>
+        <answer a_id="1">Climbers at a distance.</answer>
+        <answer a_id="2">Colorful autumn trees.</answer>
+        <answer a_id="3">People coming down because of the weather.</answer>
+        <answer a_id="4">Some cows in the fields.</answer>
+      </question>
+      <question q_id="4">
+        <q_str>What did the hiker in orange clothes mean by &quot;Hands-and-knees job&quot;?</q_str>
+        <answer a_id="1">He had had great difficulty because of the weather.</answer>
+        <answer a_id="2">He hurt his hands and knees coming down.</answer>
+        <answer a_id="3">People needed to hold hands so that they would not get lost.</answer>
+        <answer a_id="4">There was a long way to go from there to the peak.</answer>
+      </question>
+      <question q_id="5">
+        <q_str>Which of the following is meant when the writer thinks, &quot;God, I love doing this?&quot;</q_str>
+        <answer a_id="1">He is amused by other climbers' foolish behavior.</answer>
+        <answer a_id="2">He is explaining why people like to climb mountains.</answer>
+        <answer a_id="3">He is praying to God to express how grateful he is.</answer>
+        <answer a_id="4">He is satisfied to have succeeded in another climb.</answer>
+      </question>
+    </reading-test>
+    <reading-test r_id="7">
+      <doc d_id="1">During my college days, I spent my summers as an assistant at a camp for junior high school students. It was work I looked forward to every year because it was a pleasure. Of my camp memories, there is one summer that stands out from the rest. It was the first day of camp. About an hour after everyone had arrived, I noticed a small boy sitting alone under a tree. He was thin, pale and obviously uneasy. Only fifty feet away, all the other campers were playing, joking and enjoying getting to know each other, but he seemed to want to be anywhere other than where he was. He had a lost look, a look of deep loneliness. To be honest, I felt uncomfortable approaching him, but our senior staff members had instructed us to watch for campers who might feel left out, campers just like this boy. I knew it was my responsibility to talk with him even though I felt it would not be easy. I walked up to him and said, &quot;Hi, my name is Kevin, and I'm one of the assistants.&quot; In a small, shaky voice he shyly answered, &quot;Hi, I'm Tommy.&quot; &quot;Welcome to camp, Tommy. How's it going?&quot; &quot;Okay, I guess,&quot; he said quietly, not looking at me. &quot;Do you want to join the activities and meet some new kids, or do you want to just sit here under this tree?&quot; I asked with a smile. He replied unwillingly, &quot;I'm fine here. This camp is not really my thing.&quot; It was clear that camp life was new to him, and I somehow knew it would not be right to push him to join the other campers. Instead, I sat down and talked with him for a while, and then took him to his cabin. I hoped he would make some friends there. After lunch the next day, I led the two hundred campers in songs. I looked over the enthusiastic crowd and noticed Tommy, sitting alone, staring at the floor. I realized he was going to require some very special care. That night at our staff meeting, I told everyone about him, and asked them to pay attention to him and spend time with him whenever possible. Tommy became our special project. We always helped him participate in the camp activities, and slowly he opened up. Time passed quickly, and Tommy became more active every day. In no time camp was over. As the campers celebrated at a farewell party, I suddenly saw what would be one of the most vivid memories of my life. The boy who had once sat alone under the tree was now dancing. Towards the end of the party, he was dancing as if he owned the dance floor, and talking with people he had not even been able to look at a few weeks earlier. The changes in Tommy were dramatic. All of the camp staff saw him as the camp's greatest success. About five years later, I got a letter from Tommy. I had not seen him since the night he was all over the dance floor, so it was a complete surprise to get a letter from him. And what the letter said was even more of a surprise. In the letter, Tommy said, &quot;I appreciate your help very much. On the first day of camp, you came up to me while I was sitting alone. After that, you always gave me special attention and encouraged me to join activities when I hesitated. As a result, I gradually got to know the other campers, and I even became 'the king of the dance floor' on the last night. Because of your help that summer, my life changed. I gained so much confidence that I went back to school as a new person. My grades improved. I became very active and made new friends. Today, I got a letter that said I have been given a scholarship for college next year. I am proud to have gotten it, but I know that if you had not helped me, I would not have. I just wanted to thank you for helping me become a different person.&quot; I have kept that letter; it is special to me. I read it sometimes to remind myself that we never know how much our actions may affect someone. </doc>
+      <question q_id="1">
+        <q_str>What happened on the first day of camp?</q_str>
+        <answer a_id="1">Tommy felt a responsibility to talk with the lonely boy.</answer>
+        <answer a_id="2">Tommy left the camp to return to his house.</answer>
+        <answer a_id="3">Tommy tried to get to know other campers.</answer>
+        <answer a_id="4">Tommy did not feel at all comfortable.</answer>
+      </question>
+      <question q_id="2">
+        <q_str>What did Kevin do to help Tommy?</q_str>
+        <answer a_id="1">He taught him how to become a good dancer.</answer>
+        <answer a_id="2">He decided to stay with him in the same cabin.</answer>
+        <answer a_id="3">He suggested that Tommy stay under the tree.</answer>
+        <answer a_id="4">He asked the assistants to take care of him.</answer>
+      </question>
+      <question q_id="3">
+        <q_str>What happened on the last night of camp?</q_str>
+        <answer a_id="1">Kevin felt sorry about Tommy's big change.</answer>
+        <answer a_id="2">Tommy demonstrated his new confidence.</answer>
+        <answer a_id="3">Tommy wanted some friends to talk with.</answer>
+        <answer a_id="4">Kevin got a letter from Tommy.</answer>
+      </question>
+      <question q_id="4">
+        <q_str>How did the camp affect Tommy?</q_str>
+        <answer a_id="1">He changed into a new person.</answer>
+        <answer a_id="2">He became a little more lonely and shy.</answer>
+        <answer a_id="3">He lost the confidence to make friends.</answer>
+        <answer a_id="4">He was happy with his high school scholarship.</answer>
+      </question>
+      <question q_id="5">
+        <q_str>What did Kevin gain from his experience with Tommy?</q_str>
+        <answer a_id="1">He learned he was able to make a real difference in someone's life.</answer>
+        <answer a_id="2">He realized that he really enjoyed his work as a camp assistant.</answer>
+        <answer a_id="3">He realized he should force campers to participate in activities.</answer>
+        <answer a_id="4">He learned that he did not know how to be a helpful camp assistant.</answer>
+      </question>
+    </reading-test>
+    <reading-test r_id="8">
+      <doc d_id="1">I met Susan when I was a first-year student in college. We were put together as roommates, and I found that we had completely opposite personalities. I was never neat, and Susan was extremely organized. Everything she owned was labeled, and she carefully returned each item to its own place after she had used it. Both of us had cute little pencil cases; hers was full of labeled pencils, but mine was always empty. Over time Susan got neater and I got messier. A messy environment was comfortable enough for me but not for her. Because of our different habits, we began to dislike each other. Day after day she would complain about my dirty clothes thrown all over the floor, and I would complain about the heavy smell of her air freshener. One October evening Susan came into our room while I was on my bed reading, and she glanced at the top of her desk. &quot;What's this, Mary?&quot; she asked. &quot;Oh, that's my T-shirt from gym class,&quot; I responded casually and turned my attention back to my book. &quot;Why is your dirty, smelly T-shirt on my desk? Get it off and keep it off,&quot; she exploded with anger. I always left my clothes all over the room, so I did not know why she was so concerned about that one particular shirt, but it really made her mad. She picked it up and threw it toward my side of the room, knocking my lamp off my desk and onto the floor. I leapt off the bed in shock and screamed at her. She yelled back and we probably would have argued all evening and not shared the room another day if the phone had not rung. Susan answered it. Since it was for her, I angrily threw myself on my bed. The room was thick with unspoken words, and I thought I simply could not remain her roommate: I had to move out. I probably would have, but as I lay there, I could tell that Susan's phone call was not good news. I knew she had a boyfriend back home. From what I could hear her say, I guessed he had found a new girlfriend. It surprised me that tender feelings began to fill my heart. Not long before I left for college, my boyfriend had done the same thing and that painful memory was still fresh. I sat up on the edge of my bed and looked across the room at her. When she had hung up the phone, she quickly crawled under her bedcovers and turned toward the wall. I could hear her sobbing quietly. I was still upset, so I did not want to just walk over and talk to her. But I did not want to leave her alone, either. I sat on my bed for a moment, wondering what I should do. Then I got an idea and smiled to myself. Slowly I began to clean up my side of the room. I returned my lamp to the desk. I picked up my socks and shirts. I put the pencils in my pencil case and made my bed. Then I took the books I had left on her desk and put them in the bookcase. I swept the floor, even on her side. I got so involved in my work that I did not know that she had turned away from the wall and come out from under the covers. When I was finally done, I looked at her and saw that her tears had stopped and she was watching me in complete surprise. I went and sat on her bed, not saying anything. I did not know what to say. After a moment, I took her hand. Unexpectedly, it was warm. I had thought it would be cold, probably because I always thought organized people were heartless. But no. Her hand was warm as it held mine. I looked down into Susan's eyes, and she smiled at me. Susan and I stayed roommates for the rest of that year. We still did not always agree on things, but we came to understand the key to living together: giving in, cleaning up, and getting along. </doc>
+      <question q_id="1">
+        <q_str>How was Mary different from Susan?</q_str>
+        <answer a_id="1">Her belongings were clearly identified.</answer>
+        <answer a_id="2">She enjoyed the smell of air freshener.</answer>
+        <answer a_id="3">She left dirty clothes lying on the floor.</answer>
+        <answer a_id="4">She was quite neat and organized.</answer>
+      </question>
+      <question q_id="2">
+        <q_str>Why did Susan shout at Mary angrily one evening?</q_str>
+        <answer a_id="1">Mary tried to borrow Susan's T-shirt for gym class.</answer>
+        <answer a_id="2">Mary had left a T-shirt that needed washing on Susan's desk.</answer>
+        <answer a_id="3">Susan thought that Mary had stolen her boyfriend.</answer>
+        <answer a_id="4">Susan had accidentally knocked Mary's lamp on the floor.</answer>
+      </question>
+      <question q_id="3">
+        <q_str>Why was Susan so upset by the phone call?</q_str>
+        <answer a_id="1">Mary's boyfriend had found a new girlfriend.</answer>
+        <answer a_id="2">The call interrupted her argument with Mary.</answer>
+        <answer a_id="3">Her boyfriend had lost interest in her.</answer>
+        <answer a_id="4">The caller did not want to talk to Mary.</answer>
+      </question>
+      <question q_id="4">
+        <q_str>What did Mary do to show her sympathy for Susan?</q_str>
+        <answer a_id="1">She told Susan about losing her boyfriend.</answer>
+        <answer a_id="2">She held Susan's hand and warmed it.</answer>
+        <answer a_id="3">She watched Susan crying alone.</answer>
+        <answer a_id="4">She began to clean the room.</answer>
+      </question>
+      <question q_id="5">
+        <q_str>What happened after that evening?</q_str>
+        <answer a_id="1">Susan and Mary had no problem getting along.</answer>
+        <answer a_id="2">Susan thanked Mary for the phone call.</answer>
+        <answer a_id="3">Susan and Mary became better roommates.</answer>
+        <answer a_id="4">Susan learned how to keep her side of the room clean.</answer>
+      </question>
+    </reading-test>
+    <reading-test r_id="9">
+      <doc d_id="1">It is really important to have a sharp focus in one's studies, but many students enter college each year with no precise idea of what they want to do in the future. I suppose that's how I was when I entered college. I remember exactly how I first got interested enough in a subject to devote all my energy to it. It happened while I was talking to my friend, Myra. When I asked her what she did during the spring vacation, she laughed and said, &quot;Well, Beth, I slept a lot.&quot; &quot;Are you kidding?&quot; I said. &quot;Why would you waste your precious time just sleeping?&quot; She replied, &quot;Sleep is not a waste of time. It's very important.&quot; We laughed again, but later I thought about it more deeply. In fact, this conversation may have changed my life. I realized that the average person probably spends eight hours a day sleeping. That means we spend roughly one third of our lives sleeping. So, something important for our bodies and minds must be going on, I thought. Anyway, Myra and I started studying psychology. Myra got interested in stress problems and I read all I could about sleep. In our fourth year we each began looking for a university where we could do more advanced study. Eventually, after graduation, I decided to come to Western Australia, and Myra went to India. This semester I'm taking part in Dr. Carter's seminar, &quot;Advanced Sleep Research.&quot; According to Dr. Carter, it's not easy - even for scientists - to define sleep precisely. Basically, when we're asleep we're hardly aware of the things around us and we don't move much. But, surprisingly, various kinds of animals have very different sleep characteristics. Did you know that some animals which live in the ocean, for instance, swim while they're asleep? Some birds may sleep in flight while they travel long distances from one part of the world to another. People used to think that sleep just meant your brain activity temporarily stopped. I know I feel like my brain shuts down whenever I take a nap! But thanks to researchers back in the 1950s, we now know more about the cycles of brain activity during sleep, including periods of active dreaming. Scientists now think that all land mammals have such sleep cycles. You would be amazed to find out about some of the excellent methods being used to learn about sleep. Once, I was lucky enough to have my own sleep tested. A computer connected to sensors on my head was able to record my brain waves while I was asleep. I was dreaming about eating chocolate cake, but of course no one could see that on the computer screen. In our seminar, we've also heard about some interesting observations on the amount of sleep we need. Most humans seem to need about eight hours of sleep a day, but some animals need more. Dogs sleep ten hours or so, cats more than twelve, and the ferret sleeps over fourteen hours. Another kind of animal, the opossum, sleeps eighteen hours a day, or three-fourths of its life! When I told this to Myra, she said her studies in India suggested that maybe the more stress we experience, the more sleep we need. There is a lot that is still not known, but I have learned it is obviously dangerous not to get enough sleep. Past experiments have shown that the health of rats deprived of sleep can be severely damaged even when they are given plenty of food. If you don't give them food but let them sleep normally, the rats will not be so badly affected. Myra is coming here next week to give a presentation. She will discuss her recent experiments about the effects which massage, stretching, and relaxation techniques have on reducing stress. Afterwards, we are going to spend some time traveling together by train, since we have not seen each other for two years. I remember she always used to spend her vacations sleeping, but maybe she won't this time because we have so much to say to each other about stress and sleep. Many people would find ideas about sleep boring, but this topic is fascinating to me. I never sleep during Dr. Carter's seminar! In fact, next month I will finish my research here and take a job with NASA studying the sleep patterns of astronauts. Myra's ideas about lowering stress levels might be useful when I begin working with those who will go into space. Our interests developed by chance and took us to different places, but perhaps Myra and I could be working together someday. </doc>
+      <question q_id="1">
+        <q_str>What is the writer, Beth, doing in Australia?</q_str>
+        <answer a_id="1">She is learning about sleep.</answer>
+        <answer a_id="2">She is preparing to be an astronaut.</answer>
+        <answer a_id="3">She is traveling before she begins to study.</answer>
+        <answer a_id="4">She is learning about koala sleep cycles.</answer>
+      </question>
+      <question q_id="2">
+        <q_str>What first attracted Beth to the study of sleep?</q_str>
+        <answer a_id="1">A book on sleep which she got as a gift.</answer>
+        <answer a_id="2">A talk she had with a friend about sleep.</answer>
+        <answer a_id="3">Dr. Carter's seminar on &quot;Advanced Sleep Research.&quot;</answer>
+        <answer a_id="4">Her enjoyment of long naps.</answer>
+      </question>
+      <question q_id="3">
+        <q_str>What did Beth find out from research about the sleep of rats?</q_str>
+        <answer a_id="1">Some rats manage to live in good health without sleep.</answer>
+        <answer a_id="2">Lack of sleep is more dangerous than lack of food.</answer>
+        <answer a_id="3">Rats are active at night and sleep in the daytime.</answer>
+        <answer a_id="4">Rats become sleepy when they eat a great deal.</answer>
+      </question>
+      <question q_id="4">
+        <q_str>What research result will Myra present in Australia?</q_str>
+        <answer a_id="1">Some people never dream in color.</answer>
+        <answer a_id="2">All land mammals have sleep cycles.</answer>
+        <answer a_id="3">Various methods reduce stress effectively.</answer>
+        <answer a_id="4">Stress levels increase as one gets older.</answer>
+      </question>
+      <question q_id="5">
+        <q_str>What will Beth and Myra do during the vacation they will have soon?</q_str>
+        <answer a_id="1">They will travel to a famous temple in northern India.</answer>
+        <answer a_id="2">They will just relax and sleep a lot after studying hard.</answer>
+        <answer a_id="3">They will enjoy talking together as they take a train journey in Australia.</answer>
+        <answer a_id="4">They will visit Florida, where there is an important NASA museum.</answer>
+      </question>
+    </reading-test>
+  </topic>
+</test-set>
