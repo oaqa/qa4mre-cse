@@ -7,6 +7,7 @@ persistence-provider:
 
 collection-reader:
   inherit: collectionreaders.CollectionReaderDescriptor
+  dataset: QA4MRE-12-test-main
   INPUT_DIR: data/12-test-main/
 
 pipeline:
