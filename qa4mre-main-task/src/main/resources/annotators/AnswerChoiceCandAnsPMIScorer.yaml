@@ -1,4 +1,4 @@
 class: edu.cmu.lti.qalab.answer_ranking.AnswerChoiceCandAnsPMIScorer
 SOLR_SERVER_URL: http://peace.isri.cs.cmu.edu:9080/solr/genomics-simple/
 cross-opts:
-  K_CANDIDATES: [5, 10]
+  K_CANDIDATES: [5] # [5, 10]

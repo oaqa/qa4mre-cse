@@ -1,5 +1,5 @@
 configuration: 
-  name: qa4mre-12-test-alzheimer
+  name: qa4mre-12-test-main
   author: ziy
   
 persistence-provider:
@@ -7,8 +7,8 @@ persistence-provider:
 
 collection-reader:
   inherit: collectionreaders.CollectionReaderDescriptor
-  dataset: QA4MRE-12-test-alzheimer
-  INPUT_DIR: data/12-test-alzheimer/
+  dataset: QA4MRE-12-test-main
+  INPUT_DIR: data/12-test-main/
 
 pipeline:
   # question and document annotations: data -> XMIs
@@ -65,7 +65,7 @@ pipeline:
 #      - inherit: base.noop
 
   - inherit: consumers.CasConsumerDescriptor
-    OutputDirectory: results/12-test-alzheimer/final-xmis
+    OutputDirectory: results/12-test-main/final-xmis
 
   # indexing
   - inherit: ecd.phase
@@ -114,4 +114,4 @@ pipeline:
 
   # output format
   - inherit: consumers.NaiveScorerCasConsumer
-    OUTPUT_DIR: results/12-test-alzheimer/final-outputs
+    OUTPUT_DIR: results/12-test-main/final-outputs
