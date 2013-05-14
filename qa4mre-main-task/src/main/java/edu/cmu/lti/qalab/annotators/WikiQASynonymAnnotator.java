@@ -76,7 +76,7 @@ public class WikiQASynonymAnnotator extends JCasAnnotator_ImplBase {
 					Synonym synonym = new Synonym(jCas);
 					synonym.setText(syn);
 					synonym.setWeight(1.0);
-					synonym.setSource("gigaword-pubmed");
+					synonym.setSource("gigaword-wiki");
 					synonym.addToIndexes();
 					synList.add(synonym);
 				}
@@ -94,7 +94,7 @@ public class WikiQASynonymAnnotator extends JCasAnnotator_ImplBase {
 					Synonym synonym = new Synonym(jCas);
 					synonym.setText(syn);
 					synonym.setWeight(1.0);
-					synonym.setSource("gigaword-pubmed");
+					synonym.setSource("gigaword-wiki");
 					synonym.addToIndexes();
 					synList.add(synonym);
 				}
