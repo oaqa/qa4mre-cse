@@ -8,9 +8,9 @@
 		</collectionIterator>
 	</collectionReader>
 	<casProcessors casPoolSize="3" processingUnitThreadCount="1">
-		<casProcessor deployment="integrated" name="CpeDescriptor">
+		<casProcessor deployment="integrated" name="ExamCpeDescriptor">
 			<descriptor>
-				<import location="SimpleRunCPE.xml" />
+				<import location="ExamSimpleRunCPE.xml" />
 			</descriptor>
 			<deploymentParameters />
 			<errorHandling>

@@ -44,6 +44,7 @@ public class AnswerSelectionByKCandVoting extends JCasAnnotator_ImplBase {
 			Question question = qaSet.get(i).getQuestion();
 			System.out.println("Question: " + question.getText());
 			if (qaSet.get(i).getCandidateSentenceList() == null) {
+				total++;
 				continue;
 			}
 			ArrayList<Answer> choiceList = Utils.fromFSListToCollection(qaSet

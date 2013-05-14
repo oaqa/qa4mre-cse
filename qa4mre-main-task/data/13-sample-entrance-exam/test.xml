@@ -9,7 +9,7 @@ The white-haired old man was sitting in his favorite chair, holding a thick book
 <q_str>Why did Valerie and Grandpa laugh?</q_str>
 <answer a_id="1">Valerie had not finished her preparation.</answer>
 <answer a_id="2">Valerie had too many things in her suitcase.</answer>
-<answer a_id="3">They both knew that what Valerie said was not true.</answer>
+<answer a_id="3" correct="Yes">They both knew that what Valerie said was not true.</answer>
 <answer a_id="4">They both understood that Valerie had very little money.</answer>
 
 </question>
@@ -18,7 +18,7 @@ The white-haired old man was sitting in his favorite chair, holding a thick book
 <answer a_id="1">Go to the zoo.</answer>
 <answer a_id="2">Travel light.</answer>
 <answer a_id="3">Eat authentic dishes.</answer>
-<answer a_id="4">Don't plan everything.</answer>
+<answer a_id="4" correct="Yes">Don't plan everything.</answer>
 
 </question>
 <question q_id="3">
@@ -26,13 +26,13 @@ The white-haired old man was sitting in his favorite chair, holding a thick book
 <answer a_id="1">Meeting many strange people.</answer>
 <answer a_id="2">Viewing various shocking works of art.</answer>
 <answer a_id="3">Enjoying very spicy Spanish food.</answer>
-<answer a_id="4">Encountering an unusual gorilla.</answer>
+<answer a_id="4" correct="Yes">Encountering an unusual gorilla.</answer>
 
 </question>
 <question q_id="4">
 <q_str>Why was Snowflake a popular exhibit at the zoo?</q_str>
 <answer a_id="1">He had a unique name.</answer>
-<answer a_id="2">He was an unusual color.</answer>
+<answer a_id="2" correct="Yes">He was an unusual color.</answer>
 <answer a_id="3">He played many different tricks.</answer>
 <answer a_id="4">He was kept behind a glass wall.</answer>
 
@@ -41,7 +41,7 @@ The white-haired old man was sitting in his favorite chair, holding a thick book
 <q_str>According to Grandpa, what is one serious danger for gorillas in Africa?</q_str>
 <answer a_id="1">There is a high risk of getting skin cancer.</answer>
 <answer a_id="2">Air pollution causes damage to their health.</answer>
-<answer a_id="3">They are threatened by human violence.</answer>
+<answer a_id="3" correct="Yes">They are threatened by human violence.</answer>
 <answer a_id="4">Lions and other animals commonly attack them.</answer>
 
 </question>

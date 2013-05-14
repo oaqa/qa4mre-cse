@@ -1,59 +1,73 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <analysisEngineDescription xmlns="http://uima.apache.org/resourceSpecifier">
-  <frameworkImplementation>org.apache.uima.java</frameworkImplementation>
-  <primitive>true</primitive>
-  <annotatorImplementationName>edu.cmu.lti.qalab.candidate_sentence.QuestionCandSentDependencyMatcher</annotatorImplementationName>
-  <analysisEngineMetaData>
-    <name>QuestionCandSentDependencyMatcherDescriptor</name>
-    <description/>
-    <version>1.0</version>
-    <vendor/>
-    <configurationParameters>
-      <configurationParameter>
-        <name>DISCO_PATH</name>
-        <description>trained data for dependency tree matching</description>
-        <type>String</type>
-        <multiValued>false</multiValued>
-        <mandatory>false</mandatory>
-      </configurationParameter>
-      <configurationParameter>
-        <name>DEPTREE_PATH</name>
-        <description>dependency tree template</description>
-        <type>String</type>
-        <multiValued>false</multiValued>
-        <mandatory>false</mandatory>
-      </configurationParameter>      
-    </configurationParameters>
-    <configurationParameterSettings>
-      <nameValuePair>
-        <name>DISCO_PATH</name>
-        <value>
-          <string>model/dependency/pubmedModel/</string>
-        </value>
-      </nameValuePair>
-       <nameValuePair>
-        <name>DEPTREE_PATH</name>
-        <value>
-          <string>model/dependency/dpTree.xml</string>
-        </value>
-      </nameValuePair>     
-    </configurationParameterSettings>
-        
-    <typeSystemDescription/>
-    <typePriorities/>
-    <fsIndexCollection/>
-    <capabilities>
-      <capability>
-        <inputs/>
-        <outputs/>
-        <languagesSupported/>
-      </capability>
-    </capabilities>
-    <operationalProperties>
-      <modifiesCas>true</modifiesCas>
-      <multipleDeploymentAllowed>true</multipleDeploymentAllowed>
-      <outputsNewCASes>false</outputsNewCASes>
-    </operationalProperties>
-  </analysisEngineMetaData>
-  <resourceManagerConfiguration/>
+	<frameworkImplementation>org.apache.uima.java</frameworkImplementation>
+	<primitive>true</primitive>
+	<annotatorImplementationName>edu.cmu.lti.qalab.candidate_sentence.QuestionCandSentDependencyMatcher
+	</annotatorImplementationName>
+	<analysisEngineMetaData>
+		<name>QuestionCandSentDependencyMatcherDescriptor</name>
+		<description />
+		<version>1.0</version>
+		<vendor />
+		<configurationParameters>
+			<configurationParameter>
+				<name>DISCO_PUBMED_PATH</name>
+				<description>trained data for dependency tree matching</description>
+				<type>String</type>
+				<multiValued>false</multiValued>
+				<mandatory>false</mandatory>
+			</configurationParameter>
+			<configurationParameter>
+				<name>DISCO_WIKI_PATH</name>
+				<description>trained data for dependency tree matching</description>
+				<type>String</type>
+				<multiValued>false</multiValued>
+				<mandatory>false</mandatory>
+			</configurationParameter>
+			<configurationParameter>
+				<name>DEPTREE_PATH</name>
+				<description>dependency tree template</description>
+				<type>String</type>
+				<multiValued>false</multiValued>
+				<mandatory>false</mandatory>
+			</configurationParameter>
+		</configurationParameters>
+		<configurationParameterSettings>
+			<nameValuePair>
+				<name>DISCO_PUBMED_PATH</name>
+				<value>
+					<string>model/pubmedModel/</string>
+				</value>
+			</nameValuePair>
+			<nameValuePair>
+				<name>DISCO_WIKI_PATH</name>
+				<value>
+					<string>model/wikiModel/</string>
+				</value>
+			</nameValuePair>
+			<nameValuePair>
+				<name>DEPTREE_PATH</name>
+				<value>
+					<string>model/dependency/dpTree.xml</string>
+				</value>
+			</nameValuePair>
+		</configurationParameterSettings>
+
+		<typeSystemDescription />
+		<typePriorities />
+		<fsIndexCollection />
+		<capabilities>
+			<capability>
+				<inputs />
+				<outputs />
+				<languagesSupported />
+			</capability>
+		</capabilities>
+		<operationalProperties>
+			<modifiesCas>true</modifiesCas>
+			<multipleDeploymentAllowed>true</multipleDeploymentAllowed>
+			<outputsNewCASes>false</outputsNewCASes>
+		</operationalProperties>
+	</analysisEngineMetaData>
+	<resourceManagerConfiguration />
 </analysisEngineDescription>

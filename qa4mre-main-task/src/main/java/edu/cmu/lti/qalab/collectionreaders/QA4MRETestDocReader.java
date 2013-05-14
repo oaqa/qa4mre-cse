@@ -91,6 +91,10 @@ public class QA4MRETestDocReader extends CollectionReader_ImplBase {
 
 		NodeList questionNodeList = readingTestElement
 				.getElementsByTagName("q");
+		if (questionNodeList.getLength() == 0) {
+			questionNodeList = readingTestElement
+					.getElementsByTagName("question");
+		}
 
 		ArrayList<QuestionAnswerSet> questionAnswersList = new ArrayList<QuestionAnswerSet>();
 

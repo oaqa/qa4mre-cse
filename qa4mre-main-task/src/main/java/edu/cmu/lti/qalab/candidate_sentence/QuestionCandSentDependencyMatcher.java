@@ -11,6 +11,7 @@ import org.apache.uima.jcas.cas.FSList;
 import org.apache.uima.resource.ResourceInitializationException;
 
 import de.linguatools.disco.DISCO;
+import edu.cmu.lti.qalab.annotators.DiscoDataLoader;
 import edu.cmu.lti.qalab.types.CandidateSentence;
 import edu.cmu.lti.qalab.types.Dependency;
 import edu.cmu.lti.qalab.types.Question;
@@ -25,17 +26,20 @@ public class QuestionCandSentDependencyMatcher extends JCasAnnotator_ImplBase {
 	DepTreeInfo tree;
 	String filter = "";
 	String postiveFilter = null;
-
+	String wikiPath="";
+	String pubmedPath="";
+	DiscoDataLoader discoDataLoader=null;
 	@Override
 	public void initialize(UimaContext context)
 			throws ResourceInitializationException {
-		String path = (String) context.getConfigParameterValue("DISCO_PATH");
+		wikiPath = (String) context.getConfigParameterValue("DISCO_WIKI_PATH");
 		String depTreePath = (String) context
 				.getConfigParameterValue("DEPTREE_PATH");
+		pubmedPath = (String) context.getConfigParameterValue("DISCO_PUBMED_PATH");
+		
 		try {
 			tree = new DepTreeInfo(depTreePath);
-			disco = new DISCO(path, false);
-
+			discoDataLoader=DiscoDataLoader.getInstance(context);
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -44,6 +48,15 @@ public class QuestionCandSentDependencyMatcher extends JCasAnnotator_ImplBase {
 	@Override
 	public void process(JCas aJCas) throws AnalysisEngineProcessException {
 		TestDocument testDoc = Utils.getTestDocumentFromCAS(aJCas);
+		
+		if (testDoc.getTopicId().equals("0")
+				|| testDoc.getTopicId().equals("2")
+				|| testDoc.getTopicId().equals("3")) {// 0. Exam 2. Climate change, 3.// Music and society
+			disco=discoDataLoader.getDiscoModel(wikiPath);
+		}else{
+			disco=discoDataLoader.getDiscoModel(pubmedPath);
+		}
+		
 		ArrayList<QuestionAnswerSet> qaSet = Utils.fromFSListToCollection(
 				testDoc.getQaList(), QuestionAnswerSet.class);
 		for (int i = 0; i < qaSet.size(); i++) {
