@@ -44,6 +44,9 @@ public class AnswerSelectionByKCandAggregation extends JCasAnnotator_ImplBase {
 
 			Question question = qaSet.get(i).getQuestion();
 			System.out.println("Question: " + question.getText());
+			if (qaSet.get(i).getCandidateSentenceList() == null) {
+				continue;
+			}
 			ArrayList<Answer> choiceList = Utils.fromFSListToCollection(qaSet
 					.get(i).getAnswerList(), Answer.class);
 			ArrayList<CandidateSentence> candSentList = Utils
