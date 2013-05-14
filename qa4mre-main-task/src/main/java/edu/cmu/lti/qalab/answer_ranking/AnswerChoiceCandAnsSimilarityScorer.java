@@ -95,13 +95,13 @@ public class AnswerChoiceCandAnsSimilarityScorer extends JCasAnnotator_ImplBase 
 
 						for (int k = 0; k < candSentNers.size(); k++) {
 							for (int l = 0; l < choiceNERs.size(); l++) {
-								if (candSentNouns.get(k).getText()
+								if (candSentNers.get(k).getText()
 										.contains(choiceNERs.get(l).getText())) {
 									nnMatch++;
 								}
 							}
 							for (int l = 0; l < choiceNouns.size(); l++) {
-								if (candSentNouns.get(k).getText()
+								if (candSentNers.get(k).getText()
 										.contains(choiceNouns.get(l).getText())) {
 									nnMatch++;
 								}

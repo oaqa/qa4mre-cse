@@ -229,12 +229,12 @@ public class NaiveScorerCasConsumer extends CasConsumer_ImplBase {
 		StringBuffer sb = new StringBuffer();
 		if(!answered)
 		{
-			sb.append(String.format("\t\t<question q_id =\"%d\" answered=\"NO\" />\n", q_id));
+			sb.append(String.format("\t\t<question q_id =\"%d\" answered=\"NO\" />\n", q_id+1));
 		}
 		else
 		{
-			sb.append(String.format("\t\t<question q_id=\"%d\" answered=\"YES\">\n", q_id));
-			sb.append(String.format("\t\t\t<answer a_id=\"%d\"/>\n", selectedAnswerId));
+			sb.append(String.format("\t\t<question q_id=\"%d\" answered=\"YES\">\n", q_id+1));
+			sb.append(String.format("\t\t\t<answer a_id=\"%d\"/>\n", selectedAnswerId+1));
 			sb.append("\t\t</question>\n");
 		}
 		return sb.toString();
