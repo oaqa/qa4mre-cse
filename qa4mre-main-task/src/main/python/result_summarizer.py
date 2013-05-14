@@ -18,6 +18,7 @@ def generate_summary(cse_log_file):
   trace2correct = defaultdict(lambda: 0)
   trace2total = defaultdict(lambda: 0)
   trace2unanswer = defaultdict(lambda: 0)
+  trace2cat1 = defaultdict(lambda: defaultdict(lambda: 0))
   for line in open(cse_log_file):
     m = TRACE_PATTERN.match(line.strip())
     if m:
@@ -33,14 +34,16 @@ def generate_summary(cse_log_file):
       continue
     m = CAT1_PATTERN.match(line.strip())
     if m and correct > 0:
+      trace2cat1[trace][int(id)] = float(m.group(1))
       unanswer = int((float(m.group(1)) * total - correct) * total / correct)
       trace2unanswer[trace] += unanswer
       continue
   for trace in trace2correct:
-    accuracy = float(trace2correct[trace]) / float(trace2total[trace])
+    accuracy = float(trace2correct[trace]) / 160 # float(trace2total[trace])
     cat1 = float(trace2correct[trace] + trace2unanswer[trace] * accuracy) \
-           / float(trace2total[trace])
-    print '%s,%f,%f' % (trace, accuracy, cat1)
+           / 160 # float(trace2total[trace])
+    print '%s,%f,%f,%s' % (trace, accuracy, cat1, 
+                           ','.join([str(trace2cat1[trace][q]) for q in range(16)]))
 
 
 def main():

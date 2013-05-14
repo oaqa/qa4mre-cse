@@ -1,3 +1,4 @@
 class: edu.cmu.lti.qalab.candidate_sentence.QuestionCandSentDependencyMatcher
-DISCO_PATH: model/pubmedModel/
+DISCO_PUBMED_PATH: model/pubmedModel/
+DISCO_WIKI_PATH: model/wikiModel/
 DEPTREE_PATH: model/dependency/dpTree.xml
