@@ -1,5 +1,5 @@
 class: edu.cmu.lti.qalab.annotators.NoiseFilter
 cross-opts:
-  MIN_WORDS: [5, 7]
-  MIN_LENGTH: [25, 30]
-  QUALITY_THRESHOLD: [0.75, 0.8]
+  MIN_WORDS: [5] # [5, 7]
+  MIN_LENGTH: [25] # [25, 30]
+  QUALITY_THRESHOLD: [0.75] # [0.75, 0.8]

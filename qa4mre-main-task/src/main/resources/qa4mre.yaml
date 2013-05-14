@@ -50,18 +50,18 @@ pipeline:
   - inherit: ecd.phase
     name: SynonymAnnotator
     options: |
-      - inherit: base.noop
       - pipeline:
           - inherit: annotators.SynonymAnnotator
           - inherit: annotators.QASynonymAnnotator
+#      - inherit: base.noop
 
   - inherit: ecd.phase
     name: WikiSynonymAnnotator
     options: |
-      - inherit: base.noop
       - pipeline:
           - inherit: annotators.WikiSynonymAnnotator
           - inherit: annotators.WikiQASynonymAnnotator
+#      - inherit: base.noop
 
   - inherit: consumers.CasConsumerDescriptor
     OutputDirectory: results/12-test-main/final-xmis
@@ -77,15 +77,33 @@ pipeline:
     name: QuestionCandSentSimilarityMatcher
     options: |
       - inherit: annotators.QuestionCandSentSimilarityMatcher
-      - inherit: annotators.QuestionCandSentSynonymMatcher
       - inherit: annotators.QuestionCandSentDependencyMatcher
+      - pipeline:
+          - inherit: annotators.QuestionCandSentSimilarityMatcher
+          - inherit: annotators.QuestionCandSentDependencyMatcher
+      - pipeline:
+          - inherit: annotators.QuestionCandSentSimilarityMatcher
+          - inherit: annotators.QuestionCandSentSynonymMatcher
+      - pipeline:
+          - inherit: annotators.QuestionCandSentSimilarityMatcher
+          - inherit: annotators.QuestionCandSentSynonymMatcher
+          - inherit: annotators.QuestionCandSentDependencyMatcher
 
   - inherit: ecd.phase
     name: AnswerChoiceCandAnsSimilarityScorer
     options: |
       - inherit: annotators.AnswerChoiceCandAnsSimilarityScorer
-      - inherit: annotators.AnswerChoiceCandAnsSynonymScorer
       - inherit: annotators.AnswerChoiceCandAnsPMIScorer
+      - pipeline:
+          - inherit: annotators.AnswerChoiceCandAnsSimilarityScorer
+          - inherit: annotators.AnswerChoiceCandAnsPMIScorer
+      - pipeline:
+          - inheirt: annotators.AnswerChoiceCandAnsSimilarityScorer
+          - inherit: annotators.AnswerChoiceCandAnsSynonymScorer
+      - pipeline:
+          - inheirt: annotators.AnswerChoiceCandAnsSimilarityScorer
+          - inherit: annotators.AnswerChoiceCandAnsSynonymScorer
+          - inherit: annotators.AnswerChoiceCandAnsPMIScorer
 
   - inherit: ecd.phase
     name: AnswerChoiceCandAnsSimilarityScorer
