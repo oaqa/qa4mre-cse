@@ -110,6 +110,7 @@ public class StanfordNLPAnnotator extends JCasAnnotator_ImplBase {
 					tokenList.add(annToken);
 				}
 
+				
 				FSList fsTokenList = this.createTokenList(jCas, tokenList);
 				fsTokenList.addToIndexes();
 

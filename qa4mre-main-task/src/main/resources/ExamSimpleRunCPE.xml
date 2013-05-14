@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?><analysisEngineDescription xmlns="http://uima.apache.org/resourceSpecifier">
+  <frameworkImplementation>org.apache.uima.java</frameworkImplementation>
+  <primitive>false</primitive>
+  <delegateAnalysisEngineSpecifiers>
+    <delegateAnalysisEngine key="SynonymAnnotator">
+      <import location="annotators/SynonymAnnotator.xml"/>
+    </delegateAnalysisEngine>
+    <delegateAnalysisEngine key="StanfordNLPAnnotator">
+      <import location="annotators/StanfordNLPAnnotator.xml"/>
+    </delegateAnalysisEngine>
+    <delegateAnalysisEngine key="QuestionNEAnnotator">
+      <import location="annotators/QuestionNEAnnotator.xml"/>
+    </delegateAnalysisEngine>
+    <delegateAnalysisEngine key="NoiseFilter">
+      <import location="annotators/NoiseFilter.xml"/>
+    </delegateAnalysisEngine>
+    <delegateAnalysisEngine key="QuestionPhraseAnnotator">
+      <import location="annotators/QuestionPhraseAnnotator.xml"/>
+    </delegateAnalysisEngine>
+    <delegateAnalysisEngine key="PhraseAnnotator">
+      <import location="annotators/PhraseAnnotator.xml"/>
+    </delegateAnalysisEngine>
+    <delegateAnalysisEngine key="QASynonymAnnotator">
+      <import location="annotators/QASynonymAnnotator.xml"/>
+    </delegateAnalysisEngine>
+    <delegateAnalysisEngine key="StanfordQuestionNLPAnnotator">
+      <import location="annotators/StanfordQuestionNLPAnnotator.xml"/>
+    </delegateAnalysisEngine>
+    <delegateAnalysisEngine key="TextSegmenter">
+      <import location="annotators/TextSegmenter.xml"/>
+    </delegateAnalysisEngine>
+    <delegateAnalysisEngine key="NEAnnotator">
+      <import location="annotators/NEAnnotator.xml"/>
+    </delegateAnalysisEngine>
+    <delegateAnalysisEngine key="StanfordSentenceAnnotator">
+      <import location="annotators/StanfordSentenceAnnotator.xml"/>
+    </delegateAnalysisEngine>
+    <delegateAnalysisEngine key="WikiSynonymAnnotator">
+      <import location="annotators/WikiSynonymAnnotator.xml"/>
+    </delegateAnalysisEngine>
+    <delegateAnalysisEngine key="WikiQASynonymAnnotator">
+      <import location="annotators/WikiQASynonymAnnotator.xml"/>
+    </delegateAnalysisEngine>
+    
+    <delegateAnalysisEngine key="SolrIndexer">
+      <import location="annotators/SolrIndexer.xml"/>
+    </delegateAnalysisEngine>
+    
+    <!--<delegateAnalysisEngine key="QuestionCandSentDependencyMatcher">
+      <import location="annotators/QuestionCandSentDependencyMatcher.xml"/>
+    </delegateAnalysisEngine>-->
+    
+    <delegateAnalysisEngine key="QuestionCandSentSimilarityMatcher">
+      <import location="annotators/QuestionCandSentSimilarityMatcher.xml"/>
+    </delegateAnalysisEngine>
+    
+    <!--<delegateAnalysisEngine key="QuestionCandSentSynonymMatcher">
+      <import location="annotators/QuestionCandSentSynonymMatcher.xml"/>
+    </delegateAnalysisEngine>-->
+    
+    <delegateAnalysisEngine key="AnswerChoiceCandAnsSimilarityScorer">
+      <import location="annotators/AnswerChoiceCandAnsSimilarityScorer.xml"/>
+    </delegateAnalysisEngine>
+    
+    <delegateAnalysisEngine key="AnswerSelectionByKCandVoting">
+      <import location="annotators/AnswerSelectionByKCandVoting.xml"/>
+    </delegateAnalysisEngine>
+    <!--<delegateAnalysisEngine key="AnswerSelectionByKCandAggregation">
+      <import location="annotators/AnswerSelectionByKCandAggregation.xml"/>
+    </delegateAnalysisEngine>-->
+    
+  </delegateAnalysisEngineSpecifiers>
+  <analysisEngineMetaData>
+    <name>CpeDescriptor</name>
+    <description/>
+    <version>1.0</version>
+    <vendor/>
+    <configurationParameters searchStrategy="language_fallback"/>
+    <configurationParameterSettings/>
+    <flowConstraints>
+      <fixedFlow>
+        <node>TextSegmenter</node>
+        <node>StanfordSentenceAnnotator</node>
+        <node>NoiseFilter</node>
+        <node>StanfordNLPAnnotator</node>
+        <node>StanfordQuestionNLPAnnotator</node>
+        <node>PhraseAnnotator</node>
+        <node>QuestionPhraseAnnotator</node>
+        <node>NEAnnotator</node>
+        <node>QuestionNEAnnotator</node>
+        <node>SynonymAnnotator</node>
+        <node>QASynonymAnnotator</node>
+        <node>WikiSynonymAnnotator</node>
+        <node>WikiQASynonymAnnotator</node>
+        
+        <node>SolrIndexer</node>
+        <node>QuestionCandSentSimilarityMatcher</node>
+        <!-- <node>QuestionCandSentSynonymMatcher</node> -->        
+        <!-- <node>QuestionCandSentDependencyMatcher</node>-->
+        <node>AnswerChoiceCandAnsSimilarityScorer</node>
+        <!--<node>AnswerChoiceCandAnsSynonymScorer</node>-->
+        <!--<node>AnswerChoiceCandAnsPMIScorer</node>-->
+        <node>AnswerSelectionByKCandVoting</node>       
+        <!--<node>AnswerSelectionByKCandVoting</node>-->
+      </fixedFlow>
+    </flowConstraints>
+    <typePriorities/>
+    <fsIndexCollection/>
+    <capabilities>
+      <capability>
+        <inputs/>
+        <outputs/>
+        <languagesSupported/>
+      </capability>
+    </capabilities>
+    <operationalProperties>
+      <modifiesCas>true</modifiesCas>
+      <multipleDeploymentAllowed>true</multipleDeploymentAllowed>
+      <outputsNewCASes>false</outputsNewCASes>
+    </operationalProperties>
+  </analysisEngineMetaData>
+  <resourceManagerConfiguration/>
+</analysisEngineDescription>
