@@ -35,7 +35,7 @@ public class QuestionCandSentDependencyMatcher extends JCasAnnotator_ImplBase {
 		try {
 			tree = new DepTreeInfo(depTreePath);
 			disco = new DISCO(path, false);
-			
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
@@ -48,16 +48,15 @@ public class QuestionCandSentDependencyMatcher extends JCasAnnotator_ImplBase {
 				testDoc.getQaList(), QuestionAnswerSet.class);
 		for (int i = 0; i < qaSet.size(); i++) {
 
-			Question question = qaSet.get(i).getQuestion();			
+			Question question = qaSet.get(i).getQuestion();
 			System.out.println("Question: " + question.getText());
-			if(qaSet.get(i).getCandidateSentenceList()==null){
+			if (qaSet.get(i).getCandidateSentenceList() == null) {
 				continue;
 			}
-			
+
 			ArrayList<Dependency> qDepList = Utils.fromFSListToCollection(
 					question.getDependencies(), Dependency.class);
 
-			
 			ArrayList<CandidateSentence> candSentList = Utils
 					.fromFSListToCollection(qaSet.get(i)
 							.getCandidateSentenceList(),
@@ -70,7 +69,8 @@ public class QuestionCandSentDependencyMatcher extends JCasAnnotator_ImplBase {
 						Dependency.class);
 				double depMatchScore = 0.0;
 				try {
-					//depMatchScore=this.compareDependencies(qDepList, cDepList);
+					// depMatchScore=this.compareDependencies(qDepList,
+					// cDepList);
 					depMatchScore = this.getScore(qDepList, cDepList);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -78,10 +78,11 @@ public class QuestionCandSentDependencyMatcher extends JCasAnnotator_ImplBase {
 				candSent.setDepMatchScore(depMatchScore);
 				candSentList.set(j, candSent);
 			}
-			FSList fsCandSentList=Utils.fromCollectionToFSList(aJCas, candSentList);
+			FSList fsCandSentList = Utils.fromCollectionToFSList(aJCas,
+					candSentList);
 			qaSet.get(i).setCandidateSentenceList(fsCandSentList);
 		}
-		
+
 		testDoc.setQaList(Utils.fromCollectionToFSList(aJCas, qaSet));
 
 	}
@@ -158,11 +159,14 @@ public class QuestionCandSentDependencyMatcher extends JCasAnnotator_ImplBase {
 
 			}
 			score += max;
-			String d1 = t.getRelation() + "(" + t.getGovernor().getText() + ","
-					+ t.getDependent().getText() + ")";
-			String d2 = maxC.getRelation() + "(" + maxC.getGovernor().getText()
-					+ "," + maxC.getDependent().getText() + ")";
-			System.out.println(max + " " + d1 + " <---> " + d2);
+			if (maxC != null) {
+				String d1 = t.getRelation() + "(" + t.getGovernor().getText()
+						+ "," + t.getDependent().getText() + ")";
+				String d2 = maxC.getRelation() + "("
+						+ maxC.getGovernor().getText() + ","
+						+ maxC.getDependent().getText() + ")";
+				System.out.println(max + " " + d1 + " <---> " + d2);
+			}
 
 		}
 		if (validTarget == 0)
@@ -221,21 +225,23 @@ public class QuestionCandSentDependencyMatcher extends JCasAnnotator_ImplBase {
 		// System.out.println(score1+" "+score2);
 		return score1 * score2;
 	}
-	
+
 	public int compareDependencies(ArrayList<Dependency> qDep,
 			ArrayList<Dependency> candDep) throws Exception {
 		int cmpCnt = 0;
 		for (int i = 0; i < qDep.size(); i++) {
-			String qRelation=qDep.get(i).getRelation();
-			String qDependent=qDep.get(i).getDependent().getText();
-			String qGovernor=qDep.get(i).getGovernor().getText();
-			
+			String qRelation = qDep.get(i).getRelation();
+			String qDependent = qDep.get(i).getDependent().getText();
+			String qGovernor = qDep.get(i).getGovernor().getText();
+
 			for (int j = 0; j < candDep.size(); j++) {
-				String cRelation=candDep.get(j).getRelation();
-				String cDependent=candDep.get(j).getDependent().getText();
-				String cGovernor=candDep.get(j).getGovernor().getText();
-				
-				if (qRelation.equals(cRelation) && qDependent.equals(cDependent) && qGovernor.equals(cGovernor)) {
+				String cRelation = candDep.get(j).getRelation();
+				String cDependent = candDep.get(j).getDependent().getText();
+				String cGovernor = candDep.get(j).getGovernor().getText();
+
+				if (qRelation.equals(cRelation)
+						&& qDependent.equals(cDependent)
+						&& qGovernor.equals(cGovernor)) {
 					cmpCnt++;
 				}
 			}
@@ -243,6 +249,5 @@ public class QuestionCandSentDependencyMatcher extends JCasAnnotator_ImplBase {
 
 		return cmpCnt;
 	}
-
 
 }
