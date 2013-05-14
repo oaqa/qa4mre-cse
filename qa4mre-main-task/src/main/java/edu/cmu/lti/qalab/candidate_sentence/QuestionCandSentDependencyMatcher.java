@@ -48,11 +48,16 @@ public class QuestionCandSentDependencyMatcher extends JCasAnnotator_ImplBase {
 				testDoc.getQaList(), QuestionAnswerSet.class);
 		for (int i = 0; i < qaSet.size(); i++) {
 
-			Question question = qaSet.get(i).getQuestion();
+			Question question = qaSet.get(i).getQuestion();			
 			System.out.println("Question: " + question.getText());
+			if(qaSet.get(i).getCandidateSentenceList()==null){
+				continue;
+			}
+			
 			ArrayList<Dependency> qDepList = Utils.fromFSListToCollection(
 					question.getDependencies(), Dependency.class);
 
+			
 			ArrayList<CandidateSentence> candSentList = Utils
 					.fromFSListToCollection(qaSet.get(i)
 							.getCandidateSentenceList(),
