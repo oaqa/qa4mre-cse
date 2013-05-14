@@ -13,6 +13,8 @@ import abner.Tagger;
 import edu.cmu.lti.qalab.types.Answer;
 import edu.cmu.lti.qalab.types.NER;
 import edu.cmu.lti.qalab.types.Question;
+import edu.cmu.lti.qalab.types.Sentence;
+import edu.cmu.lti.qalab.types.Token;
 import edu.cmu.lti.qalab.utils.Utils;
 
 public class QuestionNEAnnotator extends JCasAnnotator_ImplBase {
@@ -46,9 +48,17 @@ public class QuestionNEAnnotator extends JCasAnnotator_ImplBase {
 			try {
 				abnerList = this.extractNER(nerTagged, jCas);
 			} catch (Exception e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
+			try {
+				ArrayList<NER> stanfordNerList = this.extractStanfordNER(question, jCas);
+				if (stanfordNerList.size() > 0) {
+					abnerList.addAll(stanfordNerList);
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+
 			FSList fsNERList = Utils.createNERList(jCas, abnerList);
 			question.setNerList(fsNERList);
 			question.addToIndexes();
@@ -67,7 +77,15 @@ public class QuestionNEAnnotator extends JCasAnnotator_ImplBase {
 				try {
 					abnerList = this.extractNER(nerTagged, jCas);
 				} catch (Exception e) {
-					// TODO Auto-generated catch block
+					
+					e.printStackTrace();
+				}
+				try {
+					ArrayList<NER> stanfordNerList = this.extractStanfordNER(ans, jCas);
+					if (stanfordNerList.size() > 0) {
+						abnerList.addAll(stanfordNerList);
+					}
+				} catch (Exception e) {
 					e.printStackTrace();
 				}
 				FSList fsNERList = Utils.createNERList(jCas, abnerList);
@@ -78,6 +96,78 @@ public class QuestionNEAnnotator extends JCasAnnotator_ImplBase {
 
 		}
 
+	}
+
+	public ArrayList<NER> extractStanfordNER(Question sentence, JCas jCas)
+			throws Exception {
+		ArrayList<NER> nerList = new ArrayList<NER>();
+		ArrayList<Token> tokenList = Utils
+				.getTokenListFromQuestion(sentence);
+		// Ram/O goes/O to/O Carnegie/ORGANIZATION Mellon/ORGANIZATION
+		// University/ORGANIZATION
+		String ner = "";
+		String type = "";
+		for (int i = 0; i < tokenList.size(); i++) {
+			Token token = tokenList.get(i);
+			if (!token.getNer().equals("O")) {
+				if (!type.equals(token.getNer())) {
+					ner = "";
+					type = "";
+					ner = token.getText();
+					type = token.getNer();
+				}else{
+					ner += token.getText();
+					type = token.getNer();
+				}
+			} else {
+				if (!type.equals("") ){
+					NER ne = new NER(jCas);
+					ne.setText(ner);
+					ne.setTag(type);
+					ne.setWeight(1.0);
+					nerList.add(ne);
+				}
+				ner = "";
+				type = "";
+			}
+		}
+		return nerList;
+	}
+
+	public ArrayList<NER> extractStanfordNER(Answer sentence, JCas jCas)
+			throws Exception {
+		ArrayList<NER> nerList = new ArrayList<NER>();
+		ArrayList<Token> tokenList = Utils
+				.getTokenListFromAnswer(sentence);
+		// Ram/O goes/O to/O Carnegie/ORGANIZATION Mellon/ORGANIZATION
+		// University/ORGANIZATION
+		String ner = "";
+		String type = "";
+		for (int i = 0; i < tokenList.size(); i++) {
+			Token token = tokenList.get(i);
+			if (!token.getNer().equals("O")) {
+				if (!type.equals(token.getNer())) {
+					ner = "";
+					type = "";
+					ner = token.getText();
+					type = token.getNer();
+				}else{
+					ner += token.getText();
+					type = token.getNer();
+				}
+			} else {
+				if (!type.equals("") ){
+					NER ne = new NER(jCas);
+					ne.setText(ner);
+					ne.setTag(type);
+					ne.setWeight(1.0);
+					nerList.add(ne);
+				}
+				ner = "";
+				type = "";
+			}
+		}
+		return nerList;
 	}
 
 	public ArrayList<NER> extractNER(String tagged, JCas jCas) throws Exception {

@@ -9,51 +9,94 @@ import org.apache.uima.jcas.JCas;
 import org.apache.uima.jcas.cas.FSList;
 import org.apache.uima.resource.ResourceInitializationException;
 
+import edu.cmu.lti.qalab.types.Token;
 import abner.Tagger;
 import edu.cmu.lti.qalab.types.NER;
 import edu.cmu.lti.qalab.types.Sentence;
 import edu.cmu.lti.qalab.utils.Utils;
 
-public class NEAnnotator extends JCasAnnotator_ImplBase{
+public class NEAnnotator extends JCasAnnotator_ImplBase {
 
 	Tagger abnerTagger = null;
+
 	@Override
 	public void initialize(UimaContext context)
 			throws ResourceInitializationException {
 		super.initialize(context);
 		abnerTagger = new Tagger(Tagger.BIOCREATIVE);
-		
+
 	}
+
 	@Override
 	public void process(JCas jCas) throws AnalysisEngineProcessException {
-		// TODO Auto-generated method stub
-		//TestDocument testDoc=Utils.getTestDocumentFromCAS(jCas);
 		
-		
-		ArrayList<Sentence> sentList=Utils.getSentenceListFromTestDocCAS(jCas);
-		for(int i=0;i<sentList.size();i++){
-			Sentence sentence=sentList.get(i);
+		// TestDocument testDoc=Utils.getTestDocumentFromCAS(jCas);
+
+		ArrayList<Sentence> sentList = Utils
+				.getSentenceListFromTestDocCAS(jCas);
+
+		for (int i = 0; i < sentList.size(); i++) {
+			Sentence sentence = sentList.get(i);
 			String nerTagged = abnerTagger.tagABNER(sentence.getText());
 
-			// System.out.println(nerTagged);
-			ArrayList<NER> abnerList=new ArrayList<NER>();
+			ArrayList<NER> abnerList = new ArrayList<NER>();
 			try {
-				 abnerList= this.extractNER(nerTagged,jCas);
+				abnerList = this.extractNER(nerTagged, jCas);
 			} catch (Exception e) {
-				// TODO Auto-generated catch block
 				e.printStackTrace();
 			}
-			FSList fsNERList=Utils.createNERList(jCas, abnerList);
+			try {
+				ArrayList<NER> stanfordNerList = this.extractStanfordNER(sentence, jCas);
+				if (stanfordNerList.size() > 0) {
+					abnerList.addAll(stanfordNerList);
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+
+			FSList fsNERList = Utils.createNERList(jCas, abnerList);
 			sentence.setNerList(fsNERList);
 			sentence.addToIndexes();
-			
 		}
-		
-		
-		
 	}
-	
-	public ArrayList<NER> extractNER(String tagged,JCas jCas) throws Exception {
+
+	public ArrayList<NER> extractStanfordNER(Sentence sentence, JCas jCas)
+			throws Exception {
+		ArrayList<NER> nerList = new ArrayList<NER>();
+		ArrayList<Token> tokenList = Utils
+				.getTokenListFromSentenceList(sentence);
+		// Ram/O goes/O to/O Carnegie/ORGANIZATION Mellon/ORGANIZATION
+		// University/ORGANIZATION
+		String ner = "";
+		String type = "";
+		for (int i = 0; i < tokenList.size(); i++) {
+			Token token = tokenList.get(i);
+			if (!token.getNer().equals("O")) {
+				if (!type.equals(token.getNer())) {
+					ner = "";
+					type = "";
+					ner = token.getText();
+					type = token.getNer();
+				}else{
+					ner += token.getText();
+					type = token.getNer();
+				}
+			} else {
+				if (!type.equals("") ){
+					NER ne = new NER(jCas);
+					ne.setText(ner);
+					ne.setTag(type);
+					ne.setWeight(1.0);
+					nerList.add(ne);
+				}
+				ner = "";
+				type = "";
+			}
+		}
+		return nerList;
+	}
+
+	public ArrayList<NER> extractNER(String tagged, JCas jCas) throws Exception {
 
 		ArrayList<NER> nerList = new ArrayList<NER>();
 		String words[] = tagged.split("[ ]");
@@ -67,13 +110,13 @@ public class NEAnnotator extends JCasAnnotator_ImplBase{
 			String rec[] = words[i].split("[|]");
 			if (!rec[1].endsWith("O")) {
 				if (rec[1].startsWith("B-")) {
-					ner=ner.trim();
+					ner = ner.trim();
 					if (!ner.equals("")) {
-						NER ne=new NER(jCas);
+						NER ne = new NER(jCas);
 						ne.setText(ner);
 						ne.setTag(type);
 						nerList.add(ne);
-						//System.out.println(ner + "\t" + type);
+						// System.out.println(ner + "\t" + type);
 					}
 
 					ner = "";
@@ -84,13 +127,13 @@ public class NEAnnotator extends JCasAnnotator_ImplBase{
 				}
 			}
 		}
-		ner=ner.trim();
+		ner = ner.trim();
 		if (!ner.equals("")) {
-			NER ne=new NER(jCas);
+			NER ne = new NER(jCas);
 			ne.setText(ner);
 			ne.setTag(type);
 			nerList.add(ne);
-			//System.out.println(ner + "\t" + type);
+			// System.out.println(ner + "\t" + type);
 		}
 		return nerList;
 	}
