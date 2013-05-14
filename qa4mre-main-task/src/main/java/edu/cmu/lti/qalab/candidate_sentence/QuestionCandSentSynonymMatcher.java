@@ -105,6 +105,9 @@ public class QuestionCandSentSynonymMatcher extends JCasAnnotator_ImplBase {
 					String sentIdx = sentId.replace(docId, "").replace("_", "")
 							.trim();
 					int idx = Integer.parseInt(sentIdx);
+					if(idx>=sentenceList.size()){
+						continue;
+					}
 					Sentence annSentence = sentenceList.get(idx);
 
 					String sentence = doc.get("text").toString();

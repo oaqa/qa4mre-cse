@@ -367,7 +367,6 @@ public class QASynonymAnnotator extends JCasAnnotator_ImplBase {
 			int freq = disco.frequency(word);
 			// and print it to stdout
 			System.out.println("Frequency of " + word + " is " + freq);
-
 			// end if the word wasn't found in the index
 			if (freq == 0) {
 				return synonymList;
@@ -380,6 +379,8 @@ public class QASynonymAnnotator extends JCasAnnotator_ImplBase {
 			for (int i = 1; i < collocationResult.length; i++) {
 				System.out.println("\t" + collocationResult[i].word + "\t"
 						+ collocationResult[i].value);
+				word=word.replace("~", "").replace("(","").replace(")", "").replace("?","").replace("*", "").trim();
+				synonymList.add(word);
 				if (i >= MAX_SYNONYMS)
 					break;
 			}

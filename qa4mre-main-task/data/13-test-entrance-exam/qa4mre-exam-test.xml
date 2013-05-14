@@ -29,13 +29,13 @@
         <q_str>How did the author feel when he told his father to sit on the side?</q_str>
         <answer a_id="1">He didn't feel bad because his father was going to sit there anyway.</answer>
         <answer a_id="2">He felt relieved at having carried out the difficult task.</answer>
-        <answer a_id="3">He regretted what he had done and wanted to blame his wife.</answer>
+        <answer a_id="3" correct="Yes">He regretted what he had done and wanted to blame his wife.</answer>
         <answer a_id="4">He was thoroughly satisfied with the new seating arrangement.</answer>
       </question>
       <question q_id="5">
         <q_str>What happened during the meal after the family had all taken their new seats?</q_str>
         <answer a_id="1">The author's children removed their grandfather from his usual place.</answer>
-        <answer a_id="2">The author's father didn't appear to mind where he sat.</answer>
+        <answer a_id="2" correct="Yes">The author's father didn't appear to mind where he sat.</answer>
         <answer a_id="3">The author's father shared his favorite dishes with the grandchildren.</answer>
         <answer a_id="4">They became tense and nervous about their future as a family.</answer>
       </question>
@@ -46,12 +46,12 @@
         <q_str>What is meant by a &quot;white-knuckle flier?&quot;</q_str>
         <answer a_id="1">It is a person who easily gets sick on an airplane.</answer>
         <answer a_id="2">It is a person who is eager to take a trip on a white airplane.</answer>
-        <answer a_id="3">It is a person who is extremely nervous on an airplane.</answer>
+        <answer a_id="3" correct="Yes">It is a person who is extremely nervous on an airplane.</answer>
         <answer a_id="4">It is a person who travels on an airplane and has white fingers.</answer>
       </question>
       <question q_id="2">
         <q_str>When the old man takes a trip on an airplane, what does he avoid doing?</q_str>
-        <answer a_id="1">Drinking anything that might make him go to the toilet.</answer>
+        <answer a_id="1" correct="Yes">Drinking anything that might make him go to the toilet.</answer>
         <answer a_id="2">Fastening his seatbelt because it limits his movement.</answer>
         <answer a_id="3">Talking with other passengers who might make him more nervous.</answer>
         <answer a_id="4">Watching the movie since he needs to sleep during the trip.</answer>
@@ -60,7 +60,7 @@
         <q_str>Did any of the author's acts of kindness relieve the old man's fear?</q_str>
         <answer a_id="1">No, none of them did.</answer>
         <answer a_id="2">Yes, his offer of a cigarette did.</answer>
-        <answer a_id="3">Yes, his suggestion to play poker did.</answer>
+        <answer a_id="3" correct="Yes">Yes, his suggestion to play poker did.</answer>
         <answer a_id="4">Yes, his talk on the safety of flying did.</answer>
       </question>
       <question q_id="4">
@@ -68,18 +68,18 @@
         <answer a_id="1">The cards he could play in the next round of the poker game.</answer>
         <answer a_id="2">The danger of two airplanes hitting each other.</answer>
         <answer a_id="3">The uncertainty of the fuel lasting to their destination.</answer>
-        <answer a_id="4">The unnaturalness of the heavy airplane flying in the air.</answer>
+        <answer a_id="4" correct="Yes">The unnaturalness of the heavy airplane flying in the air.</answer>
       </question>
       <question q_id="5">
         <q_str>What change did the pilot have to make in the flight plan?</q_str>
         <answer a_id="1">He had to avoid the dark clouds of rain that spread in his way.</answer>
         <answer a_id="2">He had to fly hundreds of miles more to show his passengers the volcano.</answer>
         <answer a_id="3">He had to fly off the regular course for the sake of safety.</answer>
-        <answer a_id="4">He had to fly several miles higher than usual to avoid ash and smoke.</answer>
+        <answer a_id="4" correct="Yes">He had to fly several miles higher than usual to avoid ash and smoke.</answer>
       </question>
       <question q_id="6">
         <q_str>Why did the old man suddenly become calm and relaxed?</q_str>
-        <answer a_id="1">He realized that human technology is unable to compete with natural forces.</answer>
+        <answer a_id="1" correct="Yes">He realized that human technology is unable to compete with natural forces.</answer>
         <answer a_id="2">He remembered that his airplane was no more powerful than four birthday cake candles.</answer>
         <answer a_id="3">He understood that his airplane was not polluting nature as much as a volcano.</answer>
         <answer a_id="4">He was comforted by the view that the earth remains healthy as long as it has active volcanoes.</answer>
@@ -92,18 +92,18 @@
         <answer a_id="1">She had left her bag in a phone booth there by mistake.</answer>
         <answer a_id="2">She wanted to tell her husband about the cat she had found.</answer>
         <answer a_id="3">She was to accompany her husband on a trip.</answer>
-        <answer a_id="4">She wished to reach the opera house with her husband on time.</answer>
+        <answer a_id="4" correct="Yes">She wished to reach the opera house with her husband on time.</answer>
       </question>
       <question q_id="2">
         <q_str>What was the purpose of the wooden cat?</q_str>
         <answer a_id="1">It had a message from the thieves hidden in it to say where they would all meet.</answer>
-        <answer a_id="2">It was a sign that the thieves would wait at the ofspera house.</answer>
+        <answer a_id="2">It was a sign that the thieves would wait at the opera house.</answer>
         <answer a_id="3">It would indicate where the bag with the jewels was to be left.</answer>
-        <answer a_id="4">It would show which woman the thieves should give the jewels to.</answer>
+        <answer a_id="4" correct="Yes">It would show which woman the thieves should give the jewels to.</answer>
       </question>
       <question q_id="3">
         <q_str>What happened in the opera house?</q_str>
-        <answer a_id="1">Jane felt herself being touched and wanted to leave early.</answer>
+        <answer a_id="1" correct="Yes">Jane felt herself being touched and wanted to leave early.</answer>
         <answer a_id="2">Jane noticed something being taken from her bag.</answer>
         <answer a_id="3">Jane spoke angrily to someone who was bothering her.</answer>
         <answer a_id="4">Jane's husband didn't enjoy the opera and so they went home before the second part.</answer>
@@ -112,13 +112,13 @@
         <q_str>Why did Jane and her husband have difficulty sleeping that night?</q_str>
         <answer a_id="1">They felt they should not have taken the cat from the phone booth.</answer>
         <answer a_id="2">They regretted that they hadn't seen the end of the opera.</answer>
-        <answer a_id="3">They were disturbed by the mysterious treasure they had found.</answer>
+        <answer a_id="3" correct="Yes">They were disturbed by the mysterious treasure they had found.</answer>
         <answer a_id="4">They were worried because the police had found out about the jewels.</answer>
       </question>
       <question q_id="5">
         <q_str>Why did the thieves' plan go wrong?</q_str>
         <answer a_id="1">They couldn't find Jane when they looked for her at the station.</answer>
-        <answer a_id="2">They didn't expect anyone else to take the cat away from the booth.</answer>
+        <answer a_id="2" correct="Yes">They didn't expect anyone else to take the cat away from the booth.</answer>
         <answer a_id="3">They didn't realize that the telephone was not working.</answer>
         <answer a_id="4">They were too late in putting the cat under the telephone.</answer>
       </question>

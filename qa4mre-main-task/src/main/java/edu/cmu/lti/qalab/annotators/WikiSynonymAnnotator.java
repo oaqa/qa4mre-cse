@@ -126,6 +126,8 @@ public class WikiSynonymAnnotator extends JCasAnnotator_ImplBase {
 			for (int i = 1; i < collocationResult.length; i++) {
 				System.out.println("\t" + collocationResult[i].word + "\t"
 						+ collocationResult[i].value);
+				word=word.replace("~", "").replace("(","").replace(")", "").replace("?","").replace("*", "").trim();
+				synonymList.add(word);
 				if (i >= MAX_SYNONYMS)
 					break;
 			}
