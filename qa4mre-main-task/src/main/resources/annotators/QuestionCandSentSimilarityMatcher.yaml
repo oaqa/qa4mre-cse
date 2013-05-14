@@ -3,4 +3,4 @@ SOLR_SERVER_URL: http://ur.lti.cs.cmu.edu:8983/solr/
 SOLR_CORE: qa4mre
 SCHEMA_NAME: clef-alzhemer-task
 cross-opts:
-  TOP_SEARCH_RESULTS: [4, 6, 8, 10, 12]
+  TOP_SEARCH_RESULTS: [5, 10] # [4, 6, 8, 10, 12]
