@@ -43,8 +43,12 @@ public class AnswerSelectionByKCandVoting extends JCasAnnotator_ImplBase {
 
 			Question question = qaSet.get(i).getQuestion();
 			System.out.println("Question: " + question.getText());
+			if (qaSet.get(i).getCandidateSentenceList() == null) {
+				continue;
+			}
 			ArrayList<Answer> choiceList = Utils.fromFSListToCollection(qaSet
 					.get(i).getAnswerList(), Answer.class);
+
 			ArrayList<CandidateSentence> candSentList = Utils
 					.fromFSListToCollection(qaSet.get(i)
 							.getCandidateSentenceList(),
@@ -66,7 +70,7 @@ public class AnswerSelectionByKCandVoting extends JCasAnnotator_ImplBase {
 			for (int c = 0; c < topK; c++) {
 
 				CandidateSentence candSent = candSentList.get(c);
-				if(candSent.getCandAnswerList()==null){
+				if (candSent.getCandAnswerList() == null) {
 					continue;
 				}
 				ArrayList<CandidateAnswer> candAnswerList = Utils
