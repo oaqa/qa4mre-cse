@@ -98,10 +98,10 @@ pipeline:
           - inherit: annotators.AnswerChoiceCandAnsSimilarityScorer
           - inherit: annotators.AnswerChoiceCandAnsPMIScorer
       - pipeline:
-          - inheirt: annotators.AnswerChoiceCandAnsSimilarityScorer
+          - inherit: annotators.AnswerChoiceCandAnsSimilarityScorer
           - inherit: annotators.AnswerChoiceCandAnsSynonymScorer
       - pipeline:
-          - inheirt: annotators.AnswerChoiceCandAnsSimilarityScorer
+          - inherit: annotators.AnswerChoiceCandAnsSimilarityScorer
           - inherit: annotators.AnswerChoiceCandAnsSynonymScorer
           - inherit: annotators.AnswerChoiceCandAnsPMIScorer
 
