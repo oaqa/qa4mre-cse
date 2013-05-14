@@ -66,7 +66,7 @@ public class SynonymAnnotator extends JCasAnnotator_ImplBase {
 	public void process(JCas jCas) throws AnalysisEngineProcessException {
 		TestDocument testDoc=Utils.getTestDocumentFromCAS(jCas);
 
-		if(testDoc.getTopicId().equals("2") || testDoc.getTopicId().equals("3")){//2. Climate change, 3. music and society
+		if(testDoc.getTopicId().equals("0") || testDoc.getTopicId().equals("2") || testDoc.getTopicId().equals("3")){//2. Climate change, 3. music and society
 			return;
 		}
 		ArrayList<Sentence> sentList = Utils

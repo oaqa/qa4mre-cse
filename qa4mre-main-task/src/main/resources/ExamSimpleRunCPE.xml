@@ -46,9 +46,9 @@
       <import location="annotators/SolrIndexer.xml"/>
     </delegateAnalysisEngine>
     
-    <!--<delegateAnalysisEngine key="QuestionCandSentDependencyMatcher">
+   	<delegateAnalysisEngine key="QuestionCandSentDependencyMatcher">
       <import location="annotators/QuestionCandSentDependencyMatcher.xml"/>
-    </delegateAnalysisEngine>-->
+    </delegateAnalysisEngine>
     
     <delegateAnalysisEngine key="QuestionCandSentSimilarityMatcher">
       <import location="annotators/QuestionCandSentSimilarityMatcher.xml"/>

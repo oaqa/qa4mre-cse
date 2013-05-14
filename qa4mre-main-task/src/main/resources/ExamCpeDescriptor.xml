@@ -3,7 +3,7 @@
 	<collectionReader>
 		<collectionIterator>
 			<descriptor>
-				<import location="collectionreaders/ExamCollectionReaderDescriptor.xml" />
+				<import location="collectionreaders/CollectionReaderDescriptor.xml" />
 			</descriptor>
 		</collectionIterator>
 	</collectionReader>
