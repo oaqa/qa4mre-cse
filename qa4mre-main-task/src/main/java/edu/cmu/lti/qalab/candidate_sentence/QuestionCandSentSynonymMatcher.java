@@ -72,6 +72,7 @@ public class QuestionCandSentSynonymMatcher extends JCasAnnotator_ImplBase {
 			ArrayList<CandidateSentence> candidateSentList = new ArrayList<CandidateSentence>();
 			SolrQuery solrQuery = new SolrQuery();
 			solrQuery.add("fq", "docid:" + testDocId);
+			searchQuery=searchQuery.replace("~", "").replace("(","").replace(")", "").trim();
 			solrQuery.add("q", searchQuery);
 			solrQuery.add("rows", String.valueOf(TOP_SEARCH_RESULTS));
 			solrQuery.setFields("*", "score");
