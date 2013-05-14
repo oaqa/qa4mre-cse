@@ -8,19 +8,19 @@
         <q_str>Where did the author's mother sit when one of her children was away?</q_str>
         <answer a_id="1">She didn't change her chair.</answer>
         <answer a_id="2">She moved her own chair next to Dad's.</answer>
-        <answer a_id="3">She moved to an empty chair on the side.</answer>
+        <answer a_id="3" correct="Yes">She moved to an empty chair on the side.</answer>
         <answer a_id="4">She sat opposite to Dad.</answer>
       </question>
       <question q_id="2">
         <q_str>What did the father's chair represent to the author in his school days?</q_str>
-        <answer a_id="1">It represented a secure family life he could rely on.</answer>
+        <answer a_id="1" correct="Yes">It represented a secure family life he could rely on.</answer>
         <answer a_id="2">It represented his father's changing position within the family.</answer>
         <answer a_id="3">It represented the religious beliefs which his father shared with the family.</answer>
         <answer a_id="4">It represented the world which could be seen outside the window.</answer>
       </question>
       <question q_id="3">
         <q_str>How did the author respond to his wife's request when he heard it for the first time?</q_str>
-        <answer a_id="1">He agreed, but was worried about the consequences.</answer>
+        <answer a_id="1" correct="Yes">He agreed, but was worried about the consequences.</answer>
         <answer a_id="2">He decided that his father would have to live apart.</answer>
         <answer a_id="3">He disagreed because he knew exactly how his father would react.</answer>
         <answer a_id="4">He refused, gently but firmly, to follow it.</answer>

@@ -46,25 +46,34 @@
       <import location="annotators/SolrIndexer.xml"/>
     </delegateAnalysisEngine>
     
-    <!--<delegateAnalysisEngine key="QuestionCandSentDependencyMatcher">
+    <delegateAnalysisEngine key="QuestionCandSentDependencyMatcher">
       <import location="annotators/QuestionCandSentDependencyMatcher.xml"/>
-    </delegateAnalysisEngine>-->
+    </delegateAnalysisEngine>
     
     <delegateAnalysisEngine key="QuestionCandSentSimilarityMatcher">
       <import location="annotators/QuestionCandSentSimilarityMatcher.xml"/>
     </delegateAnalysisEngine>
     
-    <!--<delegateAnalysisEngine key="QuestionCandSentSynonymMatcher">
+    <delegateAnalysisEngine key="QuestionCandSentSynonymMatcher">
       <import location="annotators/QuestionCandSentSynonymMatcher.xml"/>
-    </delegateAnalysisEngine>-->
+    </delegateAnalysisEngine>
     
     <delegateAnalysisEngine key="AnswerChoiceCandAnsSimilarityScorer">
       <import location="annotators/AnswerChoiceCandAnsSimilarityScorer.xml"/>
     </delegateAnalysisEngine>
     
+    <delegateAnalysisEngine key="AnswerChoiceCandAnsSynonymScorer">
+      <import location="annotators/AnswerChoiceCandAnsSynonymScorer.xml"/>
+    </delegateAnalysisEngine>
+    
+    <delegateAnalysisEngine key="AnswerChoiceCandAnsPMIScorer">
+      <import location="annotators/AnswerChoiceCandAnsPMIScorer.xml"/>
+    </delegateAnalysisEngine>
+    
     <delegateAnalysisEngine key="AnswerSelectionByKCandVoting">
       <import location="annotators/AnswerSelectionByKCandVoting.xml"/>
     </delegateAnalysisEngine>
+    
     <!--<delegateAnalysisEngine key="AnswerSelectionByKCandAggregation">
       <import location="annotators/AnswerSelectionByKCandAggregation.xml"/>
     </delegateAnalysisEngine>-->
@@ -95,11 +104,11 @@
         
         <node>SolrIndexer</node>
         <node>QuestionCandSentSimilarityMatcher</node>
-        <!-- <node>QuestionCandSentSynonymMatcher</node> -->        
-        <!-- <node>QuestionCandSentDependencyMatcher</node>-->
+        <node>QuestionCandSentSynonymMatcher</node>        
+        <node>QuestionCandSentDependencyMatcher</node>
         <node>AnswerChoiceCandAnsSimilarityScorer</node>
-        <!--<node>AnswerChoiceCandAnsSynonymScorer</node>-->
-        <!--<node>AnswerChoiceCandAnsPMIScorer</node>-->
+        <node>AnswerChoiceCandAnsSynonymScorer</node>
+        <node>AnswerChoiceCandAnsPMIScorer</node>
         <node>AnswerSelectionByKCandVoting</node>       
         <!--<node>AnswerSelectionByKCandVoting</node>-->
       </fixedFlow>

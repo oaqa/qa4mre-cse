@@ -168,6 +168,7 @@ public class AnswerChoiceCandAnsPMIScorer extends JCasAnnotator_ImplBase {
 			String query = question + " AND " + choiceNounPhrase;
 			// System.out.println(query);
 			HashMap<String, String> params = new HashMap<String, String>();
+			query=query.replace("~", "").replace("(","").replace(")", "").replace("?","").replace("*", "");
 			params.put("q", query);
 			params.put("rows", "1");
 			SolrParams solrParams = new MapSolrParams(params);
@@ -185,6 +186,7 @@ public class AnswerChoiceCandAnsPMIScorer extends JCasAnnotator_ImplBase {
 			query = choiceNounPhrase;
 			// System.out.println(query);
 			params = new HashMap<String, String>();
+			query=query.replace("~", "").replace("(","").replace(")", "").replace("?","").replace("*", "").trim();
 			params.put("q", query);
 			params.put("rows", "1");
 			solrParams = new MapSolrParams(params);
