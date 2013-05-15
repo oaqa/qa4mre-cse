@@ -19,10 +19,12 @@ def generate_summary(cse_log_file):
   trace2total = defaultdict(lambda: 0)
   trace2unanswer = defaultdict(lambda: 0)
   trace2cat1 = defaultdict(lambda: defaultdict(lambda: 0))
+  ids = set()
   for line in open(cse_log_file):
     m = TRACE_PATTERN.match(line.strip())
     if m:
       id = m.group(1)
+      ids.add(int(id))
       idx = len(m.group(3).split('>')) + 1
       trace = m.group(3) + '>' + str(idx) + "|" + m.group(2)
       continue
@@ -39,11 +41,12 @@ def generate_summary(cse_log_file):
       trace2unanswer[trace] += unanswer
       continue
   for trace in trace2correct:
-    accuracy = float(trace2correct[trace]) / 160 # float(trace2total[trace])
+    accuracy = float(trace2correct[trace]) / float(trace2total[trace])
     cat1 = float(trace2correct[trace] + trace2unanswer[trace] * accuracy) \
-           / 160 # float(trace2total[trace])
+           / float(trace2total[trace])
     print '%s,%f,%f,%s' % (trace, accuracy, cat1, 
-                           ','.join([str(trace2cat1[trace][q]) for q in range(16)]))
+                           ','.join([str(trace2cat1[trace][q]) 
+                                         for q in sorted(list(ids))]))
 
 
 def main():
