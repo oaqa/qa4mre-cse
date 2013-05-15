@@ -83,8 +83,8 @@ public class QA4MRETestDocReader extends CollectionReader_ImplBase {
 	
 		String docText = testDocNodeList.item(0).getTextContent().trim();
 	
-		String testDocId = ((Element) testDocNodeList.item(0))
-				.getAttribute("d_id");
+		String testDocId = readingTestId;//((Element) testDocNodeList.item(0))
+				//.getAttribute("d_id");
 		String fileName = testFile[nCurrFile].getName();
 
 		String docId = fileName.replace(".xmi", "") + "_" + testDocId;

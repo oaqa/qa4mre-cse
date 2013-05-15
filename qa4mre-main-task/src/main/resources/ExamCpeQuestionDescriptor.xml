@@ -8,9 +8,9 @@
 		</collectionIterator>
 	</collectionReader>
 	<casProcessors casPoolSize="3" processingUnitThreadCount="1">
-		<casProcessor deployment="integrated" name="CpeQuestionDescriptor">
+		<casProcessor deployment="integrated" name="ExamCpeQuestionDescriptor">
 			<descriptor>
-				<import location="SimpleQuestionRunCPE.xml" />
+				<import location="ExamSimpleQuestionRunCPE.xml" />
 			</descriptor>
 			<deploymentParameters />
 			<errorHandling>
@@ -21,7 +21,7 @@
 			</errorHandling>
 			<checkpoint batch="10000" time="1000ms" />
 			<configurationParameterSettings />
-		</casProcessor>
+		</casProcessor>		
 		<casProcessor deployment="integrated" name="OuputRunCasConsumerDescriptor">
 			<descriptor>
 				<import location="consumers/OuputRunCasConsumer.xml" />

@@ -101,7 +101,7 @@
         <node>WikiSynonymAnnotator</node>
         <node>WikiQASynonymAnnotator</node>
         
-        <!-- <node>SolrIndexer</node>-->
+        <node>SolrIndexer</node>
         <node>QuestionCandSentSimilarityMatcher</node>
         <node>QuestionCandSentSynonymMatcher</node>        
         <node>QuestionCandSentDependencyMatcher</node>

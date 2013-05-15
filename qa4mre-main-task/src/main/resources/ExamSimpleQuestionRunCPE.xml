@@ -28,7 +28,7 @@
     </delegateAnalysisEngine>
   </delegateAnalysisEngineSpecifiers>
   <analysisEngineMetaData>
-    <name>CpeQuestionDescriptor</name>
+    <name>ExamCpeQuestionDescriptor</name>
     <description/>
     <version>1.0</version>
     <vendor/>
@@ -37,13 +37,13 @@
     <flowConstraints>
       <fixedFlow>
         <node>QuestionCandSentSimilarityMatcher</node>
-        <!-- <node>QuestionCandSentSynonymMatcher</node>-->
-        <!-- <node>QuestionCandSentDependencyMatcher</node>-->
-        <!-- <node>AnswerChoiceCandAnsSimilarityScorer</node>-->
-        <!-- <node>AnswerChoiceCandAnsSynonymScorer</node>-->
+        <node>QuestionCandSentSynonymMatcher</node>
+        <node>QuestionCandSentDependencyMatcher</node>
+        <node>AnswerChoiceCandAnsSimilarityScorer</node>
+        <node>AnswerChoiceCandAnsSynonymScorer</node>
         <node>AnswerChoiceCandAnsPMIScorer</node>
-        <!-- <node>AnswerSelectionByKCandVoting</node>-->
-        <node>AnswerSelectionByKCandAggregation</node>
+        <node>AnswerSelectionByKCandVoting</node>
+        <!-- <node>AnswerSelectionByKCandVoting</node>-->        
       </fixedFlow>
     </flowConstraints>
     <typePriorities/>
