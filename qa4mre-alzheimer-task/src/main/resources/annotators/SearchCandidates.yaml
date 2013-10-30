@@ -1,4 +1,5 @@
 class: edu.cmu.lti.qalab.annotators.SearchCandidates
-SOLR_SERVER_URL: http://ur.lti.cs.cmu.edu:8983/solr/
-SOLR_CORE: qa4mre
-SCHEMA_NAME: clef-alzhemer-task
+params:
+    SOLR_SERVER_URL: http://ur.lti.cs.cmu.edu:8983/solr/
+    SOLR_CORE: qa4mre
+    SCHEMA_NAME: clef-alzhemer-task

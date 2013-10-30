@@ -1,3 +1,4 @@
 class: edu.cmu.lti.qalab.annotators.AnswerExtractor
-SOLR_SERVER_URL: http://peace.isri.cs.cmu.edu:5080/solr/genomics-simple/
-SOLR_CORE: genomics-simple
+params:
+    SOLR_SERVER_URL: http://peace.isri.cs.cmu.edu:5080/solr/genomics-simple/
+    SOLR_CORE: genomics-simple

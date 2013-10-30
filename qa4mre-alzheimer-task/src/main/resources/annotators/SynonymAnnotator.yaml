@@ -1,3 +1,4 @@
 class: edu.cmu.lti.qalab.annotators.SynonymAnnotator
-FILE_NAME: model/synonym/gene_ontology_ext.obo
-GIGA_WORD: model/synonym/cmudict.0.7a.gigaword.freq
+params:
+    FILE_NAME: model/synonym/gene_ontology_ext.obo
+    GIGA_WORD: model/synonym/cmudict.0.7a.gigaword.freq

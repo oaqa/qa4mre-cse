@@ -2,8 +2,8 @@ configuration:
   name: qa4mre
   author: ziy
   
-persistence-provider:
-  inherit: persistence.local-persistence-provider
+#persistence-provider:
+#  inherit: persistence.local-persistence-provider
 
 collection-reader:
   inherit: collectionreaders.CollectionReaderDescriptor
@@ -12,82 +12,82 @@ pipeline:
   # question and document annotations: data -> XMIs
   - inherit: ecd.phase
     name: TextSegmenter
-    options: |
+    options: 
       - inherit: annotators.TextSegmenter
 
   - inherit: ecd.phase
     name: StanfordSentenceAnnotator
-    options: |
+    options: 
       - inherit: annotators.StanfordSentenceAnnotator
 
   - inherit: ecd.phase
     name: NoiseFilter
-    options: |
+    options: 
       - inherit: annotators.NoiseFilter
 
   - inherit: ecd.phase
     name: StanfordNLPAnnotator
-    options: |
+    options: 
       - inherit: annotators.StanfordNLPAnnotator
 
   - inherit: ecd.phase
     name: StanfordQuestionNLPAnnotator
-    options: |
+    options: 
       - inherit: annotators.StanfordQuestionNLPAnnotator
 
   - inherit: ecd.phase
     name: PhraseAnnotator
-    options: |
+    options: 
       - inherit: annotators.PhraseAnnotator
 
   - inherit: ecd.phase
     name: QuestionPhraseAnnotator
-    options: |
+    options: 
       - inherit: annotators.QuestionPhraseAnnotator
 
   - inherit: ecd.phase
     name: NEAnnotator
-    options: |
+    options: 
       - inherit: annotators.NEAnnotator
 
   - inherit: ecd.phase
     name: QuestionNEAnnotator
-    options: |
+    options: 
       - inherit: annotators.QuestionNEAnnotator
 
   - inherit: ecd.phase
     name: SynonymAnnotator
-    options: |
+    options: 
       - inherit: annotators.SynonymAnnotator
 
   - inherit: ecd.phase
     name: QASynonymAnnotator
-    options: |
+    options: 
       - inherit: annotators.QASynonymAnnotator
 
   - inherit: ecd.phase
     name: CasConsumer
-    options: |
+    options: 
       - inherit: consumers.CasConsumerDescriptor
 
   # indexing
   - inherit: ecd.phase
     name: SolrIndexer
-    options: |
+    options: 
       - inherit: annotators.SolrIndexer
   
   # answer ranking and merging: XMIs -> results
   - inherit: ecd.phase
     name: QuestionCandSentSimilarityMatcher
-    options: |
+    options: 
       - inherit: annotators.QuestionCandSentSimilarityMatcher
 
   - inherit: ecd.phase
     name: AnswerChoiceCandAnsSimilarityScorer
-    options: |
+    options: 
       - inherit: annotators.AnswerChoiceCandAnsSimilarityScorer
 
   - inherit: ecd.phase
     name: AnswerChoiceCandAnsSimilarityScorer
-    options: |
+    options: 
       - inherit: annotators.AnswerSelectionByKCandVoting
