@@ -22,7 +22,7 @@ import edu.cmu.lti.qalab.utils.Utils;
 public class QuestionCandSentDependencyMatcher extends JCasAnnotator_ImplBase {
 
 	DISCO disco;
-	DepTreeInfo tree;
+	DepTreeInfo tree; 
 	String filter = "";
 	String postiveFilter = null;
 

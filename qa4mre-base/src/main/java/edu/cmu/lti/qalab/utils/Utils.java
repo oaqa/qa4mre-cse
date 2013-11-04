@@ -13,7 +13,7 @@ import org.apache.uima.jcas.cas.FSList;
 import org.apache.uima.jcas.cas.NonEmptyFSList;
 import org.apache.uima.jcas.cas.TOP;
 import org.apache.uima.jcas.tcas.Annotation;
-import org.uimafit.util.JCasUtil;
+import org.apache.uima.fit.util.JCasUtil;
 
 import edu.cmu.lti.qalab.types.Answer;
 import edu.cmu.lti.qalab.types.CandidateSentence;
@@ -60,7 +60,7 @@ public class Utils {
 
 		return list;
 	}
-	
+
 	/**
 	 * Creates FeatureStructure List from questionList
 	 * 
@@ -93,12 +93,9 @@ public class Utils {
 		return list;
 	}
 
-	
-	
-	public static <T extends TOP> ArrayList<T> fromFSListToCollection(FSList list,
-			Class<T> classType) {
+	public static <T extends TOP> ArrayList<T> fromFSListToCollection(
+			FSList list, Class<T> classType) {
 
-	
 		Collection<T> myCollection = JCasUtil.select(list, classType);
 		/*
 		 * for(T element:myCollection){ System.out.println(.getText()); }
@@ -106,9 +103,9 @@ public class Utils {
 
 		return new ArrayList<T>(myCollection);
 	}
-	
-	public static <T extends Annotation> FSList fromCollectionToFSList(JCas aJCas,
-			Collection<T> aCollection) {
+
+	public static <T extends Annotation> FSList fromCollectionToFSList(
+			JCas aJCas, Collection<T> aCollection) {
 		if (aCollection.size() == 0) {
 			return new EmptyFSList(aJCas);
 		}
@@ -129,7 +126,6 @@ public class Utils {
 		return list;
 	}
 
-	
 	/**
 	 * Creates FeatureStructure List from questionList
 	 * 
@@ -162,14 +158,13 @@ public class Utils {
 		return list;
 	}
 
-
-
 	/**
 	 * @param aJCas
 	 * @param aCollection
 	 * @return
 	 */
-	public static FSList createTokenList(JCas aJCas, Collection<Token> aCollection) {
+	public static FSList createTokenList(JCas aJCas,
+			Collection<Token> aCollection) {
 		if (aCollection.size() == 0) {
 			return new EmptyFSList(aJCas);
 		}
@@ -179,7 +174,7 @@ public class Utils {
 		Iterator<Token> i = aCollection.iterator();
 		while (i.hasNext()) {
 			head.setHead(i.next());
-			if (i.hasNext()) {				
+			if (i.hasNext()) {
 				head.setTail(new NonEmptyFSList(aJCas));
 				head = (NonEmptyFSList) head.getTail();
 			} else {
@@ -195,7 +190,8 @@ public class Utils {
 	 * @param aCollection
 	 * @return
 	 */
-	public static FSList createNounPhraseList(JCas aJCas, Collection<NounPhrase> aCollection) {
+	public static FSList createNounPhraseList(JCas aJCas,
+			Collection<NounPhrase> aCollection) {
 		if (aCollection.size() == 0) {
 			return new EmptyFSList(aJCas);
 		}
@@ -205,7 +201,7 @@ public class Utils {
 		Iterator<NounPhrase> i = aCollection.iterator();
 		while (i.hasNext()) {
 			head.setHead(i.next());
-			if (i.hasNext()) {				
+			if (i.hasNext()) {
 				head.setTail(new NonEmptyFSList(aJCas));
 				head = (NonEmptyFSList) head.getTail();
 			} else {
@@ -231,7 +227,7 @@ public class Utils {
 		Iterator<NER> i = aCollection.iterator();
 		while (i.hasNext()) {
 			head.setHead(i.next());
-			if (i.hasNext()) {				
+			if (i.hasNext()) {
 				head.setTail(new NonEmptyFSList(aJCas));
 				head = (NonEmptyFSList) head.getTail();
 			} else {
@@ -241,7 +237,6 @@ public class Utils {
 
 		return list;
 	}
-
 
 	public static FSList createDependencyList(JCas aJCas,
 			Collection<SemanticGraphEdge> aCollection) {
@@ -256,7 +251,7 @@ public class Utils {
 			SemanticGraphEdge edge = i.next();
 			Dependency dep = new Dependency(aJCas);
 
-			Token governorToken = new Token(aJCas);			
+			Token governorToken = new Token(aJCas);
 			governorToken.setText(edge.getGovernor().originalText());
 			governorToken.setPos(edge.getGovernor().tag());
 			governorToken.setNer(edge.getGovernor().ner());
@@ -314,8 +309,9 @@ public class Utils {
 
 		return sentenceList;
 	}
-	
-	public static ArrayList<QuestionAnswerSet> getQuestionAnswerSetFromTestDocCAS(JCas jCas) {
+
+	public static ArrayList<QuestionAnswerSet> getQuestionAnswerSetFromTestDocCAS(
+			JCas jCas) {
 
 		TestDocument testDoc = Utils.getTestDocumentFromCAS(jCas);
 		FSList fsQAList = testDoc.getQaList();
@@ -326,7 +322,7 @@ public class Utils {
 			QuestionAnswerSet qaSet = null;
 			try {
 				qaSet = (QuestionAnswerSet) fsQAList.getNthElement(i);
-				
+
 			} catch (Exception e) {
 				break;
 			}
@@ -337,7 +333,6 @@ public class Utils {
 		return qaSetList;
 	}
 
-	
 	public static ArrayList<Question> getQuestionListFromTestDocCAS(JCas jCas) {
 
 		TestDocument testDoc = Utils.getTestDocumentFromCAS(jCas);
@@ -348,8 +343,9 @@ public class Utils {
 
 			Question question = null;
 			try {
-				QuestionAnswerSet qaSet = (QuestionAnswerSet) fsQAList.getNthElement(i);
-				question=qaSet.getQuestion();
+				QuestionAnswerSet qaSet = (QuestionAnswerSet) fsQAList
+						.getNthElement(i);
+				question = qaSet.getQuestion();
 			} catch (Exception e) {
 				break;
 			}
@@ -359,21 +355,25 @@ public class Utils {
 
 		return questionList;
 	}
-	public static ArrayList<ArrayList<Answer>> getAnswerListFromTestDocCAS(JCas jCas) {
+
+	public static ArrayList<ArrayList<Answer>> getAnswerListFromTestDocCAS(
+			JCas jCas) {
 
 		TestDocument testDoc = Utils.getTestDocumentFromCAS(jCas);
 		FSList fsQAList = testDoc.getQaList();
-		
+
 		ArrayList<ArrayList<Answer>> answerList = new ArrayList<ArrayList<Answer>>();
 		int i = 0;
 		while (true) {
 
 			ArrayList<Answer> answerChoiceList = null;
 			try {
-				QuestionAnswerSet qaSet = (QuestionAnswerSet) fsQAList.getNthElement(i);
-			
-				answerChoiceList=Utils.fromFSListToCollection(qaSet.getAnswerList(),Answer.class);
-				
+				QuestionAnswerSet qaSet = (QuestionAnswerSet) fsQAList
+						.getNthElement(i);
+
+				answerChoiceList = Utils.fromFSListToCollection(
+						qaSet.getAnswerList(), Answer.class);
+
 			} catch (Exception e) {
 				break;
 			}
@@ -384,9 +384,10 @@ public class Utils {
 		return answerList;
 	}
 
-	public static ArrayList<Token> getTokenListFromSentenceList(Sentence sentence) {
+	public static ArrayList<Token> getTokenListFromSentenceList(
+			Sentence sentence) {
 
-		FSList fsTokenList=sentence.getTokenList();
+		FSList fsTokenList = sentence.getTokenList();
 		ArrayList<Token> tokenList = new ArrayList<Token>();
 		int i = 0;
 		while (true) {
@@ -403,10 +404,11 @@ public class Utils {
 
 		return tokenList;
 	}
-	
-	public static ArrayList<NounPhrase> getNounPhraseListFromQuestionList(Question question) {
 
-		FSList fsNounList=question.getNounList();
+	public static ArrayList<NounPhrase> getNounPhraseListFromQuestionList(
+			Question question) {
+
+		FSList fsNounList = question.getNounList();
 		ArrayList<NounPhrase> nounPhraseList = new ArrayList<NounPhrase>();
 		int i = 0;
 		while (true) {
@@ -424,10 +426,9 @@ public class Utils {
 		return nounPhraseList;
 	}
 
-
 	public static ArrayList<Token> getTokenListFromQuestion(Question question) {
 
-		FSList fsTokenList=question.getTokenList();
+		FSList fsTokenList = question.getTokenList();
 		ArrayList<Token> tokenList = new ArrayList<Token>();
 		int i = 0;
 		while (true) {
@@ -447,7 +448,7 @@ public class Utils {
 
 	public static ArrayList<Token> getTokenListFromAnswer(Answer answer) {
 
-		FSList fsTokenList=answer.getTokenList();
+		FSList fsTokenList = answer.getTokenList();
 		ArrayList<Token> tokenList = new ArrayList<Token>();
 		int i = 0;
 		while (true) {
@@ -486,7 +487,6 @@ public class Utils {
 		return sentenceList;
 	}
 
-	
 	public static TestDocument getTestDocumentFromCAS(JCas jCas) {
 		FSIterator it = jCas.getAnnotationIndex(TestDocument.type).iterator();
 		TestDocument srcDoc = null;
@@ -495,28 +495,31 @@ public class Utils {
 		}
 		return srcDoc;
 	}
+
 	public static CandidateSentence getCandidateSentenceFromCAS(JCas jCas) {
-		FSIterator it = jCas.getAnnotationIndex(CandidateSentence.type).iterator();
+		FSIterator it = jCas.getAnnotationIndex(CandidateSentence.type)
+				.iterator();
 		CandidateSentence candSent = null;
 		if (it.hasNext()) {
 			candSent = (CandidateSentence) it.next();
 		}
 		return candSent;
 	}
-	
-	public static boolean isInsideBracket(ArrayList<Brackets>bracketedList,int pos){
-		
-		boolean isInside=false;
-		for(int i=0;i<bracketedList.size();i++){
-			int start=bracketedList.get(i).getStart();
-			int end=bracketedList.get(i).getEnd();
-			
-			if(pos>=start && pos<=end){
-				isInside=true;
+
+	public static boolean isInsideBracket(ArrayList<Brackets> bracketedList,
+			int pos) {
+
+		boolean isInside = false;
+		for (int i = 0; i < bracketedList.size(); i++) {
+			int start = bracketedList.get(i).getStart();
+			int end = bracketedList.get(i).getEnd();
+
+			if (pos >= start && pos <= end) {
+				isInside = true;
 				break;
 			}
-			
-			if(start>pos){
+
+			if (start > pos) {
 				break;
 			}
 		}
@@ -535,7 +538,7 @@ public class Utils {
 			int start = matcher.start();
 			int end = matcher.end();
 			Brackets brackets = new Brackets(matched, start, end);
-			//System.out.println("******Bracket\t"+matched+"\t"+start+"\t"+end);
+			// System.out.println("******Bracket\t"+matched+"\t"+start+"\t"+end);
 			bracketList.add(brackets);
 		}
 
@@ -543,5 +546,4 @@ public class Utils {
 
 	}
 
-	
 }

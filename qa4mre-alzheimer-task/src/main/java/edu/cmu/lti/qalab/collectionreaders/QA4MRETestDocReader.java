@@ -5,10 +5,12 @@ import java.io.File;
 import java.io.FileReader;
 import java.io.FilenameFilter;
 import java.io.IOException;
+import java.io.InputStream;
 import java.io.StringReader;
 import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
+import java.util.regex.Pattern;
 
 import org.apache.uima.cas.CAS;
 import org.apache.uima.cas.CASException;
@@ -35,17 +37,23 @@ import edu.cmu.lti.qalab.types.TestDocument;
 public class QA4MRETestDocReader extends CollectionReader_ImplBase {
 
 	File testFile[] = null;
-	int nCurrFile = 0;
-	NodeList documents = null;
-
+	public int nCurrFile = 0;
+	public NodeList documents = null;
+	public Collection<String> files = null;
 	int nCurrDoc = 0;
 
 	@Override
 	public void initialize() throws ResourceInitializationException {
 		try {
+			String path = (String) getConfigParameterValue("INPUT_DIR");
 			// System.out.println("$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$$");
-			File inputDir = new File(
-					(String) getConfigParameterValue("INPUT_DIR"));
+			File inputDir = new File(path);
+	//		files = ResourceList.getResources(Pattern.compile(path + "*.xml"));
+		//	System.out.println(files);
+			// /*InputStream */new
+			// /*InputStream */new
+			// InputStream(getClass().getResourceAsStream(path));
+			System.out.println(inputDir);
 			testFile = inputDir.listFiles(new OnlyNXML("xml"));
 			System.out.println("Total files: " + testFile.length);
 			String xmlText = this.readTestFile();
@@ -122,9 +130,9 @@ public class QA4MRETestDocReader extends CollectionReader_ImplBase {
 				Answer ans = new Answer(jcas);
 
 				if (isCorrect != null) {
-					if (isCorrect.equals("Yes")){
+					if (isCorrect.equals("Yes")) {
 						ans.setIsCorrect(true);
-					}else{
+					} else {
 						ans.setIsCorrect(false);
 					}
 				} else {
@@ -240,13 +248,13 @@ public class QA4MRETestDocReader extends CollectionReader_ImplBase {
 		for (int i = 0; i < topicNodeList.getLength(); i++) {
 
 			Element topicElement = (Element) topicNodeList.item(i);
-			String topicId=topicElement.getAttribute("t_id");
+			String topicId = topicElement.getAttribute("t_id");
 			NodeList readingTestNodeList = topicElement
 					.getElementsByTagName("reading-test");
-			
+
 			documents = readingTestNodeList;
-			//Element eleReading=(Element)readingTestNodeList;
-			//String rId=eleReading.getAttribute("r_id");
+			// Element eleReading=(Element)readingTestNodeList;
+			// String rId=eleReading.getAttribute("r_id");
 		}
 
 	}
