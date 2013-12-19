@@ -1,3 +1,3 @@
-class: edu.cmu.lti.qalab.answer_ranking.AnswerChoiceCandAnsSimilarityScorer
+class: edu.cmu.lti.qalab.answer_ranking.CandidateAnswerSimScorer
 params:
     K_CANDIDATES: 5

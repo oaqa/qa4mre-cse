@@ -27,7 +27,8 @@ public class AnswerChoiceCandAnsSimilarityScorer extends JCasAnnotator_ImplBase 
 	public void initialize(UimaContext context)
 			throws ResourceInitializationException {
 		super.initialize(context);
-		K_CANDIDATES=(Integer)context.getConfigParameterValue("K_CANDIDATES");
+		K_CANDIDATES = (Integer) context
+				.getConfigParameterValue("K_CANDIDATES");
 	}
 
 	@Override
@@ -36,9 +37,9 @@ public class AnswerChoiceCandAnsSimilarityScorer extends JCasAnnotator_ImplBase 
 		// String testDocId = testDoc.getId();
 		ArrayList<QuestionAnswerSet> qaSet = Utils
 				.getQuestionAnswerSetFromTestDocCAS(aJCas);
-
+        //for each question
 		for (int i = 0; i < qaSet.size(); i++) {
-
+          
 			Question question = qaSet.get(i).getQuestion();
 			System.out.println("Question: " + question.getText());
 			ArrayList<Answer> choiceList = Utils.fromFSListToCollection(qaSet
@@ -49,10 +50,12 @@ public class AnswerChoiceCandAnsSimilarityScorer extends JCasAnnotator_ImplBase 
 							CandidateSentence.class);
 
 			int topK = Math.min(K_CANDIDATES, candSentList.size());
+			//for each candidate up to topK
 			for (int c = 0; c < topK; c++) {
 
+				/*initializations */
 				CandidateSentence candSent = candSentList.get(c);
-
+                    
 				ArrayList<NounPhrase> candSentNouns = Utils
 						.fromFSListToCollection(candSent.getSentence()
 								.getPhraseList(), NounPhrase.class);
@@ -68,7 +71,9 @@ public class AnswerChoiceCandAnsSimilarityScorer extends JCasAnnotator_ImplBase 
 									NounPhrase.class);
 					ArrayList<NER> choiceNERs = Utils.fromFSListToCollection(
 							answer.getNerList(), NER.class);
-
+					/*initializations */
+					
+					/* actual counting for final score */
 					int nnMatch = 0;
 					for (int k = 0; k < candSentNouns.size(); k++) {
 						for (int l = 0; l < choiceNERs.size(); l++) {
@@ -100,6 +105,8 @@ public class AnswerChoiceCandAnsSimilarityScorer extends JCasAnnotator_ImplBase 
 						}
 
 					}
+
+					/* actual counting for final score */
 
 					System.out.println(choiceList.get(j).getText() + "\t"
 							+ nnMatch);

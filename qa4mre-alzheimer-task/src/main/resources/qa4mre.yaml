@@ -1,77 +1,78 @@
 configuration: 
   name: qa4mre
   author: ziy
-  
-#persistence-provider:
-#  inherit: persistence.local-persistence-provider
 
 collection-reader:
   inherit: collectionreaders.CollectionReaderDescriptor
 
 pipeline:
   # question and document annotations: data -> XMIs
-  - phase: TextSegmenter
-    options: 
-      - inherit: annotators.TextSegmenter
+ # - phase: TextSegmenter
+  #  options: 
+  - inherit: annotators.TextSegmenter
 
-  - phase: StanfordSentenceAnnotator
-    options: 
-      - inherit: annotators.StanfordSentenceAnnotator
+ # - phase: StanfordSentenceAnnotator
+ #   options: 
+  - inherit: annotators.StanfordSentenceAnnotator
 
-  - phase: NoiseFilter
-    options: 
-      - inherit: annotators.NoiseFilter
+  #- phase: NoiseFilter
+  #  options: 
+  - inherit: annotators.NoiseFilter
 
-  - phase: StanfordNLPAnnotator
-    options: 
-      - inherit: annotators.StanfordNLPAnnotator
+  #- phase: StanfordNLPAnnotator
+  #  options: 
+  - inherit: annotators.StanfordNLPAnnotator
 
-  - phase: StanfordQuestionNLPAnnotator
-    options: 
-      - inherit: annotators.StanfordQuestionNLPAnnotator
+  #- phase: StanfordQuestionNLPAnnotator
+  #  options: 
+  - inherit: annotators.StanfordQuestionNLPAnnotator
 
-  - phase: PhraseAnnotator
-    options: 
-      - inherit: annotators.PhraseAnnotator
+  #- phase: PhraseAnnotator
+  #  options: 
+  - inherit: annotators.PhraseAnnotator
 
-  - phase: QuestionPhraseAnnotator
-    options: 
-      - inherit: annotators.QuestionPhraseAnnotator
+  #- phase: QuestionPhraseAnnotator
+   # options: 
+  - inherit: annotators.QuestionPhraseAnnotator
 
-  - phase: NEAnnotator
-    options: 
-      - inherit: annotators.NEAnnotator
+  #- phase: NEAnnotator
+  #  options: 
+  - inherit: annotators.NEAnnotator
 
-  - phase: QuestionNEAnnotator
-    options: 
-      - inherit: annotators.QuestionNEAnnotator
+  #- phase: QuestionNEAnnotator
+  #  options: 
+  - inherit: annotators.QuestionNEAnnotator
 
-  - phase: SynonymAnnotator
-    options: 
-      - inherit: annotators.SynonymAnnotator
+  #- phase: SynonymAnnotator
+  #  options: 
+  - inherit: annotators.SynonymAnnotator
 
-  - phase: QASynonymAnnotator
-    options: 
-      - inherit: annotators.QASynonymAnnotator
+  #- phase: QASynonymAnnotator
+  #  options: 
+  - inherit: annotators.QASynonymAnnotator
 
-  - phase: CasConsumer
-    options: 
-      - inherit: consumers.CasConsumerDescriptor
+  #- phase: CasConsumer
+  #  options: 
+  - inherit: consumers.CasConsumerDescriptor
 
   # indexing
-  - phase: SolrIndexer
-    options:
-      - inherit: annotators.SolrIndexer
+ # - phase: SolrIndexer
+  #  options:
+  #    - inherit: annotators.SolrIndexer
   
   # answer ranking and merging: XMIs -> results
-  - phase: QuestionCandSentSimilarityMatcher
-    options:
-      - inherit: annotators.QuestionCandSentSimilarityMatcher
+  #- phase: QuestionCandSentSimilarityMatcher
+  #  options:
+  - inherit: annotators.QuestionCandSentSimilarityMatcher
 
-  - phase: AnswerChoiceCandAnsSimilarityScorer
-    options:
-      - inherit: annotators.AnswerChoiceCandAnsSimilarityScorer
+  #- phase: AnswerChoiceCandAnsSimilarityScorer
+  #  options:
+  - inherit: annotators.AnswerChoiceCandAnsSimilarityScorer
 
-  - phase: AnswerChoiceCandAnsSimilarityScorer
-    options:
-      - inherit: annotators.AnswerSelectionByKCandVoting
+  #- phase: AnswerChoiceCandAnsSimilarityScorer
+   # options:
+
+   - evaluator: default
+       params:
+           n: 2
+  

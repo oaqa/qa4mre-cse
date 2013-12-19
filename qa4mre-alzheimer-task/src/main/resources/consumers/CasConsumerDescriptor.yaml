@@ -1,5 +1,6 @@
 class: edu.cmu.lti.qalab.casconsumers.XmiWriterCasConsumer
-OutputDirectory: results/annotated-documents
+params:
+    OutputDirectory: XMIs/12-test-alzheimer/
 
-persistence-provider: |
-  inherit: ecd.default-log-persistence-provider
+#persistence-provider: |
+#  inherit: ecd.default-log-persistence-provider
